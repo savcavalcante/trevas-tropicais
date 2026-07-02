@@ -1,0 +1,28 @@
+meu-site-fotografia/
+│
+├── index.html                  (Página Inicial: Hero, Vitrine e chamadas do Blog)
+├── sobre.html                  (Página Quem Sou/Biografia)
+├── portfolio.html              (Galeria completa de fotos dividida por categorias)
+├── contato.html                (Formulário de orçamento / Redes Sociais)
+│
+├── css/                        (Pasta para os estilos visuais)
+│   ├── estilo.css              (Estilos gerais, tipografia, cores e navbar/footer)
+│   ├── componentes.css         (Estilos específicos de blocos: cards do blog, botões)
+│   └── responsivo.css          (Ajustes de Media Queries para celular e tablet)
+│
+├── js/                         (Pasta para a lógica e interações)
+│   └── script.js               (Menu hambúrguer do celular, efeitos na galeria, etc.)
+│
+├── imagens/                    (Pasta central de imagens - todas em formato .webp)
+│   ├── logos/                  (Ícones, logotipo ou assinaturas)
+│   ├── hero/                   (Fotos de tela cheia/banners)
+│   ├── portfolio/              (Fotos dos seus ensaios e trabalhos)
+│   │   ├── casamentos/
+│   │   ├── retratos/
+│   │   └── paisagens/
+│   └── blog/                   (Fotos de capa que ilustram os artigos)
+│
+└── blog/                       (Pasta para organizar as páginas internas do blog)
+    ├── index.html              (Página principal do Blog listando todos os posts)
+    ├── post-exemplo-1.html     (Artigo individual do blog)
+    └── post-exemplo-2.html     (Artigo individual do blog)
