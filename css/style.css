@@ -1,0 +1,142 @@
+/* ==========================================================================
+   1. RESET & CONFIGURAÇÕES GERAIS (Inspirado no minimalismo escuro da referência)
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-box: border-box;
+}
+
+body {
+  background-color: #0a0a0a; /* Fundo quase preto para destacar as cores das fotos */
+  color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  padding-top: 80px; /* Evita que o menu flutuante cubra o conteúdo */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   2. NAVBAR RESPONSIVA (FLEXBOX)
+   ========================================================================== */
+.navbar-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(10, 10, 10, 0.95); /* Leve transparência elegante */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+.menu-links {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os links do menu */
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.nav-link:hover, .nav-link.ativo {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   3. VITRINE DE COLEÇÕES (FLEXBOX MOBILE-FIRST)
+   ========================================================================== */
+.container-portfolio {
+  padding: 20px;
+  width: 100%;
+}
+
+/* No Mobile: Exibe uma coleção embaixo da outra ocupando a largura total */
+.flex-colecoes {
+  display: flex;
+  flex-direction: column; 
+  gap: 30px; /* Distância vertical entre os cards */
+  width: 100%;
+}
+
+.card-colecao {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.moldura-foto {
+  width: 100%;
+  aspect-ratio: 3 / 2; /* Mantém todas as capas na mesma proporção fotográfica padronizada */
+  overflow: hidden;
+  background-color: #111;
+}
+
+.foto-capa {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+  transition: transform 0.5s ease;
+}
+
+.info-colecao {
+  margin-top: 10px;
+}
+
+.titulo-colecao {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.footer-inicial {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   4. MEDIA QUERIES (Mudança de layout para Telas Maiores / Desktops)
+   ========================================================================== */
+@media (min-width: 768px) {
+  
+  /* No computador, mudamos o fluxo do flex para linha e permitimos que quebre */
+  .flex-colecoes {
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite empilhar em linhas se faltar espaço */
+    gap: 40px 2%; /* 40px na vertical, 2% de margem na horizontal */
+  }
+
+  /* Cada card vai ocupar metade da tela (49%), gerando uma grade elegante de 2 colunas */
+  .card-colecao {
+    width: 49%; 
+  }
+
+  /* Efeito de zoom suave ao passar o mouse (apenas para desktop onde há ponteiro) */
+  .card-colecao:hover .foto-capa {
+    transform: scale(1.03);
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Para monitores bem grandes, podemos mudar para 3 colunas (aprox. 31.3% cada) */
+  .card-colecao {
+    width: 32%;
+  }
+}
