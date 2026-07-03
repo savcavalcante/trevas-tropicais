@@ -4,14 +4,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-box: border-box;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #0a0a0a; /* Fundo quase preto para destacar as cores das fotos */
   color: #f5f5f5;
   font-family: 'Arial', sans-serif;
-  padding-top: 80px; /* Evita que o menu flutuante cubra o conteúdo */
+  padding-top: 120px; /* Evita que o menu flutuante cubra o conteúdo */
 }
 
 a {
@@ -20,37 +20,36 @@ a {
 }
 
 /* ==========================================================================
-   2. NAVBAR RESPONSIVA (FLEXBOX)
+   2. CABEÇALHO ALTO COM LINKS LADO A LADO (MOBILE-FIRST)
    ========================================================================== */
-.navbar-principal {
+.header-principal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  background-color: rgba(10, 10, 10, 0.95); /* Leve transparência elegante */
+  background-color: rgba(10, 10, 10, 0.98);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Empilha os links em cima e o nome embaixo */
   align-items: center;
-  padding: 0 20px;
   z-index: 1000;
   border-bottom: 1px solid #1a1a1a;
+  padding: 15px 0 20px 0; /* Respiro interno do cabeçalho */
 }
 
-.logo {
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 1.1rem;
-}
-
+/* Container dos links: distribui lado a lado com Flexbox */
 .menu-links {
   display: flex;
-  gap: 15px; /* Espaçamento entre os links do menu */
+  justify-content: center;
+  gap: 20px; /* Espaço generoso entre os links para facilitar o toque */
+  width: 100%;
+  padding-bottom: 15px;
 }
 
 .nav-link {
-  font-size: 0.9rem;
-  opacity: 0.6;
+  font-size: 0.75rem; /* Fonte reduzida para não quebrar linha no mobile */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.5;
   transition: opacity 0.3s;
 }
 
@@ -58,19 +57,31 @@ a {
   opacity: 1;
 }
 
+/* Área do Nome */
+.identidade-marca {
+  width: 100%;
+  text-align: center;
+}
+
+.logo-nome {
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+
 /* ==========================================================================
    3. VITRINE DE COLEÇÕES (FLEXBOX MOBILE-FIRST)
    ========================================================================== */
+
 .container-portfolio {
-  padding: 20px;
+  padding: 0;
   width: 100%;
 }
 
-/* No Mobile: Exibe uma coleção embaixo da outra ocupando a largura total */
 .flex-colecoes {
   display: flex;
   flex-direction: column; 
-  gap: 30px; /* Distância vertical entre os cards */
+  gap: 0;
   width: 100%;
 }
 
@@ -78,11 +89,13 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .moldura-foto {
   width: 100%;
-  aspect-ratio: 3 / 2; /* Mantém todas as capas na mesma proporção fotográfica padronizada */
+  aspect-ratio: 3 / 2; /* Mantém a proporção fotográfica clássica (3:2) */
   overflow: hidden;
   background-color: #111;
 }
@@ -90,25 +103,30 @@ a {
 .foto-capa {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
-  transition: transform 0.5s ease;
+  object-fit: cover; 
 }
 
+/* Adicionamos um padding apenas no texto para ele não colar na borda da tela */
 .info-colecao {
-  margin-top: 10px;
+  position: absolute; /* Fixa sobre a imagem */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Faixa escura com transparência */
+  padding: 15px 20px;
+  text-align: center;
+  /* Configuração para o Hover (Desktop) que vamos ativar abaixo */
+  opacity: 1; /* No mobile, ele fica visível sempre */
+  transition: opacity 0.3s ease;
 }
 
 .titulo-colecao {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  letter-spacing: 1px;
-}
-
-.footer-inicial {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.85rem;
-  opacity: 0.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff; /* Título sempre branco */
+  text-transform: uppercase;
 }
 
 /* ==========================================================================
@@ -116,16 +134,57 @@ a {
    ========================================================================== */
 @media (min-width: 768px) {
   
+  /* --- Ajustes do Cabeçalho para Desktop --- */
+
+  .logo-nome {
+    font-size: 1.5rem; /* No computador, o nome volta a ser imponente */
+  }
+
+  .titulo-colecao {
+    font-size: 1.1rem; /* O título no centro da foto ganha mais destaque ao passar o mouse */
+  }
+  
+  /* Inverte a ordem dos blocos: Marca vai para cima (1) e Links para baixo (2) */
+  .identidade-marca {
+    order: 1;
+    padding: 10px 0; /* Diminui um pouco o espaço para o menu aproximar */
+  }
+  
+  .menu-links {
+    order: 2;
+    padding-bottom: 0;
+    padding-top: 10px;
+  }
+  
+  .header-principal {
+    padding: 20px 0 15px 0; /* Ajusta o respiro geral do bloco no desktop */
+  }
+    
   /* No computador, mudamos o fluxo do flex para linha e permitimos que quebre */
   .flex-colecoes {
     flex-direction: row;
     flex-wrap: wrap; /* Permite empilhar em linhas se faltar espaço */
-    gap: 40px 2%; /* 40px na vertical, 2% de margem na horizontal */
+    gap: 0;
   }
 
   /* Cada card vai ocupar metade da tela (49%), gerando uma grade elegante de 2 colunas */
   .card-colecao {
     width: 49%; 
+  }
+  
+  /* Esconde a legenda no desktop quando o mouse não está sobre o card */
+  .info-colecao {
+    opacity: 0;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove o padding para centralizar o texto */ 
+  }
+
+  /* Revela a legenda no hover */
+  .card-colecao:hover .info-colecao {
+    opacity: 1;
   }
 
   /* Efeito de zoom suave ao passar o mouse (apenas para desktop onde há ponteiro) */
