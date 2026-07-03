@@ -187,10 +187,16 @@ a {
     opacity: 1;
   }
 
-  /* Efeito de zoom suave ao passar o mouse (apenas para desktop onde há ponteiro) */
-  .card-colecao:hover .foto-capa {
-    transform: scale(1.03);
+/* Transforma a lista vertical em uma grade de 2 colunas coladas no desktop */
+  .grade-galeria {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+
+  .item-foto {
+    width: 50%; /* Metade da tela para cada foto */
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -199,3 +205,76 @@ a {
     width: 32%;
   }
 }
+
+/* ==========================================================================
+   5. PÁGINA INTERNA DE COLEÇÃO (GALERIA MOBILE-FIRST)
+   ========================================================================== */
+.container-colecao {
+  width: 100%;
+  padding: 0;
+}
+
+.topo-colecao {
+  text-align: center;
+  padding: 20px 20px 30px 20px;
+}
+
+.nome-colecao {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Flexbox para os botões de subfiltro */
+.subfiltros-flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-filtro {
+  background: none;
+  border: 1px solid #333;
+  color: #f5f5f5;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-filtro.ativo, .btn-filtro:hover {
+  background-color: #f5f5f5;
+  color: #0a0a0a;
+  border-color: #f5f5f5;
+}
+
+/* Alinha as fotos em uma coluna única e centralizada no desktop */
+  .grade-galeria {
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente na tela */
+    gap: 60px; /* Um espaçamento elegante entre uma foto e outra na rolagem */
+    width: 100%;
+    max-width: 1200px; /* Evita que fotos horizontais estourem demais a tela */
+    margin: 0 auto; /* Centraliza o container inteiro na página */
+    padding: 0 20px 80px 20px; /* Respiro nas laterais e um espaço generoso no fim da página */
+  }
+
+  .item-foto {
+    width: auto; /* Deixa o container assumir o tamanho da foto */
+    max-width: 100%; /* Garante que a foto não passe dos limites da tela */
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Controla o tamanho máximo vertical para fotos em pé não sumirem na tela */
+  .foto-portfolio {
+    width: auto;
+    max-width: 60%;
+    max-height: 85vh; /* A foto ocupa no máximo 85% da altura do monitor, mantendo a proporção */
+    object-fit: contain;
+  }
