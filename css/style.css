@@ -1,6 +1,5 @@
-/* ==========================================================================
-   1. RESET & CONFIGURAÇÕES GERAIS (Inspirado no minimalismo escuro da referência)
-   ========================================================================== */
+/* 1- Configurações Gerais. Design mobile-first, galeria de molduras grandes que levam às páginas das coleções,
+fundo escuro para combinar com a temática geral e posicionamento de marca, fontes e cores ainda não determinadas.*/
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +7,10 @@
 }
 
 body {
-  background-color: #0a0a0a; /* Fundo quase preto para destacar as cores das fotos */
+  background-color: #0a0a0a;
   color: #f5f5f5;
   font-family: 'Arial', sans-serif;
-  padding-top: 120px; /* Evita que o menu flutuante cubra o conteúdo */
+  padding-top: 120px;
 }
 
 a {
@@ -19,9 +18,8 @@ a {
   color: inherit;
 }
 
-/* ==========================================================================
-   2. CABEÇALHO ALTO COM LINKS LADO A LADO (MOBILE-FIRST)
-   ========================================================================== */
+/* 2- Cabeçalho. Design alto com links lado a lado provisoriamente para facilitar a navegação e portabilidade. 
+A intenção é transformar o menu em burguer no mobile e manter lado a lado no desktop, a decidir se acima ou abaixo do título/logo.*/
 .header-principal {
   position: fixed;
   top: 0;
@@ -29,24 +27,24 @@ a {
   width: 100%;
   background-color: rgba(10, 10, 10, 0.98);
   display: flex;
-  flex-direction: column; /* Empilha os links em cima e o nome embaixo */
+  flex-direction: column;
   align-items: center;
   z-index: 1000;
   border-bottom: 1px solid #1a1a1a;
-  padding: 15px 0 20px 0; /* Respiro interno do cabeçalho */
+  padding: 15px 0 20px 0;
 }
 
 /* Container dos links: distribui lado a lado com Flexbox */
 .menu-links {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Espaço generoso entre os links para facilitar o toque */
+  gap: 20px;
   width: 100%;
   padding-bottom: 15px;
 }
 
 .nav-link {
-  font-size: 0.75rem; /* Fonte reduzida para não quebrar linha no mobile */
+  font-size: 0.75rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   opacity: 0.5;
@@ -57,7 +55,7 @@ a {
   opacity: 1;
 }
 
-/* Área do Nome */
+/* Container do Nome/título/logomarca */
 .identidade-marca {
   width: 100%;
   text-align: center;
@@ -69,9 +67,9 @@ a {
   letter-spacing: 5px;
 }
 
-/* ==========================================================================
-   3. VITRINE DE COLEÇÕES (FLEXBOX MOBILE-FIRST)
-   ========================================================================== */
+/* 3- Vitrine das coleções. Aqui fica a organização das capas na entrada do site.
+Por enquanto estão lado a lado, no futuro serão organizadas em uma grade/mosaico mais fluido,
+com as capas de diferentes alturas no desktop, com título em hover. Linha única e titulo aparente no mobile.*/
 
 .container-portfolio {
   padding: 0;
@@ -95,7 +93,7 @@ a {
 
 .moldura-foto {
   width: 100%;
-  aspect-ratio: 3 / 2; /* Mantém a proporção fotográfica clássica (3:2) */
+  aspect-ratio: 3 / 2; /* Mantém a proporção fotográfica clássica (3:2), por enquanto. */
   overflow: hidden;
   background-color: #111;
 }
@@ -106,17 +104,17 @@ a {
   object-fit: cover; 
 }
 
-/* Adicionamos um padding apenas no texto para ele não colar na borda da tela */
+/* Configuração dos títulos das coleções. */
 .info-colecao {
-  position: absolute; /* Fixa sobre a imagem */
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Faixa escura com transparência */
+  background-color: rgba(0, 0, 0, 0.6); /* Faixa escura com transparência do mobile */
   padding: 15px 20px;
   text-align: center;
-  /* Configuração para o Hover (Desktop) que vamos ativar abaixo */
-  opacity: 1; /* No mobile, ele fica visível sempre */
+  /* Configuração para o Hover no Desktop, ativada abaixo (4) */
+  opacity: 1; /* Sempre visível no mobile */
   transition: opacity 0.3s ease;
 }
 
@@ -124,30 +122,27 @@ a {
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff; /* Título sempre branco */
-  text-transform: uppercase;
+  text-transform: uppercase; /* Estou decidindo ainda se quero tudo maiúsculo mesmo. */
+  color: #fff;
 }
 
-/* ==========================================================================
-   4. MEDIA QUERIES (Mudança de layout para Telas Maiores / Desktops)
-   ========================================================================== */
+/* 4- Media Queries. Configurações de portabilidade das telas menores/mobile para as maiores/desktop. */
 @media (min-width: 768px) {
   
   /* --- Ajustes do Cabeçalho para Desktop --- */
 
   .logo-nome {
-    font-size: 1.5rem; /* No computador, o nome volta a ser imponente */
+    font-size: 1.5rem;
   }
 
   .titulo-colecao {
-    font-size: 1.1rem; /* O título no centro da foto ganha mais destaque ao passar o mouse */
+    font-size: 1.1rem;
   }
   
   /* Inverte a ordem dos blocos: Marca vai para cima (1) e Links para baixo (2) */
   .identidade-marca {
     order: 1;
-    padding: 10px 0; /* Diminui um pouco o espaço para o menu aproximar */
+    padding: 10px 0; /* Diminuindo um pouco o espaço para o menu aproximar */
   }
   
   .menu-links {
@@ -157,58 +152,59 @@ a {
   }
   
   .header-principal {
-    padding: 20px 0 15px 0; /* Ajusta o respiro geral do bloco no desktop */
+    padding: 20px 0 15px 0;
   }
     
-  /* No computador, mudamos o fluxo do flex para linha e permitimos que quebre */
+  /* Mudança do fluxo do flex para linha que permite quebras */
   .flex-colecoes {
     flex-direction: row;
-    flex-wrap: wrap; /* Permite empilhar em linhas se faltar espaço */
+    flex-wrap: wrap;
     gap: 0;
   }
 
-  /* Cada card vai ocupar metade da tela (49%), gerando uma grade elegante de 2 colunas */
+  /* Cada card ocupa metade da tela */
   .card-colecao {
     width: 49%; 
   }
   
-  /* Esconde a legenda no desktop quando o mouse não está sobre o card */
+  /* Efeito que esconde a legenda no desktop quando o mouse não está sobre o card */
   .info-colecao {
     opacity: 0;
     height:100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0; /* Remove o padding para centralizar o texto */ 
+    padding: 0; 
   }
 
-  /* Revela a legenda no hover */
+  /* Efeito que revela a legenda no hover */
   .card-colecao:hover .info-colecao {
     opacity: 1;
   }
 
-/* Transforma a lista vertical em uma grade de 2 colunas coladas no desktop */
+/* Transforma a lista vertical do mobile em uma grade no desktop. */
   .grade-galeria {
     flex-direction: row;
     flex-wrap: wrap;
   }
 
   .item-foto {
-    width: 50%; /* Metade da tela para cada foto */
+    width: 50%;
   }
 
 }
 
 @media (min-width: 1200px) {
-  /* Para monitores bem grandes, podemos mudar para 3 colunas (aprox. 31.3% cada) */
+  /* Para monitores bem grandes, adiciona uma terceira coluna. Acho que vou depois manter 3 por padrão no desktop. */
   .card-colecao {
     width: 32%;
   }
 }
 
-/* ==========================================================================
-   5. PÁGINA INTERNA DE COLEÇÃO (GALERIA MOBILE-FIRST)
-   ========================================================================== */
+/* 5- Página interna de coleção. Ao clicar numa coleção você entra na galeria de fotos daquele tema.
+A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto desktop,
+ full screen no mobile e adaptativa a depender da largura da foto no desktop, mas sem tocar os cantos. 
+ Futuramente, tocar na foto dentro da coleção leva a um link de venda de quadro/print.*/
 .container-colecao {
   width: 100%;
   padding: 0;
@@ -227,7 +223,7 @@ a {
   margin-bottom: 20px;
 }
 
-/* Flexbox para os botões de subfiltro */
+/* Container para os botões de subfiltro que serão melhor implementados depois. i.e. identificação, temas, cores, lugares. */
 .subfiltros-flex {
   display: flex;
   justify-content: center;
@@ -253,15 +249,15 @@ a {
   border-color: #f5f5f5;
 }
 
-/* Alinha as fotos em uma coluna única e centralizada no desktop */
+/* Alinhamento das fotos em uma coluna única e centralizada no desktop */
   .grade-galeria {
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente na tela */
-    gap: 60px; /* Um espaçamento elegante entre uma foto e outra na rolagem */
+    align-items: center;
+    gap: 60px; 
     width: 100%;
     max-width: 1200px; /* Evita que fotos horizontais estourem demais a tela */
-    margin: 0 auto; /* Centraliza o container inteiro na página */
-    padding: 0 20px 80px 20px; /* Respiro nas laterais e um espaço generoso no fim da página */
+    margin: 0 auto; 
+    padding: 0 20px 80px 20px;
   }
 
   .item-foto {
@@ -271,10 +267,10 @@ a {
     justify-content: center;
   }
 
-  /* Controla o tamanho máximo vertical para fotos em pé não sumirem na tela */
+  /* Controla o tamanho máximo vertical para fotos em pé não sumirem na tela. Ainda estou confuso com essa configuração, vou dar uma fuçada depois. */
   .foto-portfolio {
     width: auto;
     max-width: 60%;
-    max-height: 85vh; /* A foto ocupa no máximo 85% da altura do monitor, mantendo a proporção */
+    max-height: 85vh; /* A foto ocupa no máximo 85% da altura do monitor, mantendo a proporção. */
     object-fit: contain;
   }
