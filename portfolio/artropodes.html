@@ -20,40 +20,50 @@
     </div>
   </header>
 
-  <main class="container-colecao">
-    
-    <section class="topo-colecao">
-      <h2 class="nome-colecao">Artrópodes</h2>
-      
-      <div class="subfiltros-flex">
-        <button class="btn-filtro ativo">Todos</button>
-        <button class="btn-filtro">Insetos</button>
-        <button class="btn-filtro">Cordyceps</button>
-        <button class="btn-filtro">Outros</button>
+  <!-- Container principal que abraça todo o layout adaptativo -->
+  <main class="wrapper-colecao">
+    <!-- COLUNA DA ESQUERDA: Informações fixas -->
+    <aside class="painel-info">
+      <div class="conteudo-painel">
+        <h2 class="nome-colecao">Artrópodes</h2>
+        <p class="descricao-colecao">
+          Uma exploração visual das texturas, detalhes anatômicos e interações do microcosmo, com foco em espécimes de insetos e fungos entomopatógenos.
+        </p>
       </div>
+    </aside>
+
+    <!-- COLUNA CENTRAL: Fotos roláveis -->
+    <section class="fluxo-conteudo">
+      <div class="grade-galeria">
+        <div class="item-foto" data-category="insetos">
+          <img src="../imagens/galeria/artropodes/inseto/inseto-28.webp" alt="Inseto camuflado" class="foto-portfolio" loading="lazy">
+        </div>
+        <div class="item-foto" data-category="cordyceps">
+          <img src="../imagens/galeria/artropodes/inseto/inseto-32.webp" alt="Formiga infectada por Cordyceps" class="foto-portfolio" loading="lazy">
+        </div>
+        <div class="item-foto" data-category="cordyceps">
+          <img src="../imagens/galeria/artropodes/cordyceps/cordyceps-10.webp" alt="Aranha saltadora" class="foto-portfolio" loading="lazy">
+        </div>
+      </div>
+
+      <footer class="navegacao-colecoes">
+        <a href="../botanica.html" class="btn-nav-colecao">← Coleção Anterior</a>
+        <a href="../aves.html" class="btn-nav-colecao">Próxima Coleção →</a>
+      </footer>
     </section>
 
-    <section class="grade-galeria">
-      
-      <div class="item-foto">
-        <img src="../imagens/galeria/artropodes/inseto/inseto-28.webp" alt="Inseto camuflado" class="foto-portfolio" loading="lazy">
+    <!-- COLUNA DA DIREITA: Filtros e botões interativos fixos -->
+    <aside class="painel-filtros">
+      <div class="conteudo-filtros">
+        <nav class="subfiltros-flex">
+          <button class="btn-filtro ativo" data-filter="todos">Todos</button>
+          <button class="btn-filtro" data-filter="insetos">Insetos</button>
+          <button class="btn-filtro" data-filter="cordyceps">Cordyceps</button>
+          <button class="btn-filtro" data-filter="outros">Outros</button>
+        </nav>
       </div>
-
-      <div class="item-foto">
-        <img src="../imagens/galeria/artropodes/inseto/inseto-32.webp" alt="Formiga infectada por Cordyceps" class="foto-portfolio" loading="lazy">
-      </div>
-
-      <div class="item-foto">
-        <img src="../imagens/galeria/artropodes/cordyceps/cordyceps-10.webp" alt="Aranha saltadora" class="foto-portfolio" loading="lazy">
-      </div>
-
-    </section>
-
+    </aside>
   </main>
-
-  <footer class="footer-inicial">
-    <p><a href="../index.html">← Voltar para Coleções</a></p>
-  </footer>
 
 </body>
 </html>
