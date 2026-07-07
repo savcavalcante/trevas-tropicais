@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ==========================================================================
+  // 1. LÓGICA DO MENU EXPANSÍVEL DE FILTROS (MOBILE)
+  // ==========================================================================
   const botoes = document.querySelectorAll(".btn-filtro");
   const fotos = document.querySelectorAll(".item-foto");
   const gatilhoMobile = document.getElementById("btn-gatilho-filtros");
   const conteudoFiltros = document.getElementById("conteudo-filtros");
 
-  // --- LÓGICA DO MENU EXPANSÍVEL (MOBILE) ---
   if (gatilhoMobile && conteudoFiltros) {
     gatilhoMobile.addEventListener("click", () => {
       conteudoFiltros.classList.toggle("aberto");
-      
-      // Altera a setinha do botão ao abrir/fechar
       const seta = gatilhoMobile.querySelector("span");
       if (conteudoFiltros.classList.contains("aberto")) {
         seta.textContent = "▲";
@@ -19,14 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- LÓGICA DOS FILTROS DE FOTO ---
   botoes.forEach(botao => {
     botao.addEventListener("click", () => {
-      // 1. Alterna classe ativa dos botões
       botoes.forEach(b => b.classList.remove("ativo"));
       botao.classList.add("ativo");
 
-      // 2. Filtra as imagens
       const filtro = botao.getAttribute("data-filter");
       fotos.forEach(foto => {
         const categoriaFoto = foto.getAttribute("data-category");
@@ -37,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // 3. No mobile, fecha a gaveta de filtros automaticamente após escolher um
       if (window.innerWidth <= 768 && conteudoFiltros) {
         conteudoFiltros.classList.remove("aberto");
         if (gatilhoMobile.querySelector("span")) {
@@ -46,4 +42,41 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // ==========================================================================
+  // 2. LÓGICA DO RODAPÉ DINÂMICO (MOSAICO DESKTOP / BOTÕES MOBILE)
+  // ==========================================================================
+  // A sua lista oficial de coleções. Se criar uma nova, é só adicionar a linha aqui!
+  const listaColecoes = [
+    { nome: "Artrópodes", arquivo: "artropodes.html", capa: "../imagens/capas/artropodes.webp" },
+    { nome: "Botânica", arquivo: "botanica.html", capa: "../imagens/capas/botanica.webp" },
+    { nome: "Aves", arquivo: "aves.html", capa: "../imagens/capas/aves.webp" }
+  ];
+
+  // Descobre em qual página o usuário está agora (ex: artropodes.html)
+  const paginaAtual = window.location.pathname.split("/").pop();
+  const containerRodape = document.getElementById("links-dinamicos-rodape");
+
+  if (containerRodape) {
+    let htmlGerado = "";
+
+    listaColecoes.forEach(colecao => {
+      // Só gera o link se NÃO for a página que o usuário já está vendo
+      if (colecao.arquivo !== paginaAtual) {
+        htmlGerado += `
+          <a href="../${colecao.arquivo}" class="card-sugestao-rodape">
+            <div class="moldura-sugestao">
+              <img src="${colecao.capa}" alt="Coleção ${colecao.nome}" class="img-sugestao-rodape" loading="lazy">
+              <div class="overlay-sugestao">
+                <span class="txt-sugestao-desktop">${colecao.nome}</span>
+              </div>
+            </div>
+            <span class="btn-sugestao-mobile">${colecao.nome}</span>
+          </a>
+        `;
+      }
+    });
+
+    containerRodape.innerHTML = htmlGerado;
+  }
 });
