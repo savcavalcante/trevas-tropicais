@@ -493,12 +493,12 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
 @media (min-width: 1024px) {
   .wrapper-colecao {
     flex-direction: row; /* Coloca painel e fotos lado a lado */
-    justify-content: space-between;
-    padding: 0 40px;
+    gap: 40px;
   }
 
   /* Coluna esquerda. Fixa o painel esquerdo na tela durante o scroll */
   .painel-info {
+    order: 1;
     width: 20%; /* Ocupa pouco menos de 1/3 da tela */
     text-align: left;
     height: calc(100vh - 160px); /* Ocupa a altura visível descontando o cabeçalho */
@@ -513,7 +513,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
 
 /* Coluna Central (Fotos Roláveis) */
   .fluxo-conteudo {
-    width: 50%; /* Ocupa a metade central da tela, equilibrando o layout */
+    order: 2;
+    width: 60%; /* Ocupa a metade central da tela, equilibrando o layout */
   }
 
   .grade-galeria {
@@ -524,6 +525,7 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
 
 /* Nova Coluna da Direita (Fixa) */
   .painel-filtros {
+    order: 3;
     width: 22%; /* Mesmo tamanho da coluna da esquerda para simetria visual */
     height: calc(100vh - 160px);
     position: sticky;

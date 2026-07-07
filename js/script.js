@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // A sua lista oficial de coleções. Se criar uma nova, é só adicionar a linha aqui!
   const listaColecoes = [
     { nome: "Artrópodes", arquivo: "artropodes.html", capa: "../imagens/capas/artropodes.webp" },
-    { nome: "Botânica", arquivo: "botanica.html", capa: "../imagens/capas/botanica.webp" },
-    { nome: "Aves", arquivo: "aves.html", capa: "../imagens/capas/aves.webp" }
+    { nome: "colecaoX", arquivo: "botanica.html", capa: "../imagens/capas/botanica.webp" },
+    { nome: "colecaoY", arquivo: "aves.html", capa: "../imagens/capas/aves.webp" }
   ];
 
   // Descobre em qual página o usuário está agora (ex: artropodes.html)
