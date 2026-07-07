@@ -32,6 +32,24 @@
       </div>
     </aside>
 
+    <!-- COLUNA DA DIREITA: Filtros e botões interativos fixos -->
+    <aside class="painel-filtros" id="painel-filtros">
+
+      <!-- Botão que só aparece no Mobile para abrir/fechar -->
+      <button class="btn-gatilho-filtros" id="btn-gatilho-filtros">
+        Filtrar Coleção <span>▼</span>
+      </button>
+
+      <div class="conteudo-filtros" id="conteudo-filtros">
+        <nav class="subfiltros-flex">
+          <button class="btn-filtro ativo" data-filter="todos">Todos</button>
+          <button class="btn-filtro" data-filter="insetos">Insetos</button>
+          <button class="btn-filtro" data-filter="cordyceps">Cordyceps</button>
+          <button class="btn-filtro" data-filter="outros">Outros</button>
+        </nav>
+      </div>
+    </aside>
+
     <!-- COLUNA CENTRAL: Fotos roláveis -->
     <section class="fluxo-conteudo">
       <div class="grade-galeria">
@@ -52,17 +70,7 @@
       </footer>
     </section>
 
-    <!-- COLUNA DA DIREITA: Filtros e botões interativos fixos -->
-    <aside class="painel-filtros">
-      <div class="conteudo-filtros">
-        <nav class="subfiltros-flex">
-          <button class="btn-filtro ativo" data-filter="todos">Todos</button>
-          <button class="btn-filtro" data-filter="insetos">Insetos</button>
-          <button class="btn-filtro" data-filter="cordyceps">Cordyceps</button>
-          <button class="btn-filtro" data-filter="outros">Outros</button>
-        </nav>
-      </div>
-    </aside>
+
   </main>
 
 <!-- Link do JavaScript para os filtros funcionar -->

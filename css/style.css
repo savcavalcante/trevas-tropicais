@@ -290,6 +290,88 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   object-fit: contain;
 }
 
+/* Botão de gatilho do filtro - Escondido por padrão no Desktop */
+.btn-gatilho-filtros {
+  display: none;
+  width: 100%;
+  padding: 15px;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #333;
+  font-family: var(--font-principal);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+}
+
+/* MEDIA QUERY do botão de gatilho do filtro, utilizado no mobile */
+
+@media (max-width: 768px) {
+  
+/* Garante que o painel de filtros fique no topo antes das fotos */
+  .wrapper-colecao {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .painel-filtros {
+    width: 100%;
+    position: sticky;
+    top: 135px; /* Respiro abaixo do menu fixo */
+    z-index: 10;
+    margin-bottom: 20px;
+    background-color: #0a0a0a;
+  }
+
+  /* Mostra o botão gatilho no mobile */
+  .btn-gatilho-filtros {
+    display: flex;
+  }
+
+  /* O container da gaveta que desdobra */
+  .conteudo-filtros {
+    display: none !important;
+    width: 100%;
+    background-color: #0a0a0a; /* Mudado para a cor do fundo para um visual mais infinito */
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 15px 0; /* Tiramos o padding das laterais para os botões alinharem com o gatilho */
+  }
+
+  /* Classe injetada pelo JS que faz o menu aparecer */
+  .painel-filtros .conteudo-filtros.aberto {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    opacity: 1 !important;
+  }
+
+  /* O SEGREDO DO MOSAICO: Distribui os botões lado a lado, permitindo quebra de linha */
+  .conteudo-filtros.aberto .subfiltros-flex {
+    display: flex !important;
+    flex-direction: row !important; /* Lado a lado */
+    flex-wrap: wrap !important;     /* Quebra linha se faltar espaço (mosaico) */
+    justify-content: center !important; /* Centraliza o mosaico na tela */
+    align-items: center !important;
+    gap: 8px; /* Espaçamento fino entre as caixinhas */
+    width: 100%;
+  }
+
+  /* Os botões agora moldam-se apenas ao texto */
+  .btn-filtro {
+    width: auto; /* Altera o 100% anterior para abraçar só a palavra */
+    text-align: center;
+    padding: 8px 16px; /* Diminui um pouco o tamanho para o mobile */
+    font-size: 0.7rem;  /* Deixa o texto sutil */
+    border-radius: 3px; /* Um leve arredondado opcional para acabamento */
+  }
+}
+
 /* Rodapé de navegação entre coleções (Links Próximo/Anterior) */
 .navegacao-colecoes {
   display: flex;
