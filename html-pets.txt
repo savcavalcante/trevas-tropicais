@@ -1,0 +1,254 @@
+<!-- INÍCIO DOS ITENS DE PETS -->
+
+<div class="item-foto" data-category="aves">
+  <img src="../imagens/galeria/pets/aves-1.webp" 
+       alt="Fotografia da coleção pets - Categoria aves" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aves">
+  <img src="../imagens/galeria/pets/aves-2.webp" 
+       alt="Fotografia da coleção pets - Categoria aves" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aves">
+  <img src="../imagens/galeria/pets/aves-3.webp" 
+       alt="Fotografia da coleção pets - Categoria aves" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aves">
+  <img src="../imagens/galeria/pets/aves-4.webp" 
+       alt="Fotografia da coleção pets - Categoria aves" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aves">
+  <img src="../imagens/galeria/pets/aves-5.webp" 
+       alt="Fotografia da coleção pets - Categoria aves" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-1.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-10.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-2.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-3.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-4.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-5.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-6.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-7.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-8.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="caes">
+  <img src="../imagens/galeria/pets/caes-9.webp" 
+       alt="Fotografia da coleção pets - Categoria caes" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-1.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-10.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-11.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-12.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-13.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-14.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-15.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-16.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-17.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-18.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-19.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-2.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-20.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-21.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-3.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-4.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-5.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-6.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-7.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-8.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="gatos">
+  <img src="../imagens/galeria/pets/gatos-9.webp" 
+       alt="Fotografia da coleção pets - Categoria gatos" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+<!-- FIM DOS ITENS DE PETS -->
