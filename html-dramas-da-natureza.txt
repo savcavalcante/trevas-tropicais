@@ -1,0 +1,289 @@
+<!-- INÍCIO DOS ITENS DE DRAMAS-DA-NATUREZA -->
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-1.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-10.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-11.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-12.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-13.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-14.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-15.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-16.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-17.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-2.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-3.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-4.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-5.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-6.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-7.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-8.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="cordyceps">
+  <img src="../imagens/galeria/dramas-da-natureza/cordyceps-9.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria cordyceps" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-20.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-21.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-22.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-23.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-25.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-28.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-29.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-30.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-31.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-32.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-33.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-34.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-35.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-36.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-37.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-39.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-40.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-41.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-42.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-43.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-44.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-45.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-46.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="inseto">
+  <img src="../imagens/galeria/dramas-da-natureza/inseto-47.webp" 
+       alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+<!-- FIM DOS ITENS DE DRAMAS-DA-NATUREZA -->

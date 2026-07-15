@@ -1,0 +1,72 @@
+<!-- INÍCIO DOS ITENS DE REINO-PLANTAE -->
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-1.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-10.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-2.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-3.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-4.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-5.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-6.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-7.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-8.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="planta">
+  <img src="../imagens/galeria/reino-plantae/planta-9.webp" 
+       alt="Fotografia da coleção reino-plantae - Categoria planta" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+<!-- FIM DOS ITENS DE REINO-PLANTAE -->

@@ -2,12 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 // ==========================================================================
-// CONFIGURAÇÃO DA COLEÇÃO ATUAL
+// CONFIGURAÇÃO DA COLEÇÃO ATUAL // rodar "node gerar-galeria.js" para gerar o HTML da galeria
 // ==========================================================================
-const nomeColecao = 'pets'; // mude para 'artropodes', 'aves', etc.
+const nomeColecao = 'cyberchoque'; // mudar de acordo com o nome da nova coleção, etc.
 
 // ==========================================================================
-// CONFIGURAÇÕES DO SCRIPT (Sem dicionários, automático pelo nome do arquivo)
+// CONFIGURAÇÕES DO SCRIPT (automático pelo nome do arquivo)
 // ==========================================================================
 const pastaImagens = path.join(__dirname, 'imagens', 'galeria', nomeColecao);
 const arquivoSaida = path.join(__dirname, `html-${nomeColecao}.txt`);

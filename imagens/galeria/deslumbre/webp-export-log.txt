@@ -1,0 +1,28 @@
+============================================================
+  WebP Exporter (cwebp) – Export Log
+============================================================
+  Plugin version : 1.2.2
+  Date / Time    : 2026-07-15 15:12:03
+  OS             : Windows
+  Lightroom ver  : 14.1.1
+  Export folder  : F:\BACKUP SÁVIO CAVALCANTE\BACKUP FOTOGRAFIA\FOTOS EDITADAS\WEB\WEBP-SITE\deslumbramento
+  Debug mode     : false
+============================================================
+
+[15:12:03] Export started – 3 photo(s) queued
+[15:12:10] Photo 1/3 – OK  → paisagem-urbanizada-1.webp
+------------------------------------------------------------
+[15:12:12] Photo 2/3 – OK  → paisagem-urbanizada-2.webp
+------------------------------------------------------------
+[15:12:16] Photo 3/3 – OK  → paisagem-urbanizada-3.webp
+------------------------------------------------------------
+
+============================================================
+  EXPORT SUMMARY
+============================================================
+  Total photos   : 3
+  Succeeded      : 3
+  Failed         : 0
+  Skipped/cancel : 0
+  Completed at   : 2026-07-15 15:12:16
+============================================================

@@ -53,9 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   const listaColecoes = [
-    { nome: "Artrópodes", arquivo: "artropodes.html", capa: "../imagens/capas/artropodes.webp" },
-    { nome: "colecaoX", arquivo: "botanica.html", capa: "../imagens/capas/botanica.webp" },
-    { nome: "colecaoY", arquivo: "aves.html", capa: "../imagens/capas/aves.webp" }
+    { nome: "Pets", arquivo: "../colecoes/pets.html", capa: "../imagens/capas/botanica.webp" },
+    { nome: "Delírios Lunares", arquivo: "../colecoes/delirios-lunares.html", capa: "../imagens/capas/delirios-lunares.webp" },
+    { nome: "Deslumbre", arquivo: "../colecoes/deslumbre.html", capa: "../imagens/capas/deslumbre.webp" },
+    { nome: "Micromundo", arquivo: "../colecoes/micromundo.html", capa: "../imagens/capas/micromundo.webp" },
+    { nome: "Reino Plantae", arquivo: "../colecoes/reino-plantae.html", capa: "../imagens/capas/reino-plantae.webp" },
+    { nome: "Mycelia", arquivo: "../colecoes/mycelia.html", capa: "../imagens/capas/mycelia.webp" },
+    { nome: "Dramas da Natureza", arquivo: "../colecoes/dramas-da-natureza.html", capa: "../imagens/capas/dramas-da-natureza.webp" },
+    { nome: "Cyberchoque", arquivo: "../colecoes/cyberchoque.html", capa: "../imagens/capas/cyberchoque.webp" },
   ];
 
   // Descobre em qual página o usuário está agora (ex: artropodes.html)

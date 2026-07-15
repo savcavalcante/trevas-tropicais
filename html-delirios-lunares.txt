@@ -1,0 +1,366 @@
+<!-- INÍCIO DOS ITENS DE DELIRIOS-LUNARES -->
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-1.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-10.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-11.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-12.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-13.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-14.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-15.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-16.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-17.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-18.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-19.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-2.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-20.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-3.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-4.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-5.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-6.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-7.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-8.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-cadente">
+  <img src="../imagens/galeria/delirios-lunares/lua-cadente-9.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-cadente" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-1.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-10.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-11.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-12.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-13.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-14.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-15.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-16.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-17.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-18.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-19.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-2.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-20.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-21.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-22.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-23.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-24.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-25.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-26.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-27.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-28.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-29.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-3.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-30.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-31.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-32.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-4.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-5.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-6.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-7.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-8.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="lua-de-sangue">
+  <img src="../imagens/galeria/delirios-lunares/lua-de-sangue-9.webp" 
+       alt="Fotografia da coleção delirios-lunares - Categoria lua-de-sangue" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+<!-- FIM DOS ITENS DE DELIRIOS-LUNARES -->
