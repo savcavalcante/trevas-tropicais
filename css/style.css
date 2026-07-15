@@ -1,5 +1,8 @@
-/* 1- Configurações Gerais. Design mobile-first, galeria de molduras grandes que levam às páginas das coleções,
-fundo escuro para combinar com a temática geral e posicionamento de marca, fontes e cores ainda não determinadas.*/
+/* 1- seção "CONFIGURAÇÕES GERAIS" ------------------------------------------------
+
+- Design mobile-first, galeria de molduras grandes em mosaico/masonry que levam às páginas das coleções.
+- ========= Fontes e cores gerais ainda não determinadas.*/
+
 * {
   margin: 0;
   padding: 0;
@@ -22,8 +25,11 @@ a {
   color: inherit;
 }
 
-/* 2- Cabeçalho. Design alto com links lado a lado provisoriamente para facilitar a navegação e portabilidade. 
-A intenção é transformar o menu em burguer no mobile e manter lado a lado no desktop, a decidir se acima ou abaixo do título/logo.*/
+/* 2- seção "CABEÇALHO" ------------------------------------------------------------
+
+- Design alto com links lado a lado. 
+- ========== A intenção é transformar o menu em burguer ou drop-down no mobile e manter lado a lado no desktop.*/
+
 .header-principal {
   position: fixed;
   top: 0;
@@ -38,7 +44,8 @@ A intenção é transformar o menu em burguer no mobile e manter lado a lado no 
   padding: 15px 0 20px 0;
 }
 
-/* Container dos links: distribui lado a lado com Flexbox */
+  /* subseção "CONTAINER DOS LINKS": distribui lado a lado com Flexbox */
+
 .menu-links {
   display: flex;
   justify-content: center;
@@ -59,7 +66,8 @@ A intenção é transformar o menu em burguer no mobile e manter lado a lado no 
   opacity: 1;
 }
 
-/* Container do Nome/título/logomarca */
+  /* subseção "CONTAINER DO NOME/TITULO/LOGO" */
+
 .identidade-marca {
   width: 100%;
   text-align: center;
@@ -71,9 +79,10 @@ A intenção é transformar o menu em burguer no mobile e manter lado a lado no 
   letter-spacing: 5px;
 }
 
-/* 3- Vitrine das coleções. Aqui fica a organização das capas na entrada do site.
-Por enquanto estão lado a lado, no futuro serão organizadas em uma grade/mosaico mais fluido,
-com as capas de diferentes alturas no desktop, com título em hover. Linha única e titulo aparente no mobile.*/
+/* 3- seção "VITRINE DAS COLEÇÕES DA PÁGINA INICIAL" ----------------------------------------------
+
+- Aqui fica a organização das capas na entrada do site.
+- Design em rolagem vertical no mobile, mosaico/masonry com título em hover no desktop.*/
 
 .container-portfolio {
   padding: 0;
@@ -109,7 +118,8 @@ com as capas de diferentes alturas no desktop, com título em hover. Linha únic
   display: block; 
 }
 
-/* Configuração dos títulos das coleções. */
+  /* subseção "CONFIGURAÇÃO DOS TÍTULOS DAS COLEÇÕES" */
+
 .info-colecao {
   position: absolute;
   bottom: 0;
@@ -118,7 +128,9 @@ com as capas de diferentes alturas no desktop, com título em hover. Linha únic
   background-color: rgba(0, 0, 0, 0.6); /* Faixa escura com transparência do mobile */
   padding: 15px 20px;
   text-align: center;
-  /* Configuração para o Hover no Desktop, ativada abaixo (4) */
+
+      /* subseção "Configuração para o Hover no Desktop", ativada abaixo na seção 4 */
+
   opacity: 1; /* Sempre visível no mobile */
   transition: opacity 0.3s ease;
 }
@@ -127,14 +139,70 @@ com as capas de diferentes alturas no desktop, com título em hover. Linha únic
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 2px;
-  text-transform: uppercase; /* Estou decidindo ainda se quero tudo maiúsculo mesmo. */
+  text-transform: uppercase; /* ========== Estou decidindo ainda se quero tudo maiúsculo mesmo. */
   color: #fff;
 }
 
-/* 4- Media Queries. Configurações de portabilidade das telas menores/mobile para as maiores/desktop. */
+/* 4- seção "RODAPÉ DA PÁGINA INICIAL" ---------------------------------------- */
+
+.rodape-principal {
+  width: 100%;
+  border-top: 1px solid #1a1a1a;
+  background-color: #0a0a0a;
+  padding: 40px 20px;
+  margin-top: 60px; /* Dá um recuo após o término das capas da vitrine */
+}
+
+.container-rodape {
+  display: flex;
+  flex-direction: column; /* Mobile: empilhado */
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-copyright p {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.links-rodape {
+  display: flex;
+  gap: 20px;
+}
+
+.link-fino {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.link-fino:hover {
+  opacity: 1;
+}
+
+  /* subseção "AJUSTE PARA DESKTOP" */
+
+@media (min-width: 768px) {
+  .container-rodape {
+    flex-direction: row; 
+    justify-content: space-between; /* Copyright na esquerda, links na direita */
+  }
+}
+
+
+/* 5- seção "MEDIA QUERIES DA PÁGINA INICIAL" ------------------------------------------------------
+
+- Configurações de portabilidade das telas menores/mobile para as maiores/desktop. */
+
 @media (min-width: 768px) {
   
-  /* --- Ajustes do Cabeçalho para Desktop --- */
+    /* subseção "AJUSTES DO CABEÇALHO PARA DESKTOP" */
 
   .logo-nome {
     font-size: 1.5rem;
@@ -144,10 +212,11 @@ com as capas de diferentes alturas no desktop, com título em hover. Linha únic
     font-size: 1.1rem;
   }
   
-  /* Inverte a ordem dos blocos: Marca vai para cima (1) e Links para baixo (2) */
+    /* subseção "INVERSÃO DA ORDEM DOS BLOCOS": Marca vai para cima (1) e Links para baixo (2) */
+
   .identidade-marca {
     order: 1;
-    padding: 10px 0; /* Diminuindo um pouco o espaço para o menu aproximar */
+    padding: 10px 0;
   }
   
   .menu-links {
@@ -160,8 +229,8 @@ com as capas de diferentes alturas no desktop, com título em hover. Linha únic
     padding: 20px 0 15px 0;
   }
     
-  /* Mudança do fluxo do flex para grade assimétrica/masonry, permitindo que as capas colem
-  umas nas outras e tenham o tamanho relativo à própria imagem. */
+    /* subseção "MUDANÇA DE FLUXO (FLEX>MASONRY)" */
+
   .flex-colecoes {
     display: block;
     column-count: 2;
@@ -173,7 +242,8 @@ com as capas de diferentes alturas no desktop, com título em hover. Linha únic
     display: block;
   }
   
-  /* Efeito que esconde a legenda no desktop quando o mouse não está sobre o card */
+    /* subseção "EFEITO ESCONDER LEGENDA NO DESKTOP" */
+
   .info-colecao {
     opacity: 0;
     height:100%;
@@ -185,26 +255,29 @@ com as capas de diferentes alturas no desktop, com título em hover. Linha únic
     transition: opacity 0.3s ease;
   }
 
-  /* Efeito que revela a legenda no hover */
+    /* subseção "EFEITO DE REVELAR LEGENDA NO HOVER" */
+
   .card-colecao:hover .info-colecao {
     opacity: 1;
     pointer-events: auto; /* Permite interação com a legenda quando visível */
   }
 }
 
+    /* seção "AJUSTE PARA TELAS AINDA MAIORES", colocando 3 colunas. */
+
 @media (min-width: 1200px) {
-  /* Para monitores bem grandes, adiciona uma terceira coluna. Acho que vou depois manter 3 por padrão no desktop. */
   .flex-colecoes {
     column-count: 3;
   }
 }
 
-/* 5- PÁGINA INTERNA DE COLEÇÃO. Ao clicar numa coleção você entra na galeria de fotos daquele tema.
-A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto desktop,
- full screen no mobile e adaptativa a depender da largura da foto no desktop, mas sem tocar os cantos. 
- Futuramente, tocar na foto dentro da coleção leva a um link de venda de quadro/print.*/
+/* 6- seção "PÁGINA INTERNA DE COLEÇÃO". ----------------------------------------------------------- 
 
- /* Container adaptativo que abraça as duas colunas */
+- A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto desktop,
+- Full screen no mobile, adaptativa a depender da largura da foto no desktop, mas sem tocar os cantos. 
+- ============ Muito provavelmente vou querer fazer algo diferente dependendo da coleção, no desktop */
+
+  /* subseção "CONTAINER ADAPTATIVO QUE ABRAÇA AS DUAS COLUNAS" */
 
 .wrapper-colecao {
   display: flex;
@@ -213,7 +286,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   padding: 0 20px;
 }
 
-/* Painel de Texto (Título, Descrição e Filtros) */
+  /* subseção "PAINEL DE TEXTO (TÍTULO, DESCRIÇÃO E FILTROS)" */
+
 .painel-info {
   width: 100%;
   padding: 20px 0 30px 0;
@@ -236,7 +310,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   margin: 0 auto 25px auto;
 }
 
-/* Container para os botões de subfiltro */
+  /* subseção "CONTAINER PARA OS BOTÕES DE FILTRO" */
+
 .subfiltros-flex {
   display: flex;
   justify-content: center;
@@ -262,12 +337,14 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   border-color: #f5f5f5;
 }
 
-/* Fluxo de conteúdo da direita (Galeria + Rodapé de links) */
+  /* subseção "FLUXO DE CONTEÚDO DA COLEÇÃO" */
+
 .fluxo-conteudo {
   width: 100%;
 }
 
-/* Alinhamento das fotos em uma coluna única e centralizada */
+  /* subseção "ALINHAMENTO DAS FOTOS". Coluna única e centralizada */
+
 .grade-galeria {
   display: flex;
   flex-direction: column;
@@ -283,7 +360,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   justify-content: center;
 }
 
-/* Controla o tamanho máximo vertical para fotos em pé não sumirem na tela. */
+  /* subseção "CONTROLE DE TAMANHO MÁXIMO VERTICAL". Previne que fotos em pé não sumam na tela. */
+
 .foto-portfolio {
   width: auto;
   max-width: 100%;
@@ -291,7 +369,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   object-fit: contain;
 }
 
-/* Botão de gatilho do filtro - Escondido por padrão no Desktop */
+  /* subseção "BOTÃO DE GATILHO DO FILTRO" - Escondido por padrão no Desktop */
+
 .btn-gatilho-filtros {
   display: none;
   width: 100%;
@@ -309,11 +388,12 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   gap: 10px;
 }
 
-/* MEDIA QUERY do botão de gatilho do filtro, utilizado no mobile */
+  /* subseção "MEDIA QUERY DO BOTÃO DE GATILHO DO FILTRO", utilizado no mobile */
 
 @media (max-width: 768px) {
   
-/* Garante que o painel de filtros fique no topo antes das fotos */
+    /* Garante que o painel de filtros fique no topo antes das fotos */
+
   .wrapper-colecao {
     display: flex;
     flex-direction: column;
@@ -326,23 +406,26 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
     background-color: #0a0a0a;
   }
 
-  /* Mostra o botão gatilho no mobile */
+    /* Mostra o botão gatilho no mobile */
+
   .btn-gatilho-filtros {
     display: flex;
   }
 
-  /* O container da gaveta que desdobra */
+    /* subseção "CONTAINER DA GAVETA", que desdobra */
+
   .conteudo-filtros {
     display: none !important;
     width: 100%;
-    background-color: #0a0a0a; /* Mudado para a cor do fundo para um visual mais infinito */
+    background-color: #0a0a0a;
     border-left: 1px solid #1a1a1a;
     border-right: 1px solid #1a1a1a;
     border-bottom: 1px solid #1a1a1a;
-    padding: 15px 0; /* Tiramos o padding das laterais para os botões alinharem com o gatilho */
+    padding: 15px 0;
   }
 
-  /* Classe injetada pelo JS que faz o menu aparecer */
+    /* subseção "CLASSE INJETADA PELO JS", que faz o menu aparecer" */
+
   .painel-filtros .conteudo-filtros.aberto {
     display: block !important;
     visibility: visible !important;
@@ -350,30 +433,92 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
     opacity: 1 !important;
   }
 
-  /* O SEGREDO DO MOSAICO: Distribui os botões lado a lado, permitindo quebra de linha */
+    /* subseção "CONTAINER DOS FILTROS ABERTOS", distribuidos lado a lado. */
+
   .conteudo-filtros.aberto .subfiltros-flex {
     display: flex !important;
-    flex-direction: row !important; /* Lado a lado */
+    flex-direction: row !important;
     flex-wrap: wrap !important;     /* Quebra linha se faltar espaço (mosaico) */
-    justify-content: center !important; /* Centraliza o mosaico na tela */
+    justify-content: center !important;
     align-items: center !important;
-    gap: 8px; /* Espaçamento fino entre as caixinhas */
+    gap: 8px;
     width: 100%;
   }
 
-  /* Os botões agora moldam-se apenas ao texto */
+    /* subseção "MOLDE DOS BOTÕES", ajustando-se ao tamanho do texto */
   .btn-filtro {
-    width: auto; /* Altera o 100% anterior para abraçar só a palavra */
+    width: auto;
     text-align: center;
-    padding: 8px 16px; /* Diminui um pouco o tamanho para o mobile */
-    font-size: 0.7rem;  /* Deixa o texto sutil */
-    border-radius: 3px; /* Um leve arredondado opcional para acabamento */
+    padding: 8px 16px;
+    font-size: 0.7rem;
+    border-radius: 3px;
   }
 }
 
-/* ==========================================================================
-   RODAPÉ DE NAVEGAÇÃO AUTOMATIZADO
-   ========================================================================== */
+/* 6.1- seção "COMPORTAMENTO DAS PÁGINAS INTERNAS NO DESKTOP" --------------------------- */
+
+@media (min-width: 1024px) {
+  .wrapper-colecao {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  /* subseção "COLUNA DA ESQUERDA". Fixa o painel esquerdo na tela durante o scroll */
+
+  .painel-info {
+    order: 1;
+    width: 20%; /* Ocupa pouco menos de 1/3 da tela */
+    text-align: left;
+    height: calc(100vh - 160px); /* Ocupa a altura visível descontando o cabeçalho */
+    position: sticky;
+    top: 140px; /* Alinha o topo abaixo da barra de navegação */
+    padding: 0;
+  }
+
+  .descricao-colecao {
+    margin: 0;
+  }
+
+  /* subseção "COLUNA CENTRAL", com scroll vertical das fotos */
+
+  .fluxo-conteudo {
+    order: 2;
+    width: 60%;
+  }
+
+  .grade-galeria {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0 80px 0;
+  }
+
+  /* subseção "COLUNA DA DIREITA". Fixa o painel de filtros na tela durante o scroll */
+
+  .painel-filtros {
+    order: 3;
+    width: 20%; /* Mesmo tamanho da coluna da esquerda para simetria visual */
+    height: calc(100vh - 160px);
+    position: sticky;
+    top: 140px;
+    display: flex;
+    justify-content: flex-end; /* Alinha os filtros no canto direito da tela */
+  }
+
+  .conteudo-filtros {
+    width: 100%;
+  }
+
+  .subfiltros-flex {
+    flex-direction: column; /* No desktop, os botões ficam em lista vertical */
+    align-items: flex-end; /* Alinha os botões à direita */
+    gap: 15px;
+  }
+}
+
+/* 6.2- seção "RODAPÉ DE NAVEGAÇÃO AUTOMATIZADO" ----------------------------- 
+
+- =============== aqui talvez eu mude para repedir o esquema da página inicial em mobile e desktop.
+- =============== ainda não foi testado direito pois falta incluir coleções. */
 
 .navegacao-colecoes {
   width: 100%;
@@ -393,7 +538,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   margin-bottom: 30px;
 }
 
-/* Container que segura os cards injetados pelo JS */
+  /* subseção "CONTAINER DOS LINKS DINÂMICOS" */
+
 .container-links-dinamicos {
   display: flex;
   justify-content: center;
@@ -401,21 +547,22 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   width: 100%;
 }
 
-/* O link geral */
 .card-sugestao-rodape {
   display: block;
   text-decoration: none;
   color: inherit;
 }
 
-/* --- COMPORTAMENTO PADRÃO: MOBILE FIRST --- */
+/* ------ COMPORTAMENTO PADRÃO: MOBILE FIRST ------ */
 
-/* Esconde o mosaico de fotos no mobile */
+  /* Esconde o mosaico de fotos no mobile, mostrando apenas os nomes */
+
 .moldura-sugestao {
   display: none;
 }
 
-/* Mostra apenas os botões de texto no mobile */
+  /* Mostra apenas os botões de texto no mobile */
+
 .btn-sugestao-mobile {
   display: inline-block;
   border: 1px solid #333;
@@ -433,19 +580,22 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   border-color: #f5f5f5;
 }
 
-/* --- COMPORTAMENTO ADAPTATIVO: DESKTOP (Telas maiores) --- */
+/* ------ COMPORTAMENTO ADAPTATIVO: DESKTOP (Telas maiores) ------ */
+
 @media (min-width: 1024px) {
   
   /* Esconde os botões de texto no desktop */
+
   .btn-sugestao-mobile {
     display: none;
   }
 
   /* Exibe o mosaico visual elegante */
+
   .moldura-sugestao {
     display: block;
     position: relative;
-    width: 280px; /* Tamanho controlado para as miniaturas das outras capas */
+    width: 280px;
     height: 180px;
     overflow: hidden;
     border: 1px solid #1a1a1a;
@@ -461,6 +611,7 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   }
 
   /* Faixa escura com o nome da coleção */
+
   .overlay-sugestao {
     position: absolute;
     bottom: 0;
@@ -478,76 +629,22 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
     color: #fff;
   }
 
-  /* Efeito de hover refinado para o portfólio */
+  /* Efeito de hover*/
+
   .moldura-sugestao:hover {
-    transform: translateY(-4px); /* Sutil elevação */
+    transform: translateY(-4px); /* efeito de elevação sutil */
     border-color: #444;
   }
 
   .moldura-sugestao:hover .img-sugestao-rodape {
-    opacity: 1; /* Revela a cor real da foto ao passar o mouse */
+    opacity: 1; /* efeito que revela a cor real da foto ao passar o mouse */
   }
 }
 
-/* --- Comportamento Desktop para Páginas Internas --- */
-@media (min-width: 1024px) {
-  .wrapper-colecao {
-    flex-direction: row; /* Coloca painel e fotos lado a lado */
-    gap: 40px;
-  }
+/* 7- seção "PÁGINA INSTITUCIONAL/SOBRE/CONTATO" ------------------------------------------ */
 
-  /* Coluna esquerda. Fixa o painel esquerdo na tela durante o scroll */
-  .painel-info {
-    order: 1;
-    width: 20%; /* Ocupa pouco menos de 1/3 da tela */
-    text-align: left;
-    height: calc(100vh - 160px); /* Ocupa a altura visível descontando o cabeçalho */
-    position: sticky;
-    top: 140px; /* Alinha o topo abaixo da barra de navegação */
-    padding: 0;
-  }
+  /* subseção "WRAPPER INSTITUCIONAL", que centraliza o conteúdo*/
 
-  .descricao-colecao {
-    margin: 0;
-  }
-
-/* Coluna Central (Fotos Roláveis) */
-  .fluxo-conteudo {
-    order: 2;
-    width: 60%; /* Ocupa a metade central da tela, equilibrando o layout */
-  }
-
-  .grade-galeria {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 0 80px 0;
-  }
-
-/* Nova Coluna da Direita (Fixa) */
-  .painel-filtros {
-    order: 3;
-    width: 22%; /* Mesmo tamanho da coluna da esquerda para simetria visual */
-    height: calc(100vh - 160px);
-    position: sticky;
-    top: 140px;
-    display: flex;
-    justify-content: flex-end; /* Alinha os filtros no canto direito da tela */
-  }
-
-  .conteudo-filtros {
-    width: 100%;
-  }
-
-  .subfiltros-flex {
-    flex-direction: column; /* No desktop, os botões ficam em lista vertical */
-    align-items: flex-end; /* Alinha os botões à direita */
-    gap: 15px;
-  }
-}
-
-/* 6- PÁGINA INSTITUCIONAL/SOBRE/CONTATO */
-
-/* Wrapper que centraliza o conteúdo*/
 .wrapper-institucional {
   max-width: 600px;
   margin: 60px auto;
@@ -558,18 +655,20 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   text-align: center;
 }
 
-/* Espaçamento entre os grandes blocos da página */
+  /* subseção "ESPAÇAMENTO DOS GRANDES BLOCOS", que define o espaçamento dos blocos da página */
+
 .wrapper-institucional section {
   width: 100%;
   margin-bottom: 50px;
 }
 
-/* Container da Foto de Perfil */
+  /* subseção "CONTAINER DA FOTO DE PERFIL" */
+
 .container-foto-perfil {
   width: 180px;
   height: 180px;
   margin: 0 auto;
-  border-radius: 50%; /* Deixa a foto redonda, estilo perfil */
+  border-radius: 50%; /* Deixa a foto redonda */
   overflow: hidden;
   background-color: #222; /* Fundo placeholder caso a imagem suma */
   border: 1px solid #333;
@@ -581,7 +680,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   object-fit: cover;
 }
 
-/* Títulos */
+  /* subseção "TÍTULOS" */
+
 .titulo-institucional {
   font-family: var(--font-principal); /* Usa a variável de fonte que já tiver */
   font-size: 2rem;
@@ -599,7 +699,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   color: #aaa;
 }
 
-/* Bloco de Texto */
+  /* subseção "BLOCO DE TEXTO" */
+
 .texto-placeholder p {
   font-size: 1rem;
   line-height: 1.8;
@@ -607,7 +708,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   margin-bottom: 20px;
 }
 
-/* Alinhamento dos botões de link */
+  /* subseção "ALINHAMENTO DOS BOTÕES DE LINK" */
+
 .grade-botoes-links {
   display: flex;
   flex-direction: column;
@@ -617,7 +719,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   margin: 0 auto;
 }
 
-/* Estilo dos botões */
+  /* subseção "ESTILO DOS BOTÕES" */
+
 .btn-link-institucional {
   display: block;
   padding: 14px 20px;
@@ -631,7 +734,8 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   background-color: rgba(255, 255, 255, 0.02);
 }
 
-/* Efeito hover dos botões */
+  /* subseção "EFEITO HOVER DOS BOTÕES" */
+
 .btn-link-institucional:hover {
   background-color: #fff;
   color: #000;
@@ -639,55 +743,3 @@ A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto des
   cursor: pointer;
 }
 
-/* ==========================================================================
-   7- RODAPÉ DA PÁGINA INICIAL (INDEX.HTML)
-   ========================================================================== */
-
-.rodape-principal {
-  width: 100%;
-  border-top: 1px solid #1a1a1a;
-  background-color: #0a0a0a;
-  padding: 40px 20px;
-  margin-top: 60px; /* Dá um recuo após o término das capas da vitrine */
-}
-
-.container-rodape {
-  display: flex;
-  flex-direction: column; /* Mobile: empilhado */
-  align-items: center;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.info-copyright p {
-  font-size: 0.7rem;
-  letter-spacing: 1px;
-  color: #666; /* Tom cinza bem sutil */
-}
-
-.links-rodape {
-  display: flex;
-  gap: 20px;
-}
-
-.link-fino {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #fff;
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
-}
-
-.link-fino:hover {
-  opacity: 1;
-}
-
-/* Ajuste para Desktop: Distribui nas extremidades */
-@media (min-width: 768px) {
-  .container-rodape {
-    flex-direction: row; /* Coloca lado a lado */
-    justify-content: space-between; /* Copyright na esquerda, links na direita */
-  }
-}

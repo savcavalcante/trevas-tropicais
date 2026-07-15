@@ -1,7 +1,8 @@
+// ==========================================================================
+// 1. LÓGICA DO MENU EXPANSÍVEL DE FILTROS (MOBILE)
+// ==========================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
-  // ==========================================================================
-  // 1. LÓGICA DO MENU EXPANSÍVEL DE FILTROS (MOBILE)
-  // ==========================================================================
   const botoes = document.querySelectorAll(".btn-filtro");
   const fotos = document.querySelectorAll(".item-foto");
   const gatilhoMobile = document.getElementById("btn-gatilho-filtros");
@@ -43,10 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ==========================================================================
-  // 2. LÓGICA DO RODAPÉ DINÂMICO (MOSAICO DESKTOP / BOTÕES MOBILE)
-  // ==========================================================================
-  // A sua lista oficial de coleções. Se criar uma nova, é só adicionar a linha aqui!
+
+// ==========================================================================
+// 2. LÓGICA DO RODAPÉ DINÂMICO (MOSAICO DESKTOP / BOTÕES MOBILE)
+// ==========================================================================
+// Lista oficial de coleções. Quando criar uma nova, adicionar uma linha aqui.
+// A ordem das linhas determina a ordem de exibição no rodapé, por enquanto.
+
+
   const listaColecoes = [
     { nome: "Artrópodes", arquivo: "artropodes.html", capa: "../imagens/capas/artropodes.webp" },
     { nome: "colecaoX", arquivo: "botanica.html", capa: "../imagens/capas/botanica.webp" },
