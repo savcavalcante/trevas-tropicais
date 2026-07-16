@@ -3,6 +3,10 @@
 - Design mobile-first, galeria de molduras grandes em mosaico/masonry que levam às páginas das coleções.
 - ========= Fontes e cores gerais ainda não determinadas.*/
 
+:root {
+  --font-principal: 'Century Gothic', 'Apple Gothic', AppleGothic, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +20,7 @@ html {
 body {
   background-color: #0a0a0a;
   color: #f5f5f5;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-principal);
   padding-top: 120px;
 }
 
