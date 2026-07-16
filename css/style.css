@@ -574,7 +574,7 @@ a {
 }
 
   /* subseção "BLOQUEIO DO MENU DE TOQUE LONGO", evitando o salvamento nativo das fotos em celulares */
-  
+
 .foto-portfolio {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Safari */
@@ -627,7 +627,7 @@ a {
     position: sticky;
     top: 140px;
     display: flex;
-    justify-content: flex-end; /* Alinha os filtros no canto direito da tela */
+    justify-content: space-between; /* Alinha os filtros no canto direito da tela */
   }
 
   .conteudo-filtros {
@@ -636,7 +636,7 @@ a {
 
   .subfiltros-flex {
     flex-direction: column; /* No desktop, os botões ficam em lista vertical */
-    align-items: flex-end; /* Alinha os botões à direita */
+    align-items: space-between; /* Alinha os botões à direita */
     gap: 15px;
   }
 }

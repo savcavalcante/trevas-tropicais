@@ -131,9 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
       gradeGaleria.classList.toggle("modo-mosaico");
 
       if (gradeGaleria.classList.contains("modo-mosaico")) {
-        btnAlternar.textContent = "Visualizar: Lista";
+        btnAlternar.textContent = "Modo Lista";
       } else {
-        btnAlternar.textContent = "Visualizar: Mosaico";
+        btnAlternar.textContent = "Modo Mosaico";
       }
     });
 
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
           gradeGaleria.classList.remove("modo-mosaico");
           
           // 2. Atualiza o texto do botão do alternador
-          btnAlternar.textContent = "Visualizar: Mosaico";
+          btnAlternar.textContent = "Modo Mosaico";
           
           // 3. Rola a tela suavemente para que a foto clicada fique centralizada
           foto.scrollIntoView({
