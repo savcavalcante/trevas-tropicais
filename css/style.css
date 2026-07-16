@@ -393,6 +393,65 @@ a {
   border-color: #f5f5f5;
 }
 
+/* subseção "ALTERNADOR DE VISUALIZAÇÃO" */
+
+.container-visualizacao {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-alternar-view {
+  background: none;
+  border: 1px dashed #444; /* Estilo sutil tracejado para se diferenciar dos filtros */
+  color: #aaa;
+  padding: 8px 16px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-alternar-view:hover {
+  border-color: #f5f5f5;
+  color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+  /* subseção "COMPORTAMENTO DINÂMICO PARA MODO MOSAICO" */
+
+/* Força a galeria a se comportar como colunas (masonry) sem espaços vazios */
+.grade-galeria.modo-mosaico {
+  display: block; 
+  column-count: 2; /* 2 colunas de fotos no mobile */
+  column-gap: 0px;
+}
+
+/* Garante que os cards não quebrem ao meio entre colunas */
+.grade-galeria.modo-mosaico .item-foto {
+  display: block;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  break-inside: avoid;
+}
+
+.grade-galeria.modo-mosaico .foto-portfolio {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .grade-galeria.modo-mosaico {
+    column-count: 3; /* 3 colunas de fotos no desktop */
+  }
+}
+
+
   /* subseção "FLUXO DE CONTEÚDO DA COLEÇÃO" */
 
 .fluxo-conteudo {

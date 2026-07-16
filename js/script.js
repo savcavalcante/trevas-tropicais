@@ -119,4 +119,24 @@ document.addEventListener("DOMContentLoaded", () => {
     containerRodape.innerHTML = htmlGerado;
   }
 
+// ==========================================================================
+  // 4. LÓGICA DO ALTERNADOR DE VISUALIZAÇÃO (MOSAICO VS LISTA)
+  // ==========================================================================
+  const btnAlternar = document.getElementById("btn-alternar-view");
+  const gradeGaleria = document.getElementById("grade-galeria");
+
+  if (btnAlternar && gradeGaleria) {
+    btnAlternar.addEventListener("click", () => {
+      // Adiciona ou remove a classe que ativa as colunas do mosaico
+      gradeGaleria.classList.toggle("modo-mosaico");
+
+      // Altera o rótulo do botão dependendo do modo ativo
+      if (gradeGaleria.classList.contains("modo-mosaico")) {
+        btnAlternar.textContent = "Modo Lista";
+      } else {
+        btnAlternar.textContent = "Modo Mosaico";
+      }
+    });
+  }
+
 });
