@@ -138,5 +138,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+// ==========================================================================
+  // 5. ALEATORIZAÇÃO DE FOTOS EM COLEÇÕES SELECIONADAS
+  // ==========================================================================
+  const galeriaParaEmbaralhar = document.querySelector('.grade-galeria[data-random="true"]');
 
+  if (galeriaParaEmbaralhar) {
+    // Transforma a lista de fotos em uma Array para manipulação no JS
+    const fotosArray = Array.from(galeriaParaEmbaralhar.querySelectorAll('.item-foto'));
+    
+    // Algoritmo Fisher-Yates para embaralhar a array de fotos de forma justa
+    for (let i = fotosArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [fotosArray[i], fotosArray[j]] = [fotosArray[j], fotosArray[i]];
+    }
+
+    // Limpa o conteúdo atual do container e insere as fotos na nova ordem aleatória
+    galeriaParaEmbaralhar.innerHTML = "";
+    fotosArray.forEach(foto => {
+      galeriaParaEmbaralhar.appendChild(foto);
+    });
+  }
+  
 });
