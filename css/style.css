@@ -155,7 +155,8 @@ a {
   width: 100%;
   height: auto;
   object-fit: contain;
-  display: block; 
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
 }
 
   /* subseção "CONFIGURAÇÃO DOS TÍTULOS DAS COLEÇÕES" */

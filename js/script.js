@@ -159,8 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
 // ==========================================================================
-  // 5. ALEATORIZAÇÃO DE FOTOS EM COLEÇÕES SELECIONADAS
+  // 5. ALEATORIZAÇÃO DE FOTOS COM PRIORIDADE DE CARREGAMENTO DINÂMICA
   // ==========================================================================
   const galeriaParaEmbaralhar = document.querySelector('.grade-galeria[data-random="true"]');
 
@@ -168,15 +169,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // Transforma a lista de fotos em uma Array para manipulação no JS
     const fotosArray = Array.from(galeriaParaEmbaralhar.querySelectorAll('.item-foto'));
     
-    // Algoritmo Fisher-Yates para embaralhar a array de fotos de forma justa
+    // Algoritmo Fisher-Yates para embaralhar a array de fotos
     for (let i = fotosArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [fotosArray[i], fotosArray[j]] = [fotosArray[j], fotosArray[i]];
     }
 
-    // Limpa o conteúdo atual do container e insere as fotos na nova ordem aleatória
+    // Limpa o conteúdo atual do container
     galeriaParaEmbaralhar.innerHTML = "";
-    fotosArray.forEach(foto => {
+
+    // Aplica a prioridade de carregamento baseada na nova ordem
+    fotosArray.forEach((foto, index) => {
+      const img = foto.querySelector('img');
+      
+      if (img) {
+        if (index < 5) {
+          // As 5 primeiras imagens do novo topo perdem o "lazy" e carregam imediatamente
+          img.removeAttribute('loading');
+          img.setAttribute('fetchpriority', 'high'); // Sinaliza ao navegador prioridade máxima
+        } else {
+          // Todas as outras da 4ª em diante usam carregamento preguiçoso e decodificação assíncrona
+          img.setAttribute('loading', 'lazy');
+          img.setAttribute('decoding', 'async');
+        }
+      }
+      
+      // Insere o elemento na nova ordem aleatória
       galeriaParaEmbaralhar.appendChild(foto);
     });
   }
