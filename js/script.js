@@ -72,18 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================================================================
+// ==========================================================================
   // 3. LÓGICA DO RODAPÉ DINÂMICO (MOSAICO DESKTOP / BOTÕES MOBILE)
   // ==========================================================================
   const listaColecoes = [
-    { nome: "Pets", arquivo: "colecoes/pets.html", capa: "imagens/capas/botanica.webp" },
-    { nome: "Delírios Lunares", arquivo: "colecoes/delirios-lunares.html", capa: "imagens/capas/delirios-lunares.webp" },
-    { nome: "Deslumbre", arquivo: "colecoes/deslumbre.html", capa: "imagens/capas/deslumbre.webp" },
-    { nome: "Micromundo", arquivo: "colecoes/micromundo.html", capa: "imagens/capas/micromundo.webp" },
-    { nome: "Reino Plantae", arquivo: "colecoes/reino-plantae.html", capa: "imagens/capas/reino-plantae.webp" },
-    { nome: "Mycelia", arquivo: "colecoes/mycelia.html", capa: "imagens/capas/mycelia.webp" },
-    { nome: "Dramas da Natureza", arquivo: "colecoes/dramas-da-natureza.html", capa: "imagens/capas/dramas-da-natureza.webp" },
-    { nome: "Cyberchoque", arquivo: "colecoes/cyberchoque.html", capa: "imagens/capas/cyberchoque.webp" }
+    { nome: "Pets", arquivo: "colecoes/pets.html", capa: "imagens/galeria/pets/gatos-12.webp" },
+    { nome: "Delírios Lunares", arquivo: "colecoes/delirios-lunares.html", capa: "imagens/galeria/delirios-lunares/lua-cadente-3.webp" },
+    { nome: "Deslumbre", arquivo: "colecoes/deslumbre.html", capa: "imagens/galeria/deslumbre/paisagem-natural-4.webp" }, // ajuste a capa se necessário
+    { nome: "Micromundo", arquivo: "colecoes/micromundo.html", capa: "imagens/galeria/micromundo/asas-107.webp" },
+    { nome: "Reino Plantae", arquivo: "colecoes/reino-plantae.html", capa: "imagens/galeria/reino-plantae/planta-4.webp" },
+    { nome: "Mycelia", arquivo: "colecoes/mycelia.html", capa: "imagens/galeria/mycelia/fungo-1.webp" },
+    { nome: "Dramas da Natureza", arquivo: "colecoes/dramas-da-natureza.html", capa: "imagens/galeria/dramas-da-natureza/inseto-32.webp" },
+    { nome: "Cyberchoque", arquivo: "colecoes/cyberchoque.html", capa: "imagens/galeria/cyberchoque/cyber-horror-4.webp" }
   ];
 
   const paginaAtual = window.location.pathname.split("/").pop();
@@ -100,14 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
       
       if (nomeArquivoColecao !== paginaAtual) {
         htmlGerado += `
-          <a href="${prefixo}${colecao.arquivo}" class="card-sugestao-rodape">
-            <div class="moldura-sugestao">
-              <img src="${prefixo}${colecao.capa}" alt="Coleção ${colecao.nome}" class="img-sugestao-rodape" loading="lazy">
-              <div class="overlay-sugestao">
-                <span class="txt-sugestao-desktop">${colecao.nome}</span>
-              </div>
-            </div>
+          <a href="${prefixo}${colecao.arquivo}" class="card-sugestao-rodape card-colecao">
+            <!-- Mobile: Estrutura de Botão Simples -->
             <span class="btn-sugestao-mobile">${colecao.nome}</span>
+
+            <!-- Desktop: Mosaico Reutilizando Perfeitamente as Classes da Home -->
+            <div class="moldura-sugestao moldura-foto">
+              <img src="${prefixo}${colecao.capa}" alt="Coleção ${colecao.nome}" class="foto-capa img-sugestao-rodape" loading="lazy">
+            </div>
+            <div class="info-colecao overlay-sugestao">
+              <h2 class="titulo-colecao txt-sugestao-desktop">${colecao.nome}</h2>
+            </div>
           </a>
         `;
       }

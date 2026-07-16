@@ -230,8 +230,8 @@ a {
 
 @media (min-width: 768px) {
   .container-rodape {
-    flex-direction: row; 
-    justify-content: space-between; /* Copyright na esquerda, links na direita */
+    flex-direction: column; 
+    gap: 20px;
   }
 }
 
@@ -405,9 +405,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px; 
+  gap: 5px; 
   width: 100%;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
 }
 
 .item-foto {
@@ -578,9 +578,9 @@ a {
 
 .navegacao-colecoes {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 80px auto 0 auto;
-  padding: 40px 0 80px 0;
+  padding: 40px 0 0px 0;
   border-top: 1px solid #1a1a1a;
   text-align: center;
 }
@@ -599,10 +599,10 @@ a {
 .container-links-dinamicos {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que os botões quebrem linha no mobile */
   gap: 12px 10px;
   width: 100%;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .card-sugestao-rodape {
@@ -615,8 +615,9 @@ a {
 
   /* Esconde o mosaico de fotos no mobile, mostrando apenas os nomes */
 
-.moldura-sugestao {
-  display: none;
+.container-links-dinamicos .moldura-sugestao,
+.container-links-dinamicos .overlay-sugestao {
+  display: none !important;
 }
 
   /* Mostra apenas os botões de texto no mobile */
@@ -630,7 +631,7 @@ a {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   background-color: #111;
-  white-space: nowrap;
+  white-space: nowrap; /* Impede quebra de texto dentro do botão */
 }
 
 .btn-sugestao-mobile:hover {
@@ -646,27 +647,41 @@ a {
   /* Esconde os botões de texto no desktop */
 
   .btn-sugestao-mobile {
-    display: none;
+    display: none !important;
   }
 
   /* Exibe o mosaico visual elegante */
 
-  .moldura-sugestao {
+  .container-links-dinamicos .moldura-sugestao {
+    display: block !important;
+  }
+
+  .container-links-dinamicos .overlay-sugestao {
+    display: flex !important; /* Ativa o flexbox para centralizar o título na vertical */
+  }
+
+  /* Ajusta o container para herdar o comportamento de colunas (mosaico) da Home */
+  .container-links-dinamicos {
     display: block;
-    position: relative;
-    width: 280px;
-    height: 180px;
-    overflow: hidden;
-    border: 1px solid #1a1a1a;
-    transition: transform 0.3s ease;
+    column-count: 3; /* Renderiza as sugestões em 3 colunas impecáveis */
+    gap: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .container-links-dinamicos .card-sugestao-rodape {
+    display: block;
+    width: 100%;
+    break-inside: avoid; /* Evita que um card se divida entre duas colunas */
   }
 
   .img-sugestao-rodape {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Recorta a imagem sem distorcer para caber no mini-mosaico */
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   /* Faixa escura com o nome da coleção */
@@ -676,27 +691,32 @@ a {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
     text-align: center;
+    opacity: 0; /* Invisível por padrão no desktop */
+    transition: opacity 0.3s ease;
+    pointer-events: none;
   }
 
   .txt-sugestao-desktop {
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: #fff;
   }
 
   /* Efeito de hover*/
 
-  .moldura-sugestao:hover {
-    transform: translateY(-4px); /* efeito de elevação sutil */
-    border-color: #444;
+  .container-links-dinamicos .card-sugestao-rodape:hover .overlay-sugestao {
+    opacity: 1; /* Revela a legenda no hover */
+    pointer-events: auto;
   }
 
-  .moldura-sugestao:hover .img-sugestao-rodape {
-    opacity: 1; /* efeito que revela a cor real da foto ao passar o mouse */
+  .container-links-dinamicos .card-sugestao-rodape:hover .img-sugestao-rodape {
+    opacity: 1; /* Revela a cor real da foto ao passar o mouse */
+    transform: scale(1.03); /* Efeito de zoom sutil e elegante */
   }
 }
 
