@@ -436,6 +436,7 @@ a {
   margin: 0px;
   padding: 0px;
   break-inside: avoid;
+  cursor:pointer; /* Adiciona um cursor de ponteiro para indicar que a foto é clicável */
 }
 
 .grade-galeria.modo-mosaico .foto-portfolio {

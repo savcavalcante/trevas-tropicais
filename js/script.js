@@ -120,22 +120,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 // ==========================================================================
-  // 4. LÓGICA DO ALTERNADOR DE VISUALIZAÇÃO (MOSAICO VS LISTA)
+  // 4. LÓGICA DO ALTERNADOR DE VISUALIZAÇÃO (MOSAICO VS LISTA) E FOCO NA FOTO
   // ==========================================================================
   const btnAlternar = document.getElementById("btn-alternar-view");
   const gradeGaleria = document.getElementById("grade-galeria");
 
   if (btnAlternar && gradeGaleria) {
+    // 4.1. Lógica do Botão de Alternância
     btnAlternar.addEventListener("click", () => {
-      // Adiciona ou remove a classe que ativa as colunas do mosaico
       gradeGaleria.classList.toggle("modo-mosaico");
 
-      // Altera o rótulo do botão dependendo do modo ativo
       if (gradeGaleria.classList.contains("modo-mosaico")) {
-        btnAlternar.textContent = "Modo Lista";
+        btnAlternar.textContent = "Visualizar: Lista";
       } else {
-        btnAlternar.textContent = "Modo Mosaico";
+        btnAlternar.textContent = "Visualizar: Mosaico";
       }
+    });
+
+    // 4.2. NOVO: Lógica de clicar na foto no Mosaico para focar na Lista
+    const fotosGaleria = gradeGaleria.querySelectorAll(".item-foto");
+    
+    fotosGaleria.forEach(foto => {
+      foto.addEventListener("click", () => {
+        // Só age se a galeria estiver atualmente no modo mosaico
+        if (gradeGaleria.classList.contains("modo-mosaico")) {
+          // 1. Remove o modo mosaico (voltando para o modo lista)
+          gradeGaleria.classList.remove("modo-mosaico");
+          
+          // 2. Atualiza o texto do botão do alternador
+          btnAlternar.textContent = "Visualizar: Mosaico";
+          
+          // 3. Rola a tela suavemente para que a foto clicada fique centralizada
+          foto.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }
+      });
     });
   }
 // ==========================================================================
@@ -159,5 +180,5 @@ document.addEventListener("DOMContentLoaded", () => {
       galeriaParaEmbaralhar.appendChild(foto);
     });
   }
-  
+
 });
