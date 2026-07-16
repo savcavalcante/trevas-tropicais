@@ -181,4 +181,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ==========================================================================
+  // 6. PROTEÇÃO DO ACERVO (BLOQUEIO DE BOTÃO DIREITO NAS IMAGENS)
+  // ==========================================================================
+  document.addEventListener("contextmenu", (e) => {
+    // Se o clique com botão direito for em cima de uma foto do portfólio, bloqueia
+    if (e.target.classList.contains("foto-portfolio") || e.target.classList.contains("foto-capa")) {
+      e.preventDefault();
+    }
+  });
+
 });

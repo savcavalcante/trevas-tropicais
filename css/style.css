@@ -563,6 +563,7 @@ a {
   }
 
     /* subseção "MOLDE DOS BOTÕES", ajustando-se ao tamanho do texto */
+
   .btn-filtro {
     width: auto;
     text-align: center;
@@ -570,6 +571,14 @@ a {
     font-size: 0.7rem;
     border-radius: 3px;
   }
+}
+
+  /* subseção "BLOQUEIO DO MENU DE TOQUE LONGO", evitando o salvamento nativo das fotos em celulares */
+  
+.foto-portfolio {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Safari */
+  user-select: none;           /* Padrão */
 }
 
 /* 6.1- seção "COMPORTAMENTO DAS PÁGINAS INTERNAS NO DESKTOP" --------------------------- */
