@@ -416,13 +416,14 @@ a {
   justify-content: center;
 }
 
-  /* subseção "CONTROLE DE TAMANHO MÁXIMO VERTICAL". Previne que fotos em pé não sumam na tela. */
+  /* subseção "CONTROLE DE TAMANHO MÁXIMO VERTICAL". Alterado para imagens verticais ocuparem toda a largura, talvez reverta isso depois. */
 
 .foto-portfolio {
-  width: auto;
+  width: 100%;
+  height: auto;
   max-width: 100%;
-  max-height: 85vh; /* A foto ocupa no máximo 85% da altura do monitor, mantendo a proporção. */
-  object-fit: contain;
+  max-height: none; /* A foto ocupa no máximo 85% da altura do monitor, mantendo a proporção. */
+  object-fit: cover;
 }
 
   /* subseção "BOTÃO DE GATILHO DO FILTRO" - Escondido por padrão no Desktop */
