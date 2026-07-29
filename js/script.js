@@ -83,7 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
     { nome: "Reino Plantae", arquivo: "colecoes/reino-plantae.html", capa: "imagens/galeria/reino-plantae/planta-4.webp" },
     { nome: "Mycelia", arquivo: "colecoes/mycelia.html", capa: "imagens/galeria/mycelia/fungo-1.webp" },
     { nome: "Dramas da Natureza", arquivo: "colecoes/dramas-da-natureza.html", capa: "imagens/galeria/dramas-da-natureza/inseto-32.webp" },
-    { nome: "Cyberchoque", arquivo: "colecoes/cyberchoque.html", capa: "imagens/galeria/cyberchoque/cyber-horror-4.webp" }
+    { nome: "Cyberchoque", arquivo: "colecoes/cyberchoque.html", capa: "imagens/galeria/cyberchoque/cyber-horror-4.webp" },
+    { nome: "Arachnida", arquivo: "colecoes/arachnida.html", capa: "imagens/galeria/arachnida/aranha-13.webp" },
+    { nome: "Floresta Noturna", arquivo: "colecoes/floresta-noturna.html", capa: "imagens/galeria/floresta-noturna/inseto-12.webp" }
   ];
 
   const paginaAtual = window.location.pathname.split("/").pop();
