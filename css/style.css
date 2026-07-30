@@ -400,16 +400,18 @@ a {
 
 /* subseção "ALTERNADOR DE VISUALIZAÇÃO" */
 
-.container-visualizacao {
-  margin-top: 15px;
+.barra-acoes-rapidas {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
 }
 
 .btn-alternar-view {
   background: none;
-  border: 1px dashed #444; /* Estilo sutil tracejado para se diferenciar dos filtros */
+  border: 1px dashed #444;
   color: #aaa;
   padding: 8px 16px;
   font-size: 0.7rem;
@@ -417,12 +419,14 @@ a {
   letter-spacing: 1.5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: auto;
 }
 
-.btn-alternar-view:hover {
+.btn-alternar-view:hover, 
+.btn-alternar-view:active {
   border-color: #f5f5f5;
   color: #f5f5f5;
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
   /* subseção "COMPORTAMENTO DINÂMICO PARA MODO MOSAICO" */
@@ -632,7 +636,8 @@ a {
     position: sticky;
     top: 140px;
     display: flex;
-    justify-content: space-between; /* Alinha os filtros no canto direito da tela */
+    flex-direction:column;
+    justify-content: flex-start; /* Alinha os filtros no canto direito da tela */
   }
 
   .conteudo-filtros {
@@ -641,15 +646,20 @@ a {
 
   .subfiltros-flex {
     flex-direction: column; /* No desktop, os botões ficam em lista vertical */
-    align-items: space-between; /* Alinha os botões à direita */
+    align-items: flex-end; /* Alinha os botões à direita */
     gap: 15px;
+  }
+
+  .barra-acoes-rapidas {
+    padding: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão de alternar visualização à direita */
   }
 }
 
-/* 6.2- seção "RODAPÉ DE NAVEGAÇÃO AUTOMATIZADO" ----------------------------- 
-
-- =============== aqui talvez eu mude para repedir o esquema da página inicial em mobile e desktop.
-- =============== ainda não foi testado direito pois falta incluir coleções. */
+/* 6.2- seção "RODAPÉ DE NAVEGAÇÃO AUTOMATIZADO" ----------------------------- */
 
 .navegacao-colecoes {
   width: 100%;
@@ -669,129 +679,93 @@ a {
   margin-bottom: 30px;
 }
 
-  /* subseção "CONTAINER DOS LINKS DINÂMICOS" */
-
+/* CONTAINER DOS LINKS DINÂMICOS (MOBILE FIRST: 2 COLUNAS) */
 .container-links-dinamicos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite que os botões quebrem linha no mobile */
-  gap: 12px 10px;
-  width: 100%;
-  padding: 0 20px;
-}
-
-.card-sugestao-rodape {
   display: block;
-  text-decoration: none;
-  color: inherit;
+  column-count: 2; /* Exibe em 2 colunas no mobile */
+  column-gap: 0;
+  width: 100%;
+  padding: 0;
 }
 
-/* ------ COMPORTAMENTO PADRÃO: MOBILE FIRST ------ */
+.container-links-dinamicos .card-sugestao-rodape {
+  display: block;
+  width: 100%;
+  break-inside: avoid; /* Evita que um card se divida entre duas colunas */
+  position: relative;
+  overflow: hidden;
+}
 
-  /* Esconde o mosaico de fotos no mobile, mostrando apenas os nomes */
+.img-sugestao-rodape {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 
-.container-links-dinamicos .moldura-sugestao,
+/* Legenda visível por padrão no mobile, idêntica à página inicial */
 .container-links-dinamicos .overlay-sugestao {
-  display: none !important;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 12px 10px;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-  /* Mostra apenas os botões de texto no mobile */
-
-.btn-sugestao-mobile {
-  display: inline-block;
-  border: 1px solid #333;
-  padding: 10px 20px;
+.txt-sugestao-desktop {
   font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  background-color: #111;
-  white-space: nowrap; /* Impede quebra de texto dentro do botão */
-}
-
-.btn-sugestao-mobile:hover {
-  background-color: #f5f5f5;
-  color: #0a0a0a;
-  border-color: #f5f5f5;
+  color: #fff;
 }
 
 /* ------ COMPORTAMENTO ADAPTATIVO: DESKTOP (Telas maiores) ------ */
 
 @media (min-width: 1024px) {
   
-  /* Esconde os botões de texto no desktop */
-
-  .btn-sugestao-mobile {
-    display: none !important;
-  }
-
-  /* Exibe o mosaico visual elegante */
-
-  .container-links-dinamicos .moldura-sugestao {
-    display: block !important;
-  }
-
-  .container-links-dinamicos .overlay-sugestao {
-    display: flex !important; /* Ativa o flexbox para centralizar o título na vertical */
-  }
-
-  /* Ajusta o container para herdar o comportamento de colunas (mosaico) da Home */
+  /* Expande o container para 3 colunas no desktop */
   .container-links-dinamicos {
-    display: block;
-    column-count: 3; /* Renderiza as sugestões em 3 colunas impecáveis */
-    gap: 0;
-    width: 100%;
-    padding: 0;
-  }
-
-  .container-links-dinamicos .card-sugestao-rodape {
-    display: block;
-    width: 100%;
-    break-inside: avoid; /* Evita que um card se divida entre duas colunas */
+    column-count: 3;
   }
 
   .img-sugestao-rodape {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
     opacity: 0.85;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  /* Faixa escura com o nome da coleção */
-
-  .overlay-sugestao {
-    position: absolute;
+  /* Aplica o efeito hover de revelar legenda no desktop */
+  .container-links-dinamicos .overlay-sugestao {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    top: 0;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px 20px;
-    text-align: center;
-    opacity: 0; /* Invisível por padrão no desktop */
-    transition: opacity 0.3s ease;
+    opacity: 0; /* Continua invisível até o hover */
     pointer-events: none;
+    padding: 20px;
+    transition: opacity 0.3s ease;
   }
 
   .txt-sugestao-desktop {
     font-size: 0.9rem;
-    font-weight: 400;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff;
   }
 
-  /* Efeito de hover*/
-
   .container-links-dinamicos .card-sugestao-rodape:hover .overlay-sugestao {
-    opacity: 1; /* Revela a legenda no hover */
+    opacity: 1;
     pointer-events: auto;
   }
 
   .container-links-dinamicos .card-sugestao-rodape:hover .img-sugestao-rodape {
-    opacity: 1; /* Revela a cor real da foto ao passar o mouse */
-    transform: scale(1.03); /* Efeito de zoom sutil e elegante */
+    opacity: 1;
+    transform: scale(1.03);
   }
 }
 
@@ -897,3 +871,38 @@ a {
   cursor: pointer;
 }
 
+/* 8- seção "BOTÃO DA ARACNOFOBIA", regra para ocultar aranhas em qualquer link ou foto ------------- */
+
+.btn-toggle-sensivel {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: var(--font-principal);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-toggle-sensivel:hover {
+  opacity: 1;
+}
+
+.btn-toggle-sensivel.ativo {
+  opacity: 0.9;
+  color: #ffb74d;
+}
+
+body.ocultar-aranhas [href*="arachnida"],
+body.ocultar-aranhas .item-foto[data-category="aranha"],
+body.ocultar-aranhas .item-foto[data-category="opiliao"],
+body.ocultar-aranhas .item-foto[data-category="arachnida"],
+body.ocultar-aranhas .item-foto[data-tag="aranha"] {
+  display: none !important;
+}

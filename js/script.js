@@ -73,19 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 // ==========================================================================
-  // 3. LÓGICA DO RODAPÉ DINÂMICO (MOSAICO DESKTOP / BOTÕES MOBILE)
+  // 3. LÓGICA DO RODAPÉ DINÂMICO (MOSAICO INTEGRAL MOBILE/DESKTOP)
   // ==========================================================================
   const listaColecoes = [
     { nome: "Pets", arquivo: "colecoes/pets.html", capa: "imagens/galeria/pets/gatos-12.webp" },
     { nome: "Delírios Lunares", arquivo: "colecoes/delirios-lunares.html", capa: "imagens/galeria/delirios-lunares/lua-cadente-3.webp" },
-    { nome: "Deslumbre", arquivo: "colecoes/deslumbre.html", capa: "imagens/galeria/deslumbre/paisagem-natural-4.webp" }, // ajuste a capa se necessário
-    { nome: "Micromundo", arquivo: "colecoes/micromundo.html", capa: "imagens/galeria/micromundo/asas-107.webp" },
-    { nome: "Reino Plantae", arquivo: "colecoes/reino-plantae.html", capa: "imagens/galeria/reino-plantae/planta-4.webp" },
-    { nome: "Mycelia", arquivo: "colecoes/mycelia.html", capa: "imagens/galeria/mycelia/fungo-1.webp" },
-    { nome: "Dramas da Natureza", arquivo: "colecoes/dramas-da-natureza.html", capa: "imagens/galeria/dramas-da-natureza/inseto-32.webp" },
+    { nome: "Deslumbre", arquivo: "colecoes/deslumbre.html", capa: "imagens/galeria/deslumbre/paisagem-natural-4.webp" },
+    { nome: "Micromundo", arquivo: "colecoes/micromundo.html", capa: "imagens/galeria/micromundo/asas-102.webp" },
+    { nome: "Reino Plantae", arquivo: "colecoes/reino-plantae.html", capa: "imagens/galeria/reino-plantae/flor-11.webp" },
+    { nome: "Mycelia", arquivo: "colecoes/mycelia.html", capa: "imagens/galeria/mycelia/cogumelo-5.webp" },
+    { nome: "Dramas da Natureza", arquivo: "colecoes/dramas-da-natureza.html", capa: "imagens/galeria/dramas-da-natureza/inseto-10.webp" },
     { nome: "Cyberchoque", arquivo: "colecoes/cyberchoque.html", capa: "imagens/galeria/cyberchoque/cyber-horror-4.webp" },
     { nome: "Arachnida", arquivo: "colecoes/arachnida.html", capa: "imagens/galeria/arachnida/aranha-13.webp" },
-    { nome: "Floresta Noturna", arquivo: "colecoes/floresta-noturna.html", capa: "imagens/galeria/floresta-noturna/inseto-12.webp" }
+    { nome: "Floresta Noturna", arquivo: "colecoes/floresta-noturna.html", capa: "imagens/galeria/floresta-noturna/inseto-7.webp" }
   ];
 
   const paginaAtual = window.location.pathname.split("/").pop();
@@ -103,10 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (nomeArquivoColecao !== paginaAtual) {
         htmlGerado += `
           <a href="${prefixo}${colecao.arquivo}" class="card-sugestao-rodape card-colecao">
-            <!-- Mobile: Estrutura de Botão Simples -->
-            <span class="btn-sugestao-mobile">${colecao.nome}</span>
-
-            <!-- Desktop: Mosaico Reutilizando Perfeitamente as Classes da Home -->
             <div class="moldura-sugestao moldura-foto">
               <img src="${prefixo}${colecao.capa}" alt="Coleção ${colecao.nome}" class="foto-capa img-sugestao-rodape" loading="lazy">
             </div>
@@ -210,5 +206,43 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
     }
   });
+
+// ==========================================================================
+  // 7. LÓGICA DO TOGGLE DE SENSIBILIDADE (OCULTAR ARACNÍDEOS)
+  // ==========================================================================
+  const btnToggleAranhas = document.getElementById("btn-toggle-aranhas");
+  const estadoSalvo = localStorage.getItem("ocultarAranhas") === "true";
+
+  // Função para aplicar/remover o filtro de visibilidade
+  function aplicarFiltroAranhas(ocultar) {
+    if (ocultar) {
+      document.body.classList.add("ocultar-aranhas");
+      if (btnToggleAranhas) {
+        btnToggleAranhas.classList.add("ativo");
+        btnToggleAranhas.querySelector(".icone-check").textContent = "[✓]";
+      }
+    } else {
+      document.body.classList.remove("ocultar-aranhas");
+      if (btnToggleAranhas) {
+        btnToggleAranhas.classList.remove("ativo");
+        btnToggleAranhas.querySelector(".icone-check").textContent = "[ ]";
+      }
+    }
+  }
+
+  // Aplica a preferência assim que a página carrega
+  aplicarFiltroAranhas(estadoSalvo);
+
+  // Escuta o clique no botão do rodapé
+  if (btnToggleAranhas) {
+    btnToggleAranhas.addEventListener("click", () => {
+      const estaOculto = document.body.classList.contains("ocultar-aranhas");
+      const novoEstado = !estaOculto;
+      
+      // Salva no localStorage para lembrar a escolha entre as páginas
+      localStorage.setItem("ocultarAranhas", novoEstado);
+      aplicarFiltroAranhas(novoEstado);
+    });
+  }
 
 });

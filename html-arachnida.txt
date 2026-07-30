@@ -1,0 +1,142 @@
+<!-- INÍCIO DOS ITENS DE ARACHNIDA -->
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-1.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-10.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-11.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-12.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-13.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-14.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-15.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-16.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-17.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-18.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-2.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-3.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-4.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-5.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-6.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-7.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-8.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="aranha">
+  <img src="../imagens/galeria/arachnida/aranha-9.webp" 
+       alt="Fotografia da coleção arachnida - Categoria aranha" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="escorpiao">
+  <img src="../imagens/galeria/arachnida/escorpiao-1.webp" 
+       alt="Fotografia da coleção arachnida - Categoria escorpiao" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+
+<div class="item-foto" data-category="opiliao">
+  <img src="../imagens/galeria/arachnida/opiliao-1.webp" 
+       alt="Fotografia da coleção arachnida - Categoria opiliao" 
+       class="foto-portfolio" 
+       loading="lazy">
+</div>
+<!-- FIM DOS ITENS DE ARACHNIDA -->
