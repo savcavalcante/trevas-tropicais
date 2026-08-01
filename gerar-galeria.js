@@ -4,7 +4,7 @@ const path = require('path');
 // ==========================================================================
 // CONFIGURAÇÃO DA COLEÇÃO ATUAL // rodar "node gerar-galeria.js" para gerar o HTML da galeria
 // ==========================================================================
-const nomeColecao = 'arachnida'; // mudar de acordo com o nome da nova coleção, etc.
+const nomeColecao = 'cyberchoque'; // mudar de acordo com o nome da nova coleção, etc.
 
 // ==========================================================================
 // CONFIGURAÇÕES DO SCRIPT (automático pelo nome do arquivo)
