@@ -188,7 +188,7 @@ a {
   color: #fff;
 }
 
-/* 4- seção "RODAPÉ DA PÁGINA INICIAL" ---------------------------------------- */
+/* 4- seção "RODAPÉS" ----------------------------------------------------------- */
 
 .rodape-principal {
   width: 100%;
@@ -229,6 +229,25 @@ a {
 
 .link-fino:hover {
   opacity: 1;
+}
+
+  /* subseção "ASSINATURA DO RODAPÉ" */
+
+.assinatura-rodape {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 5px 0;
+}
+
+.img-assinatura-rodape {
+  width: 110px; /* Um pouco menor que a do manifesto para manter a hierarquia do rodapé */
+  height: auto;
+  opacity: 0.4;  /* Bem discreta, integrada à paleta dos textos secundários */
+  transition: opacity 0.3s ease;
+}
+
+.img-assinatura-rodape:hover {
+  opacity: 0.8;
 }
 
   /* subseção "AJUSTE PARA DESKTOP" */
@@ -834,6 +853,26 @@ a {
   line-height: 1.8;
   color: #ccc;
   margin-bottom: 20px;
+}
+
+  /* subseção "ASSINATURA PÓS MANIFESTO" */
+
+.container-assinatura-manifesto {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px; /* Recuo confortável após o término do texto */
+}
+
+.img-assinatura {
+  width: 160px; /* Largura elegante para visualização em desktop e mobile */
+  height: auto;
+  opacity: 0.85; /* Dá um tom sutil e elegante */
+  transition: opacity 0.3s ease;
+}
+
+.img-assinatura:hover {
+  opacity: 1;
 }
 
   /* subseção "ALINHAMENTO DOS BOTÕES DE LINK" */
