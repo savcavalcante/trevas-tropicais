@@ -502,6 +502,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
+  cursor: pointer; /* Indica que a foto é clicável */
 }
 
   /* subseção "CONTROLE DE TAMANHO MÁXIMO VERTICAL". Alterado para imagens verticais ocuparem toda a largura, talvez reverta isso depois. */
@@ -910,6 +911,12 @@ a {
   cursor: pointer;
 }
 
+  /* Seção "CONTATO" com âncora de navegação */
+
+#secao-contato {
+  scroll-margin-top: 140px; /* Compensação da altura do cabeçalho fixo durante a rolagem */
+}
+
 /* 8- seção "BOTÃO DA ARACNOFOBIA", regra para ocultar aranhas em qualquer link ou foto ------------- */
 
 .btn-toggle-sensivel {
@@ -944,4 +951,119 @@ body.ocultar-aranhas .item-foto[data-category="opiliao"],
 body.ocultar-aranhas .item-foto[data-category="arachnida"],
 body.ocultar-aranhas .item-foto[data-tag="aranha"] {
   display: none !important;
+}
+
+/* 9- seção "MODAL DE VISUALIZAÇÃO (LIGHTBOX)" ------------------------------------ */
+
+.modal-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* Fundo escuro absoluto para destaque total */
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-lightbox.ativo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Botão Fechar (Topo Direita) */
+.btn-fechar-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  z-index: 2010;
+}
+
+.btn-fechar-modal:hover {
+  opacity: 1;
+}
+
+/* Área Central com Imagem e Navegação */
+.container-midia-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 120px);
+  position: relative;
+}
+
+.img-modal-destaque {
+  max-height: 85vh;
+  max-width: 90vw;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* Botões de Navegação (Esquerda / Direita) */
+.btn-nav-modal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  z-index: 2005;
+}
+
+.btn-nav-modal:hover {
+  opacity: 1;
+}
+
+.btn-nav-modal.anterior { left: 10px; }
+.btn-nav-modal.proxima { right: 10px; }
+
+/* Rodapé do Modal (Título e Botão de Contato/Orçamento) */
+.rodape-modal {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+}
+
+.titulo-foto-modal {
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.btn-orcamento-modal {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px dashed #444;
+  padding: 6px 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-orcamento-modal:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
 }

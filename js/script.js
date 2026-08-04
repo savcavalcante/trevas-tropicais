@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-// ==========================================================================
+  // ==========================================================================
   // 3. LÓGICA DO RODAPÉ DINÂMICO (MOSAICO INTEGRAL MOBILE/DESKTOP)
   // ==========================================================================
   const listaColecoes = [
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     containerRodape.innerHTML = htmlGerado;
   }
 
-// ==========================================================================
+  // ==========================================================================
   // 4. LÓGICA DO ALTERNADOR DE VISUALIZAÇÃO (MOSAICO VS LISTA) E FOCO NA FOTO
   // ==========================================================================
   const btnAlternar = document.getElementById("btn-alternar-view");
@@ -135,20 +135,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 4.2. NOVO: Lógica de clicar na foto no Mosaico para focar na Lista
+// 4.2. Lógica de clicar na foto no Mosaico para focar na Lista (com flag de bloqueio para o modal)
     const fotosGaleria = gradeGaleria.querySelectorAll(".item-foto");
     
     fotosGaleria.forEach(foto => {
-      foto.addEventListener("click", () => {
-        // Só age se a galeria estiver atualmente no modo mosaico
+      foto.addEventListener("click", (e) => {
+        // Se ainda está no modo mosaico
         if (gradeGaleria.classList.contains("modo-mosaico")) {
-          // 1. Remove o modo mosaico (voltando para o modo lista)
+          // Interrompe a propagação para que o evento da seção 8 (Lightbox) não seja disparado neste clique
+          e.stopImmediatePropagation();
+
+          // 1. Remove o modo mosaico
           gradeGaleria.classList.remove("modo-mosaico");
           
-          // 2. Atualiza o texto do botão do alternador
+          // 2. Atualiza o texto do botão
           btnAlternar.textContent = "Modo Mosaico";
           
-          // 3. Rola a tela suavemente para que a foto clicada fique centralizada
+          // 3. Rola suavemente até a foto
           foto.scrollIntoView({
             behavior: "smooth",
             block: "center"
@@ -158,43 +161,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-// ==========================================================================
+  // ==========================================================================
   // 5. ALEATORIZAÇÃO DE FOTOS COM PRIORIDADE DE CARREGAMENTO DINÂMICA
   // ==========================================================================
   const galeriaParaEmbaralhar = document.querySelector('.grade-galeria[data-random="true"]');
 
   if (galeriaParaEmbaralhar) {
-    // Transforma a lista de fotos em uma Array para manipulação no JS
+    // Transforma a lista de fotos em um Array para manipulação
     const fotosArray = Array.from(galeriaParaEmbaralhar.querySelectorAll('.item-foto'));
     
-    // Algoritmo Fisher-Yates para embaralhar a array de fotos
+    // Algoritmo Fisher-Yates para embaralhar o Array de fotos
     for (let i = fotosArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [fotosArray[i], fotosArray[j]] = [fotosArray[j], fotosArray[i]];
     }
 
-    // Limpa o conteúdo atual do container
-    galeriaParaEmbaralhar.innerHTML = "";
+    // Cria um container invisível em memória RAM (evita múltiplos reflows na tela)
+    const fragmento = document.createDocumentFragment();
 
-    // Aplica a prioridade de carregamento baseada na nova ordem
-    fotosArray.forEach((foto, index) => {
+    fotosArray.forEach(foto => {
       const img = foto.querySelector('img');
       
       if (img) {
-        if (index < 5) {
-          // As 5 primeiras imagens do novo topo perdem o "lazy" e carregam imediatamente
-          img.removeAttribute('loading');
-          img.setAttribute('fetchpriority', 'high'); // Sinaliza ao navegador prioridade máxima
-        } else {
-          // Todas as outras da 4ª em diante usam carregamento preguiçoso e decodificação assíncrona
-          img.setAttribute('loading', 'lazy');
-          img.setAttribute('decoding', 'async');
-        }
+        // Aplica o carregamento preguiçoso e a decodificação assíncrona globalmente.
+        // O navegador decide automaticamente quais fotos estão visíveis na viewport
+        // do usuário e prioriza o carregamento delas nativamente.
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
       }
       
-      // Insere o elemento na nova ordem aleatória
-      galeriaParaEmbaralhar.appendChild(foto);
+      // Adiciona a foto reordenada no fragmento em memória
+      fragmento.appendChild(foto);
     });
+
+    // Limpa o container original e injeta a nova ordem em um único ciclo do navegador
+    galeriaParaEmbaralhar.innerHTML = "";
+    galeriaParaEmbaralhar.appendChild(fragmento);
   }
 
   // ==========================================================================
@@ -207,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-// ==========================================================================
+  // ==========================================================================
   // 7. LÓGICA DO TOGGLE DE SENSIBILIDADE (OCULTAR ARACNÍDEOS)
   // ==========================================================================
   const btnToggleAranhas = document.getElementById("btn-toggle-aranhas");
@@ -245,4 +247,96 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ==========================================================================
+  // 8. LÓGICA DO MODAL DE VISUALIZAÇÃO (LIGHTBOX)
+  // ==========================================================================
+  const modal = document.getElementById("modal-lightbox");
+  const imgModal = document.getElementById("img-modal-destaque");
+  const tituloModal = document.getElementById("titulo-foto-modal");
+  const btnFecharModal = document.getElementById("btn-fechar-modal");
+  const btnAntModal = document.getElementById("btn-modal-anterior");
+  const btnProxModal = document.getElementById("btn-modal-proxima");
+
+  let fotosAtivas = [];
+  let indiceFotoAtual = 0;
+
+  if (modal && imgModal) {
+    // Função para abrir o modal
+    function abrirModal(index) {
+      fotosAtivas = Array.from(document.querySelectorAll(".item-foto"))
+        .filter(item => item.style.display !== "none") // Considera apenas fotos visíveis no filtro ativo
+        .map(item => item.querySelector("img"));
+
+      if (fotosAtivas.length === 0) return;
+
+      indiceFotoAtual = index;
+      atualizarConteudoModal();
+      modal.classList.add("ativo");
+      document.body.style.overflow = "hidden"; // Desativa scroll da página de fundo
+    }
+
+    // Função para fechar o modal
+    function fecharModal() {
+      modal.classList.remove("ativo");
+      document.body.style.overflow = ""; // Reativa scroll da página
+    }
+
+    // Atualiza imagem e título no modal
+    function atualizarConteudoModal() {
+      const imgTarget = fotosAtivas[indiceFotoAtual];
+      if (imgTarget) {
+        imgModal.src = imgTarget.src;
+        tituloModal.textContent = imgTarget.alt || "Sem título";
+      }
+    }
+
+    // Navegação entre imagens
+    function fotoAnterior() {
+      indiceFotoAtual = (indiceFotoAtual - 1 + fotosAtivas.length) % fotosAtivas.length;
+      atualizarConteudoModal();
+    }
+
+    function proximaFoto() {
+      indiceFotoAtual = (indiceFotoAtual + 1) % fotosAtivas.length;
+      atualizarConteudoModal();
+    }
+
+    // Evento de clique: Só abre o Lightbox se a galeria NÃO estiver no modo mosaico
+    document.addEventListener("click", (e) => {
+      const itemFoto = e.target.closest(".item-foto");
+      const grade = document.getElementById("grade-galeria");
+
+      if (itemFoto && grade && !grade.classList.contains("modo-mosaico")) {
+        const fotoClicada = itemFoto.querySelector("img");
+        
+        fotosAtivas = Array.from(document.querySelectorAll(".item-foto"))
+          .filter(item => item.style.display !== "none")
+          .map(item => item.querySelector("img"));
+
+        const idx = fotosAtivas.indexOf(fotoClicada);
+        if (idx !== -1) abrirModal(idx);
+      }
+    });
+
+    // Controles de botões do modal
+    if (btnFecharModal) btnFecharModal.addEventListener("click", fecharModal);
+    if (btnAntModal) btnAntModal.addEventListener("click", fotoAnterior);
+    if (btnProxModal) btnProxModal.addEventListener("click", proximaFoto);
+
+    // Fechar ao clicar fora da imagem
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.classList.contains("container-midia-modal")) {
+        fecharModal();
+      }
+    });
+
+    // Navegação por teclado (ESC, Seta Esquerda, Seta Direita)
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("ativo")) return;
+
+      if (e.key === "Escape") fecharModal();
+      if (e.key === "ArrowLeft") fotoAnterior();
+      if (e.key === "ArrowRight") proximaFoto();
+    });
+  }
 });
