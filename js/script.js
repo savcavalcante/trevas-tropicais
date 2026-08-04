@@ -202,9 +202,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   // 6. PROTEÇÃO DO ACERVO (BLOQUEIO DE BOTÃO DIREITO NAS IMAGENS)
   // ==========================================================================
-  document.addEventListener("contextmenu", (e) => {
-    // Se o clique com botão direito for em cima de uma foto do portfólio, bloqueia
-    if (e.target.classList.contains("foto-portfolio") || e.target.classList.contains("foto-capa")) {
+document.addEventListener("contextmenu", (e) => {
+    // Se o clique com botão direito for em cima de uma foto do portfólio ou do modal lightbox, bloqueia
+    if (
+      e.target.classList.contains("foto-portfolio") || 
+      e.target.classList.contains("foto-capa") ||
+      e.target.classList.contains("img-modal-destaque") ||
+      e.target.id === "img-modal-destaque"
+    ) {
+      e.preventDefault();
+    }
+  });
+
+   // Previne também o evento de arrastar a imagem com o mouse/dedo
+  document.addEventListener("dragstart", (e) => {
+    if (
+      e.target.classList.contains("foto-portfolio") || 
+      e.target.classList.contains("foto-capa") ||
+      e.target.classList.contains("img-modal-destaque") ||
+      e.target.id === "img-modal-destaque"
+    ) {
       e.preventDefault();
     }
   });
@@ -339,4 +356,34 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "ArrowRight") proximaFoto();
     });
   }
+  // lógica da navegação por gestos de deslize (swipe) no modal
+
+    let touchstartX = 0;
+    let touchendX = 0;
+    const limiteMinimoSwipe = 50; // Distância mínima em pixels para considerar um gesto de deslize
+
+    modal.addEventListener("touchstart", (e) => {
+      // Registra a posição horizontal inicial do toque
+      touchstartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modal.addEventListener("touchend", (e) => {
+      // Registra a posição horizontal final ao soltar o dedo
+      touchendX = e.changedTouches[0].screenX;
+      tratarGestoSwipe();
+    }, { passive: true });
+
+    function tratarGestoSwipe() {
+      const diferencaX = touchendX - touchstartX;
+
+      // Se moveu o dedo para a esquerda além do limite -> próxima foto
+      if (diferencaX < -limiteMinimoSwipe) {
+        proximaFoto();
+      }
+      
+      // Se moveu o dedo para a direita além do limite -> foto anterior
+      if (diferencaX > limiteMinimoSwipe) {
+        fotoAnterior();
+      }
+    }
 });
