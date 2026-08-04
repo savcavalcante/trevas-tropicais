@@ -266,6 +266,8 @@ document.addEventListener("contextmenu", (e) => {
 
   // ==========================================================================
   // 8. LÓGICA DO MODAL DE VISUALIZAÇÃO (LIGHTBOX)
+  //
+  // DESATIVADO, achei a aplicação redundante, talvez remova.
   // ==========================================================================
   const modal = document.getElementById("modal-lightbox");
   const imgModal = document.getElementById("img-modal-destaque");
@@ -319,7 +321,10 @@ document.addEventListener("contextmenu", (e) => {
     }
 
     // Evento de clique: Só abre o Lightbox se a galeria NÃO estiver no modo mosaico
-    document.addEventListener("click", (e) => {
+    
+    // DESATIVADO TEMPORARIAMENTE
+    
+    /* document.addEventListener("click", (e) => {
       const itemFoto = e.target.closest(".item-foto");
       const grade = document.getElementById("grade-galeria");
 
@@ -333,7 +338,7 @@ document.addEventListener("contextmenu", (e) => {
         const idx = fotosAtivas.indexOf(fotoClicada);
         if (idx !== -1) abrirModal(idx);
       }
-    });
+    }); */
 
     // Controles de botões do modal
     if (btnFecharModal) btnFecharModal.addEventListener("click", fecharModal);
