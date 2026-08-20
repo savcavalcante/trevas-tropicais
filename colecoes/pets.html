@@ -48,19 +48,26 @@
 
     <aside class="painel-filtros" id="painel-filtros">
 
+    <!-- Controle de Visualização Global (Fora da gaveta) -->
+
       <div class="barra-acoes-rapidas">
-        <button class="btn-alternar-view" id="btn-alternar-view">
-          Modo Lista
+        <button class="btn-alternar-view" id="btn-alternar-view" aria-label="Alternar modo de visualização">
+          [ ☰ Modo Lista ]
         </button>
       </div>
 
+    <!-- Gatilho da Gaveta de Subfiltros -->
+
       <button class="btn-gatilho-filtros" id="btn-gatilho-filtros">
-        Filtrar Coleção <span>▼</span>
+        [Filtros <span class="seta-filtro">▼</span> ]
       </button>
 
+    <!-- Gaveta Colapsável de Filtros de Conteúdo -->
+
       <div class="conteudo-filtros" id="conteudo-filtros">
+        <span class="label-filtros">Filtrar por:</span>
         <nav class="subfiltros-flex">
-          <button class="btn-filtro ativo" data-filter="todos">Todos</button>
+          <button class="btn-filtro ativo" data-filter="todos">Ver todas</button>
           <button class="btn-filtro" data-filter="caes">Cães</button>
           <button class="btn-filtro" data-filter="gatos">Gatos</button>
           <button class="btn-filtro" data-filter="aves">Aves</button>

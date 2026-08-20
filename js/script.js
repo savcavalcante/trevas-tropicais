@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (gatilhoMobile && conteudoFiltros) {
     gatilhoMobile.addEventListener("click", () => {
       conteudoFiltros.classList.toggle("aberto");
-      const seta = gatilhoMobile.querySelector("span");
+      const seta = gatilhoMobile.querySelector(".seta-filtro");
       if (seta) {
         if (conteudoFiltros.classList.contains("aberto")) {
           seta.textContent = "▲";
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (window.innerWidth <= 768 && conteudoFiltros) {
           conteudoFiltros.classList.remove("aberto");
           if (gatilhoMobile) {
-            const seta = gatilhoMobile.querySelector("span");
+            const seta = gatilhoMobile.querySelector(".seta-filtro");
             if (seta) {
               seta.textContent = "▼";
             }
@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
       gradeGaleria.classList.toggle("modo-mosaico");
 
       if (gradeGaleria.classList.contains("modo-mosaico")) {
-        btnAlternar.textContent = "Modo Lista";
+        btnAlternar.textContent = "[ ☰ Modo Lista ]";
       } else {
-        btnAlternar.textContent = "Modo Mosaico";
+        btnAlternar.textContent = "[ ⠿ Modo Mosaico ]";
       }
     });
 
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
           gradeGaleria.classList.remove("modo-mosaico");
           
           // 2. Atualiza o texto do botão
-          btnAlternar.textContent = "Modo Mosaico";
+          btnAlternar.textContent = "[ ⠿ Modo Mosaico ]";
           
           // 3. Rola suavemente até a foto
           foto.scrollIntoView({
