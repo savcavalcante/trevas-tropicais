@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fotos = document.querySelectorAll(".item-foto");
   const gatilhoMobile = document.getElementById("btn-gatilho-filtros");
   const conteudoFiltros = document.getElementById("conteudo-filtros");
+  const gradeGaleriaFiltro = document.getElementById("grade-galeria");
 
   if (gatilhoMobile && conteudoFiltros) {
     gatilhoMobile.addEventListener("click", () => {
@@ -67,6 +68,17 @@ document.addEventListener("DOMContentLoaded", () => {
               seta.textContent = "▼";
             }
           }
+        }
+        
+        if (gradeGaleriaFiltro) {
+          const alturaCabecalho = 140; 
+          
+          const posicaoTopo = gradeGaleriaFiltro.getBoundingClientRect().top + window.scrollY - alturaCabecalho;
+
+          window.scrollTo({
+            top: posicaoTopo,
+            behavior: "smooth"
+          });
         }
       });
     });
