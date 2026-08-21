@@ -199,6 +199,18 @@ document.addEventListener("DOMContentLoaded", () => {
     galeriaParaEmbaralhar.appendChild(fragmento);
   }
 
+  // Lógica do botão de reorganização da trilha (recarrega a página para reembaralhar)
+
+  const btnReorganizar = document.getElementById("btn-reorganizar-trilha");
+
+  if (btnReorganizar) {
+    btnReorganizar.addEventListener("click", () => {
+      // Dispara o recarregamento nativo da página
+      // Ao recarregar, o algoritmo de aleatorização (Fisher-Yates) reordenará as imagens
+      window.location.reload();
+    });
+  }
+
   // ==========================================================================
   // 6. PROTEÇÃO DO ACERVO (BLOQUEIO DE BOTÃO DIREITO NAS IMAGENS)
   // ==========================================================================
