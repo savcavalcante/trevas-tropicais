@@ -530,7 +530,6 @@ a {
   }
 }
 
-
   /* subseção "FLUXO DE CONTEÚDO DA COLEÇÃO" */
 
 .fluxo-conteudo {
@@ -654,6 +653,28 @@ a {
     font-size: 0.7rem;
     border-radius: 3px;
   }
+}
+
+/* subseção "NOTA SUTIL DE ACERVO AO FIM DA COLEÇÃO" */
+
+.nota-acervo-colecao {
+  width: 100%;
+  max-width: 550px;
+  margin: 50px auto 30px auto;
+  padding-top: 25px;
+  border-top: 1px dashed #222;
+  text-align: center;
+}
+
+.texto-nota-acervo {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #777;
+  font-style: italic;
+}
+
+.texto-nota-acervo .link-sublinhado {
+  color: #aaa;
 }
 
   /* subseção "BLOQUEIO DO MENU DE TOQUE LONGO", evitando o salvamento nativo das fotos em celulares */
@@ -940,39 +961,119 @@ a {
   opacity: 1;
 }
 
-  /* subseção "ALINHAMENTO DOS BOTÕES DE LINK" */
+  /* subseção "LINKS DE CONTATO" */
 
-.grade-botoes-links {
+.lista-links-sutil {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 12px;
+  margin-top: 15px;
+}
+
+.link-texto-sutil {
+  font-size: 0.9rem;
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-texto-sutil:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.divisor-link {
+  font-size: 0.75rem;
+  color: #444;
+  user-select: none;
+}
+
+/* subseção "BLOCOS COMERCIAIS E INSTITUCIONAIS" */
+
+.cabecalho-secao-servicos {
+  width: 100%;
+  max-width: 600px;
+  margin: 60px auto 30px auto;
+  padding-top: 40px;
+  border-top: 1px solid #1a1a1a;
+  text-align: center;
+}
+
+.subtitulo-secao-institucional {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.bloco-comercial-institucional {
+  width: 100%;
+  padding-top: 30px;
+  border-top: 1px solid #1a1a1a;
+  text-align: center;
+}
+
+.cabecalho-bloco-comercial {
+  margin-bottom: 15px;
+}
+
+.tag-categoria-comercial {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #666;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.texto-descricao-comercial p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #ccc;
+  max-width: 500px;
+  margin: 0 auto 15px auto;
+}
+
+.texto-instrucao-prints {
+  font-size: 0.85rem !important;
+  color: #888 !important;
+  font-style: italic;
+}
+
+.link-prova-social {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.link-sublinhado {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.link-sublinhado:hover {
+  opacity: 0.7;
+}
+
+.container-cta-comercial {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
 }
 
-  /* subseção "ESTILO DOS BOTÕES" */
-
-.btn-link-institucional {
-  display: block;
-  padding: 14px 20px;
-  color: #fff;
-  text-decoration: none;
-  border: 1px solid #333;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.02);
+.btn-destaque-comercial {
+  border-color: #555;
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
-  /* subseção "EFEITO HOVER DOS BOTÕES" */
-
-.btn-link-institucional:hover {
-  background-color: #fff;
-  color: #000;
-  border-color: #fff;
-  cursor: pointer;
+.sub-grade-redes {
+  margin-top: 12px;
 }
 
   /* Seção "CONTATO" com âncora de navegação */
