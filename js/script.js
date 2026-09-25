@@ -287,6 +287,18 @@ document.addEventListener("contextmenu", (e) => {
       aplicarFiltroAranhas(novoEstado);
     });
   }
+  
+  // Lógica para o botão de texto na apresentação da Home ("é só clicar aqui")
+  const btnFiltroTopo = document.getElementById("btn-filtro-aracnideos-topo");
+  
+  if (btnFiltroTopo) {
+    btnFiltroTopo.addEventListener("click", () => {
+      if (btnToggleAranhas) {
+        // Dispara o clique no botão original do rodapé, reaproveitando toda a lógica de salvar no localStorage e trocar classes
+        btnToggleAranhas.click();
+      }
+    });
+  }
 
   // ==========================================================================
   // 8. LÓGICA DO MODAL DE VISUALIZAÇÃO (LIGHTBOX)

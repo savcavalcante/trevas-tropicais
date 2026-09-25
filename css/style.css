@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'Cinzel Decorative';
-  src: url('css\fontes\CinzelDecorative-Regular.ttf') format('truetype');
+  src: url('/css/fontes/CinzelDecorative-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: 'Josefin Sans';
-  src: url('css\fontes\JosefinSans-Light.ttf') format('truetype');
+  src: url('/css/fontes/JosefinSans-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -51,6 +51,7 @@ h1, h2, h3, .logo-nome, .titulo-colecao, .nome-colecao, .titulo-institucional {
   font-family: var(--font-titulo);
   font-weight: 400;
   letter-spacing: 8px !important;
+  text-transform: lowercase !important;
 }
 
 a {
@@ -157,6 +158,85 @@ a {
 - Aqui fica a organização das capas na entrada do site.
 - Design em rolagem vertical no mobile, mosaico/masonry com título em hover no desktop.*/
 
+ /* subseção "TEXTO DE APRESENTAÇÃO" */
+
+.apresentacao-home {
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.apresentacao-home p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #b0b0b0;
+  letter-spacing: 0.3px;
+}
+
+/* Bloco discreto para o aviso sobre aranhas */
+.apresentacao-home .bloco-aracnideos {
+  display: inline;
+  color: #888;
+  font-style: italic;
+}
+
+/* Botão minimalista 'é só clicar aqui' */
+.btn-filtro-inline {
+  background: none;
+  border: none;
+  color: #d0d0d0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: normal;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-filtro-inline:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* --- CHAMADA DRAMÁTICA FINAL --- */
+.chamada-dramatica {
+  margin-top: 30px !important;
+  font-size: 0.95rem !important;
+  color: #c0c0c0 !important;
+  letter-spacing: 1px;
+}
+
+.destaque-cinzel {
+  display: block; /* Força a quebra para a linha de baixo */
+  margin-top: 8px;
+  font-family: var(--font-titulo) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 1.4rem; /* Tamanho maior e imponente */
+  letter-spacing: 3px !important;
+  color: #ffffff;
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Efeito sutil de brilho ao passar o mouse */
+.chamada-dramatica:hover .destaque-cinzel {
+  transform: scale(1.04);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.3);
+}
+
+/* Linha divisória sutil */
+.divisoria-home {
+  width: 50px;
+  height: 1px;
+  background-color: #262626;
+  margin: 35px auto 0 auto;
+}
+
+ /* subseção "GRID DE COLEÇÕES" */
+
 .container-portfolio {
   padding: 0;
   width: 100%;
@@ -213,7 +293,6 @@ a {
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 2px;
-  text-transform: uppercase; /* ========== Estou decidindo ainda se quero tudo maiúsculo mesmo. */
   color: #fff;
 }
 
@@ -407,7 +486,6 @@ a {
   font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 3px;
-  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
