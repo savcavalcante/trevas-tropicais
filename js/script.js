@@ -313,25 +313,32 @@ document.addEventListener("contextmenu", (e) => {
   //
   // DESATIVADO, achei a aplicação redundante, talvez remova.
   // ==========================================================================
-  const modal = document.getElementById("modal-lightbox");
+const modal = document.getElementById("modal-lightbox");
   const imgModal = document.getElementById("img-modal-destaque");
   const statusLojaModal = document.getElementById("status-loja-modal");
-  const btnCtaModal = document.getElementById("btn-cta-modal");
+  const subtituloModal = document.getElementById("subtitulo-modal");
+  const btnWspModal = document.getElementById("btn-wsp-modal");
+  const btnEmailModal = document.getElementById("btn-email-modal");
   const btnFecharModal = document.getElementById("btn-fechar-modal");
   const btnAntModal = document.getElementById("btn-modal-anterior");
   const btnProxModal = document.getElementById("btn-modal-proxima");
 
-  // SEU NÚMERO DO WHATSAPP COM DDD (Apenas números)
+  // SEUS DADOS DE CONTATO
   const numeroWhatsapp = "5521964304299"; 
+  const emailContato = "contato@trevastropicais.art.br"; 
 
   let fotosAtivas = [];
   let indiceFotoAtual = 0;
 
+  // Variáveis para controle de gestos (Swipe)
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const limiteSwipe = 50;
+
   if (modal && imgModal) {
-    // Função para abrir o modal
     function abrirModal(index) {
       fotosAtivas = Array.from(document.querySelectorAll(".item-foto"))
-        .filter(item => item.style.display !== "none") // Considera apenas fotos visíveis no filtro ativo
+        .filter(item => item.style.display !== "none")
         .map(item => item.querySelector("img"));
 
       if (fotosAtivas.length === 0) return;
@@ -339,22 +346,19 @@ document.addEventListener("contextmenu", (e) => {
       indiceFotoAtual = index;
       atualizarConteudoModal();
       modal.classList.add("ativo");
-      document.body.style.overflow = "hidden"; // Desativa scroll da página de fundo
+      document.body.style.overflow = "hidden";
     }
 
-    // Função para fechar o modal
     function fecharModal() {
       modal.classList.remove("ativo");
-      document.body.style.overflow = ""; // Reativa scroll da página
+      document.body.style.overflow = "";
     }
 
-    // Extrai apenas o nome do arquivo da URL (ex: 'anfibio-1.webp')
     function obterNomeArquivo(src) {
       if (!src) return "";
       return src.split("/").pop();
     }
 
-    // Atualiza imagem, texto do status e link do botão no modal
     function atualizarConteudoModal() {
       const imgTarget = fotosAtivas[indiceFotoAtual];
       if (imgTarget) {
@@ -365,43 +369,57 @@ document.addEventListener("contextmenu", (e) => {
         const linkLoja = imgTarget.getAttribute("data-loja");
 
         if (linkLoja) {
-          // Caso a foto já tenha um produto cadastrado na Nuvemshop
+          // Se tiver link direto na Nuvemshop
           if (statusLojaModal) statusLojaModal.textContent = "Essa foto já está disponível para compra!";
-          if (btnCtaModal) {
-            btnCtaModal.textContent = "[ 🛒 Comprar na Loja ]";
-            btnCtaModal.href = linkLoja;
+          if (subtituloModal) subtituloModal.textContent = "";
+          if (btnWspModal) {
+            btnWspModal.textContent = "[ 🛒 Visitar a Loja ]";
+            btnWspModal.href = linkLoja;
+            btnWspModal.target = "_blank";
           }
+          if (btnEmailModal) btnEmailModal.style.display = "none"; // Oculta botão de e-mail se já está na loja
         } else {
-          // Padrão: foto ainda não cadastrada, envia encomenda via WhatsApp
-          if (statusLojaModal) statusLojaModal.textContent = "Deseja essa foto em impressão Fine Art?";
-          if (btnCtaModal) {
-            btnCtaModal.textContent = "[ 💬 Quero encomendar essa foto ]";
-            
-            const mensagem = encodeURIComponent(`Olá! Gostaria de encomendar a foto (${nomeArquivo}) em Fine Art.`);
-            btnCtaModal.href = `https://wa.me/${numeroWhatsapp}?text=${mensagem}`;
+          // Exibe fluxo de encomenda via WhatsApp / E-mail
+          if (btnEmailModal) btnEmailModal.style.display = "inline-block";
+
+          if (statusLojaModal) statusLojaModal.textContent = "Essa foto ainda não está disponível na loja, mas posso disponibilizá-la para você rapidinho!";
+          if (subtituloModal) subtituloModal.textContent = "Entre em contato:";
+
+          // Link do WhatsApp
+          if (btnWspModal) {
+            btnWspModal.textContent = "[ 💬 WhatsApp ]";
+            const msgWsp = encodeURIComponent(`Olá! Gostaria de encomendar essa foto: ${nomeArquivo}`);
+            btnWspModal.href = `https://wa.me/${numeroWhatsapp}?text=${msgWsp}`;
+            btnWspModal.target = "_blank";
+          }
+
+          // Link de Mailto (Abre o app de e-mail do cliente)
+          if (btnEmailModal) {
+            btnEmailModal.textContent = "[ ✉️ E-mail ]";
+            const assuntoEmail = encodeURIComponent(`Encomenda da foto ${nomeArquivo}`);
+            const corpoEmail = encodeURIComponent(`Olá!\n\nGostaria de obter informações e encomendar essa foto: ${nomeArquivo}\n\nObrigado!`);
+            btnEmailModal.href = `mailto:${emailContato}?subject=${assuntoEmail}&body=${corpoEmail}`;
+            btnEmailModal.target = "_self";
           }
         }
       }
     }
 
-    // Navegação entre imagens
     function fotoAnterior() {
       indiceFotoAtual = (indiceFotoAtual - 1 + fotosAtivas.length) % fotosAtivas.length;
       atualizarConteudoModal();
     }
 
-    // Próxima foto
     function proximaFoto() {
       indiceFotoAtual = (indiceFotoAtual + 1) % fotosAtivas.length;
       atualizarConteudoModal();
     }
 
-    // Evento de clique na foto (Somente abre no modo lista)
+    // Clique na foto para abrir o Lightbox no modo lista
     document.addEventListener("click", (e) => {
       const itemFoto = e.target.closest(".item-foto");
       const grade = document.getElementById("grade-galeria");
 
-      // Abre o lightbox se a galeria NÃO estiver em modo mosaico
       if (itemFoto && grade && !grade.classList.contains("modo-mosaico")) {
         const fotoClicada = itemFoto.querySelector("img");
         
@@ -414,19 +432,16 @@ document.addEventListener("contextmenu", (e) => {
       }
     });
 
-    // Controles de botões do modal
     if (btnFecharModal) btnFecharModal.addEventListener("click", fecharModal);
     if (btnAntModal) btnAntModal.addEventListener("click", fotoAnterior);
     if (btnProxModal) btnProxModal.addEventListener("click", proximaFoto);
 
-    // Fechar ao clicar fora da imagem
     modal.addEventListener("click", (e) => {
       if (e.target === modal || e.target.classList.contains("container-midia-modal")) {
         fecharModal();
       }
     });
 
-    // Navegação por teclado (ESC, Seta Esquerda, Seta Direita)
     document.addEventListener("keydown", (e) => {
       if (!modal.classList.contains("ativo")) return;
 
@@ -434,5 +449,25 @@ document.addEventListener("contextmenu", (e) => {
       if (e.key === "ArrowLeft") fotoAnterior();
       if (e.key === "ArrowRight") proximaFoto();
     });
+
+    // Gestos Touch (Swipe)
+    modal.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modal.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      tratarGestoSwipe();
+    }, { passive: true });
+
+    function tratarGestoSwipe() {
+      const diferenca = touchStartX - touchEndX;
+
+      if (diferenca > limiteSwipe) {
+        proximaFoto();
+      } else if (diferenca < -limiteSwipe) {
+        fotoAnterior();
+      }
+    }
   }
 });

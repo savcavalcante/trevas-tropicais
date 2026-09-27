@@ -1326,7 +1326,7 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   padding-bottom: 10px;
   text-align: center;
   z-index: 2010;
@@ -1335,23 +1335,48 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
 .status-loja-modal {
   font-size: var(--font-size-sm);
   letter-spacing: 1px;
-  color: #aaa;
+  color: #fff;
+  font-weight: 500;
+}
+
+.subtitulo-modal {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #888;
   font-style: italic;
+  margin-bottom: 4px;
+}
+
+/* Container para alinhar botões de contato lado a lado */
+.container-acoes-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 500px) {
+  .container-acoes-modal {
+    flex-direction: row;
+    gap: 12px;
+  }
 }
 
 .btn-orcamento-modal {
   font-size: var(--font-size-sm);
   letter-spacing: 1.5px;
-  color: #fff;
+  color: #ccc;
   text-transform: uppercase;
-  border: 1px dashed #555;
-  padding: 8px 18px;
+  border: 1px dashed #444;
+  padding: 8px 16px;
   background-color: rgba(255, 255, 255, 0.03);
   transition: all 0.3s ease;
   display: inline-block;
+  text-decoration: none;
 }
 
 .btn-orcamento-modal:hover {
   border-color: #fff;
+  color: #fff;
   background-color: rgba(255, 255, 255, 0.1);
 }
