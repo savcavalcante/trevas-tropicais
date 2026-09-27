@@ -1244,18 +1244,18 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.96);
   z-index: 2000;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px; /* Reduzido padding vertical */
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  overflow-y: auto; /* Permite scroll no modal em ecrãs extremamente pequenos */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .modal-lightbox.ativo {
@@ -1285,14 +1285,15 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
 
 /* Área Central com Imagem e Navegação */
 .container-midia-modal {
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  flex: 1 1 auto; /* Flexível para ocupar o centro sem empurrar o rodapé */
-  min-height: 0;   /* Permite que a imagem reduza se a altura da tela for pequena */
+  height: 45vh !important; /* Força a área da foto a ter no máximo 45% da tela */
+  max-height: 45vh !important;
   position: relative;
-  margin-top: 0;   /* Removido recuo do topo para ganhar espaço útil */
+  margin-top: 15px;
+  flex: none; /* Desativa flex-grow para não empurrar o rodapé */
 }
 
 .img-modal-destaque {
@@ -1327,17 +1328,16 @@ display: flex;
 
 /* Rodapé do Modal (Status de Venda / CTA WhatsApp ou Nuvemshop) */
 .rodape-modal {
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 0 10px 10px 10px; /* Padding ajustado */
+  gap: 6px;
+  padding: 10px;
   text-align: center;
   z-index: 2010;
   width: 100%;
-  max-width: 500px;
-  flex-shrink: 0;  /* Impede o rodapé de ser esmagado ou empurrado para fora */
-  margin-top: auto; /* Força o rodapé a colar na base visível da tela */
+  margin-top: auto; /* Cola o rodapé no fundo visível */
+  position: relative;
 }
 
 .status-loja-modal {
