@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // Força o navegador a NÃO restaurar a posição do scroll ao recarregar a página
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   // ==========================================================================
   // 1. LÓGICA DO MENU DE NAVEGAÇÃO DO CABEÇALHO (MOBILE)
   // ==========================================================================
@@ -217,7 +222,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (btnReorganizar) {
     btnReorganizar.addEventListener("click", () => {
-      // Dispara o recarregamento nativo da página
+      // 1. Rola suavemente até ao topo instantaneamente antes de recarregar
+      window.scrollTo(0, 0);
+
+      // 2. Dispara o recarregamento nativo da página
       // Ao recarregar, o algoritmo de aleatorização (Fisher-Yates) reordenará as imagens
       window.location.reload();
     });
