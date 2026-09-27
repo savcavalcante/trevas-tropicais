@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   // 6. PROTEÇÃO DO ACERVO (BLOQUEIO DE BOTÃO DIREITO NAS IMAGENS)
   // ==========================================================================
-document.addEventListener("contextmenu", (e) => {
+ /* document.addEventListener("contextmenu", (e) => {
     // Se o clique com botão direito for em cima de uma foto do portfólio ou do modal lightbox, bloqueia
     if (
       e.target.classList.contains("foto-portfolio") || 
@@ -249,7 +249,7 @@ document.addEventListener("contextmenu", (e) => {
     ) {
       e.preventDefault();
     }
-  });
+  }); */
 
   // ==========================================================================
   // 7. LÓGICA DO TOGGLE DE SENSIBILIDADE (OCULTAR ARACNÍDEOS)
