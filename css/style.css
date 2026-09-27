@@ -1248,13 +1248,14 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.95);
   z-index: 2000;
-  display: none; /* Esconde totalmente quando inativo para liberar o toque no mobile */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 10px 15px; /* Reduzido padding vertical */
   opacity: 0;
   transition: opacity 0.3s ease;
+  overflow-y: auto; /* Permite scroll no modal em ecrãs extremamente pequenos */
 }
 
 .modal-lightbox.ativo {
@@ -1288,12 +1289,14 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 110px);
+  flex: 1; /* Ocupa o espaço disponível sem estourar a altura da viewport */
+  min-height: 0; /* Permite encolher em ecrãs pequenos */
   position: relative;
+  margin-top: 30px; /* Garante distância do botão fechar */
 }
 
 .img-modal-destaque {
-  max-height: 80vh;
+  max-height: 60vh;
   max-width: 90vw;
   object-fit: contain;
   user-select: none;
@@ -1351,7 +1354,9 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
 /* Container para alinhar botões de contato lado a lado */
 .container-acoes-modal {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Força ficar lado a lado ou responsivo sem quebrar layout */
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 }

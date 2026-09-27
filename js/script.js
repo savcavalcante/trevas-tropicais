@@ -304,10 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ==========================================================================
   // 8. LÓGICA DO MODAL DE VISUALIZAÇÃO (LIGHTBOX)
-  //
-  // DESATIVADO, achei a aplicação redundante, talvez remova.
   // ==========================================================================
-const modal = document.getElementById("modal-lightbox");
+  const modal = document.getElementById("modal-lightbox");
   const imgModal = document.getElementById("img-modal-destaque");
   const statusLojaModal = document.getElementById("status-loja-modal");
   const subtituloModal = document.getElementById("subtitulo-modal");
@@ -407,8 +405,34 @@ const modal = document.getElementById("modal-lightbox");
       atualizarConteudoModal();
     }
 
-// Clique unificado para desktop e mobile
-document.addEventListener("click", (e) => {
+    // Adicionar escutadores de eventos para os botões do modal
+    if (btnFecharModal) {
+      btnFecharModal.addEventListener("click", fecharModal);
+    }
+
+    if (btnAntModal) {
+      btnAntModal.addEventListener("click", (e) => {
+        e.stopPropagation();
+        fotoAnterior();
+      });
+    }
+
+    if (btnProxModal) {
+      btnProxModal.addEventListener("click", (e) => {
+        e.stopPropagation();
+        proximaFoto();
+      });
+    }
+
+    // Fechar ao clicar no fundo escuro fora da imagem
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.classList.contains("container-midia-modal")) {
+        fecharModal();
+      }
+    });
+
+    // Clique unificado para desktop e mobile
+    document.addEventListener("click", (e) => {
       // Localiza se o clique/toque foi em algum item da galeria
       const itemFoto = e.target.closest(".item-foto");
       if (!itemFoto) return;
