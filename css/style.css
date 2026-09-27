@@ -1285,18 +1285,18 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
 
 /* Área Central com Imagem e Navegação */
 .container-midia-modal {
-  display: flex;
+display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  flex: 1; /* Ocupa o espaço disponível sem estourar a altura da viewport */
-  min-height: 0; /* Permite encolher em ecrãs pequenos */
+  flex: 1 1 auto; /* Flexível para ocupar o centro sem empurrar o rodapé */
+  min-height: 0;   /* Permite que a imagem reduza se a altura da tela for pequena */
   position: relative;
-  margin-top: 30px; /* Garante distância do botão fechar */
+  margin-top: 0;   /* Removido recuo do topo para ganhar espaço útil */
 }
 
 .img-modal-destaque {
-  max-height: 48vh;
+  max-height: 42vh;
   max-width: 90vw;
   object-fit: contain;
   user-select: none;
@@ -1327,16 +1327,17 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
 
 /* Rodapé do Modal (Status de Venda / CTA WhatsApp ou Nuvemshop) */
 .rodape-modal {
-  display: flex;
+display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  padding: 5px 10px 15px 10px;
+  padding: 0 10px 10px 10px; /* Padding ajustado */
   text-align: center;
   z-index: 2010;
   width: 100%;
   max-width: 500px;
-  flex-shrink: 0;
+  flex-shrink: 0;  /* Impede o rodapé de ser esmagado ou empurrado para fora */
+  margin-top: auto; /* Força o rodapé a colar na base visível da tela */
 }
 
 .status-loja-modal {
