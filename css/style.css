@@ -689,17 +689,23 @@ a {
   justify-content: center;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
   /* subseção "CONTROLE DE TAMANHO MÁXIMO VERTICAL". Alterado para imagens verticais ocuparem toda a largura, talvez reverta isso depois. */
 
 .foto-portfolio {
-  width: 100%;
+width: 100%;
   height: auto;
   max-width: 100%;
-  max-height: none; /* A foto ocupa no máximo 85% da altura do monitor, mantendo a proporção. */
+  max-height: none;
   object-fit: cover;
   pointer-events: auto;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
   /* subseção "BOTÃO DE GATILHO DO FILTRO" - Escondido por padrão no Desktop */

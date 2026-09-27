@@ -152,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    /*
 // 4.2. Lógica de clicar na foto no Mosaico para focar na Lista (com flag de bloqueio para o modal)
     const fotosGaleria = gradeGaleria.querySelectorAll(".item-foto");
 
@@ -168,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
       });
-    });
+    }); */
   }
 
   // ==========================================================================
@@ -407,39 +408,38 @@ const modal = document.getElementById("modal-lightbox");
     }
 
 // Clique unificado para desktop e mobile
-    document.addEventListener("click", (e) => {
+document.addEventListener("click", (e) => {
+      // Localiza se o clique/toque foi em algum item da galeria
       const itemFoto = e.target.closest(".item-foto");
       if (!itemFoto) return;
 
       const grade = document.getElementById("grade-galeria");
 
-      // Se estiver no Modo Mosaico, o primeiro clique foca na foto e muda para lista
+      // REGRA 1: Se estiver em MODO MOSAICO
+      // O clique APENAS sai do mosaico, foca a imagem em lista e NÃO abre o modal.
       if (grade && grade.classList.contains("modo-mosaico")) {
         grade.classList.remove("modo-mosaico");
         if (btnAlternar) btnAlternar.textContent = "[ ⠿ Modo Mosaico ]";
+        
         itemFoto.scrollIntoView({ behavior: "smooth", block: "center" });
-        return;
+        return; // Interrompe para não abrir o Lightbox
       }
 
-      // Se já estiver em Modo Lista (padrão), abre o Lightbox
+      // REGRA 2: Se estiver em MODO LISTA (ou mobile em fluxo padrão)
+      // O clique ABRE o Modal Lightbox.
       const fotoClicada = itemFoto.querySelector("img");
+      
+      // Mapeia apenas as fotos visíveis no momento (respeitando filtros)
       fotosAtivas = Array.from(document.querySelectorAll(".item-foto"))
-        .filter(item => window.getComputedStyle(item).display !== "none")
+        .filter(item => {
+          const style = window.getComputedStyle(item);
+          return style.display !== "none" && style.visibility !== "hidden";
+        })
         .map(item => item.querySelector("img"));
 
       const idx = fotosAtivas.indexOf(fotoClicada);
       if (idx !== -1) {
         abrirModal(idx);
-      }
-    });
-
-    if (btnFecharModal) btnFecharModal.addEventListener("click", fecharModal);
-    if (btnAntModal) btnAntModal.addEventListener("click", fotoAnterior);
-    if (btnProxModal) btnProxModal.addEventListener("click", proximaFoto);
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal || e.target.classList.contains("container-midia-modal")) {
-        fecharModal();
       }
     });
 
