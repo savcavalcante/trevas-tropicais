@@ -685,7 +685,8 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
-  /* cursor: pointer; */ /* DESATIVADO ENQUANTO MODAL ESTÁ DESATIVADO- Indica que a foto é clicável */
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
   /* subseção "CONTROLE DE TAMANHO MÁXIMO VERTICAL". Alterado para imagens verticais ocuparem toda a largura, talvez reverta isso depois. */

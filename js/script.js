@@ -156,25 +156,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const fotosGaleria = gradeGaleria.querySelectorAll(".item-foto");
     
     fotosGaleria.forEach(foto => {
-      foto.addEventListener("click", (e) => {
-        // Se ainda está no modo mosaico
+      function tratarCliqueMosaico(e) {
         if (gradeGaleria.classList.contains("modo-mosaico")) {
-          // Interrompe a propagação para que o evento da seção 8 (Lightbox) não seja disparado neste clique
-          e.stopImmediatePropagation();
+          e.stopPropagation();
+          e.preventDefault();
 
-          // 1. Remove o modo mosaico
           gradeGaleria.classList.remove("modo-mosaico");
-          
-          // 2. Atualiza o texto do botão
           btnAlternar.textContent = "[ ⠿ Modo Mosaico ]";
           
-          // 3. Rola suavemente até a foto
           foto.scrollIntoView({
             behavior: "smooth",
             block: "center"
           });
         }
-      });
+      }
+
+      foto.addEventListener("click", tratarCliqueMosaico);
     });
   }
 
@@ -333,7 +330,9 @@ const modal = document.getElementById("modal-lightbox");
   // Variáveis para controle de gestos (Swipe)
   let touchStartX = 0;
   let touchEndX = 0;
-  const limiteSwipe = 50;
+  let touchStartY = 0;
+  let touchEndY = 0;
+  const limiteSwipe = 40;
 
   if (modal && imgModal) {
     function abrirModal(index) {
@@ -369,7 +368,6 @@ const modal = document.getElementById("modal-lightbox");
         const linkLoja = imgTarget.getAttribute("data-loja");
 
         if (linkLoja) {
-          // Se tiver link direto na Nuvemshop
           if (statusLojaModal) statusLojaModal.textContent = "Essa foto já está disponível para compra!";
           if (subtituloModal) subtituloModal.textContent = "";
           if (btnWspModal) {
@@ -377,15 +375,13 @@ const modal = document.getElementById("modal-lightbox");
             btnWspModal.href = linkLoja;
             btnWspModal.target = "_blank";
           }
-          if (btnEmailModal) btnEmailModal.style.display = "none"; // Oculta botão de e-mail se já está na loja
+          if (btnEmailModal) btnEmailModal.style.display = "none";
         } else {
-          // Exibe fluxo de encomenda via WhatsApp / E-mail
           if (btnEmailModal) btnEmailModal.style.display = "inline-block";
 
           if (statusLojaModal) statusLojaModal.textContent = "Essa foto ainda não está disponível na loja, mas posso disponibilizá-la para você rapidinho!";
           if (subtituloModal) subtituloModal.textContent = "Entre em contato:";
 
-          // Link do WhatsApp
           if (btnWspModal) {
             btnWspModal.textContent = "[ 💬 WhatsApp ]";
             const msgWsp = encodeURIComponent(`Olá! Gostaria de encomendar essa foto: ${nomeArquivo}`);
@@ -393,7 +389,6 @@ const modal = document.getElementById("modal-lightbox");
             btnWspModal.target = "_blank";
           }
 
-          // Link de Mailto (Abre o app de e-mail do cliente)
           if (btnEmailModal) {
             btnEmailModal.textContent = "[ ✉️ E-mail ]";
             const assuntoEmail = encodeURIComponent(`Encomenda da foto ${nomeArquivo}`);
@@ -415,11 +410,12 @@ const modal = document.getElementById("modal-lightbox");
       atualizarConteudoModal();
     }
 
-    // Clique na foto para abrir o Lightbox no modo lista
-    document.addEventListener("click", (e) => {
+    // Ação de clique/toque na foto para abrir o Lightbox
+    function tratarCliqueFoto(e) {
       const itemFoto = e.target.closest(".item-foto");
       const grade = document.getElementById("grade-galeria");
 
+      // Só abre o modal se NÃO estiver no Modo Mosaico
       if (itemFoto && grade && !grade.classList.contains("modo-mosaico")) {
         const fotoClicada = itemFoto.querySelector("img");
         
@@ -428,9 +424,13 @@ const modal = document.getElementById("modal-lightbox");
           .map(item => item.querySelector("img"));
 
         const idx = fotosAtivas.indexOf(fotoClicada);
-        if (idx !== -1) abrirModal(idx);
+        if (idx !== -1) {
+          abrirModal(idx);
+        }
       }
-    });
+    }
+
+    document.addEventListener("click", tratarCliqueFoto);
 
     if (btnFecharModal) btnFecharModal.addEventListener("click", fecharModal);
     if (btnAntModal) btnAntModal.addEventListener("click", fotoAnterior);
@@ -450,23 +450,29 @@ const modal = document.getElementById("modal-lightbox");
       if (e.key === "ArrowRight") proximaFoto();
     });
 
-    // Gestos Touch (Swipe)
+    // Gestos Touch (Swipe no Mobile)
     modal.addEventListener("touchstart", (e) => {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     }, { passive: true });
 
     modal.addEventListener("touchend", (e) => {
       touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
       tratarGestoSwipe();
     }, { passive: true });
 
     function tratarGestoSwipe() {
-      const diferenca = touchStartX - touchEndX;
+      const difX = touchStartX - touchEndX;
+      const difY = touchStartY - touchEndY;
 
-      if (diferenca > limiteSwipe) {
-        proximaFoto();
-      } else if (diferenca < -limiteSwipe) {
-        fotoAnterior();
+      // Garante que o gesto foi horizontal (scroll para o lado) e não um scroll vertical
+      if (Math.abs(difX) > Math.abs(difY) && Math.abs(difX) > limiteSwipe) {
+        if (difX > 0) {
+          proximaFoto();
+        } else {
+          fotoAnterior();
+        }
       }
     }
   }
