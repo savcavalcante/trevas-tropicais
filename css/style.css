@@ -24,6 +24,24 @@
 :root {
   --font-principal: 'Josefin Sans', 'Century Gothic', sans-serif;
   --font-titulo: 'Cinzel Decorative', 'Georgia', serif;
+
+  /* TAMANHOS DE FONTE BASE (MOBILE) */
+
+  --font-size-sm: 0.75rem;   /* ~12px: Legendas, links finos, avisos */
+  --font-size-base: 0.9rem;   /* ~14.4px: Textos descritivos e parágrafos */
+  --font-size-lg: 1.1rem;    /* ~17.6px: Subtítulos e títulos médios */
+  --font-size-xl: 1.4rem;    /* ~22.4px: Títulos de destaque */
+}
+
+/* ESCALA AUTOMÁTICA PARA DESKTOP */
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-sm: 0.85rem;   /* ~13.6px */
+    --font-size-base: 1.05rem;  /* ~16.8px */
+    --font-size-lg: 1.25rem;   /* ~20px */
+    --font-size-xl: 1.6rem;    /* ~25.6px */
+  }
 }
 
 * {
@@ -148,7 +166,7 @@ a {
 }
 
 .logo-nome {
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   font-weight: 300;
   letter-spacing: 5px;
 }
@@ -168,7 +186,7 @@ a {
 }
 
 .apresentacao-home p {
-  font-size: 0.9rem;
+  font-size: var(--font-size-base);
   line-height: 1.8;
   color: #b0b0b0;
   letter-spacing: 0.3px;
@@ -204,7 +222,7 @@ a {
 /* --- CHAMADA DRAMÁTICA FINAL --- */
 .chamada-dramatica {
   margin-top: 30px !important;
-  font-size: 0.95rem !important;
+  font-size: var(--font-size-base) !important;
   color: #c0c0c0 !important;
   letter-spacing: 1px;
 }
@@ -290,7 +308,7 @@ a {
 }
 
 .titulo-colecao {
-  font-size: 0.9rem;
+  font-size: var(--font-size-base);
   font-weight: 400;
   letter-spacing: 2px;
   color: #fff;
@@ -316,7 +334,7 @@ a {
 }
 
 .info-copyright p {
-  font-size: 0.7rem;
+  font-size: var(--font-size-sm);
   letter-spacing: 1px;
   color: #666;
 }
@@ -327,7 +345,7 @@ a {
 }
 
 .link-fino {
-  font-size: 0.7rem;
+  font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #fff;
@@ -377,11 +395,11 @@ a {
   /* subseção "AJUSTES DO CABEÇALHO PARA DESKTOP" */
 
   .logo-nome {
-    font-size: 1.5rem;
+    font-size: var(--font-size-xl);
   }
 
   .titulo-colecao {
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
   }
   
     /* ESCONDE O BOTÃO DE GATILHO NO DESKTOP */
@@ -483,14 +501,14 @@ a {
 }
 
 .nome-colecao {
-  font-size: 1.2rem;
+  font-size: var(--font-size-lg);
   font-weight: 300;
   letter-spacing: 3px;
   margin-bottom: 20px;
 }
 
 .descricao-colecao {
-  font-size: 0.9rem;
+  font-size: var(--font-size-base);
   line-height: 1.6;
   opacity: 0.7;
   max-width: 600px;
@@ -508,7 +526,7 @@ a {
 }
 
   .frase-conceitual {
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   color: #666666;
   font-style: italic;
@@ -522,7 +540,7 @@ a {
   border: none;
   color: #888888;
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   font-weight: normal;
   cursor: pointer;
   padding: 4px 6px;
@@ -554,7 +572,7 @@ a {
   border: 1px solid #333;
   color: #f5f5f5;
   padding: 6px 14px;
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
@@ -583,7 +601,7 @@ a {
   border: 1px dashed #444;
   color: #ccc;
   padding: 8px 16px;
-  font-size: 0.7rem;
+  font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   cursor: pointer;
@@ -601,7 +619,7 @@ a {
 /* Rótulo descritivo dentro da gaveta de subfiltros */
 .label-filtros {
   display: block;
-  font-size: 0.65rem;
+  font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #666;
@@ -690,7 +708,7 @@ a {
   color: #fff;
   border: 1px solid #333;
   font-family: var(--font-principal);
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
@@ -766,7 +784,7 @@ a {
     width: auto;
     text-align: center;
     padding: 8px 16px;
-    font-size: 0.7rem;
+    font-size: var(--font-size-sm);
     border-radius: 3px;
   }
 }
@@ -783,7 +801,7 @@ a {
 }
 
 .texto-nota-acervo {
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   color: #777;
   font-style: italic;
@@ -892,7 +910,7 @@ a {
 }
 
 .titulo-veja-tambem {
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
   font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -939,7 +957,7 @@ a {
 }
 
 .txt-sugestao-desktop {
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   font-weight: 400;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -975,7 +993,7 @@ a {
   }
 
   .txt-sugestao-desktop {
-    font-size: 0.9rem;
+    font-size: var(--font-size-base);
     letter-spacing: 2px;
   }
 
@@ -1005,13 +1023,13 @@ a {
 }
 
 .wrapper-institucional h2 {
-  font-size: 1.8rem;
+  font-size: var(--font-size-xl);
   margin-bottom: 25px;
   color: #fff;
 }
 
 .wrapper-institucional h3 {
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   margin-bottom: 15px;
   color: #aaa;
 }
@@ -1044,7 +1062,7 @@ a {
   /* subseção "BLOCO DE TEXTO" */
 
 .texto-placeholder p {
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   line-height: 1.8;
   color: #ccc;
   margin-bottom: 20px;
@@ -1082,7 +1100,7 @@ a {
 }
 
 .link-texto-sutil {
-  font-size: 0.9rem;
+  font-size: var(--font-size-base);
   color: #ccc;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -1123,7 +1141,7 @@ a {
 }
 
 .tag-categoria-comercial {
-  font-size: 0.7rem;
+  font-size: var(--font-size-base);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #666;
@@ -1140,13 +1158,13 @@ a {
 }
 
 .texto-instrucao-prints {
-  font-size: 0.85rem !important;
+  font-size: var(--font-size-sm) !important;
   color: #888 !important;
   font-style: italic;
 }
 
 .link-prova-social {
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
   color: #888;
   margin-bottom: 20px;
 }
@@ -1190,7 +1208,7 @@ a {
   border: none;
   color: #fff;
   font-family: var(--font-principal);
-  font-size: 0.7rem;
+  font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   opacity: 0.4;
@@ -1313,14 +1331,14 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
 }
 
 .titulo-foto-modal {
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #888;
 }
 
 .btn-orcamento-modal {
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   letter-spacing: 1px;
   color: #fff;
   text-transform: uppercase;
