@@ -1245,13 +1245,13 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000; /* Fundo escuro absoluto para destaque total */
+  background-color: rgba(0, 0, 0, 0.95); /* Fundo quase 100% escuro para destaque */
   z-index: 2000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -1265,8 +1265,8 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
 /* Botão Fechar (Topo Direita) */
 .btn-fechar-modal {
   position: absolute;
-  top: 20px;
-  right: 25px;
+  top: 15px;
+  right: 20px;
   background: none;
   border: none;
   color: #fff;
@@ -1287,12 +1287,12 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 110px);
   position: relative;
 }
 
 .img-modal-destaque {
-  max-height: 85vh;
+  max-height: 80vh;
   max-width: 90vw;
   object-fit: contain;
   user-select: none;
@@ -1321,33 +1321,37 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
 .btn-nav-modal.anterior { left: 10px; }
 .btn-nav-modal.proxima { right: 10px; }
 
-/* Rodapé do Modal (Título e Botão de Contato/Orçamento) */
+/* Rodapé do Modal (Status de Venda / CTA WhatsApp ou Nuvemshop) */
 .rodape-modal {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
   padding-bottom: 10px;
+  text-align: center;
+  z-index: 2010;
 }
 
-.titulo-foto-modal {
+.status-loja-modal {
   font-size: var(--font-size-sm);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #888;
+  letter-spacing: 1px;
+  color: #aaa;
+  font-style: italic;
 }
 
 .btn-orcamento-modal {
   font-size: var(--font-size-sm);
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   color: #fff;
   text-transform: uppercase;
-  border: 1px dashed #444;
-  padding: 6px 14px;
+  border: 1px dashed #555;
+  padding: 8px 18px;
+  background-color: rgba(255, 255, 255, 0.03);
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .btn-orcamento-modal:hover {
   border-color: #fff;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
 }
