@@ -815,15 +815,6 @@ a {
   color: #aaa;
 }
 
-  /* subseção "BLOQUEIO DO MENU DE TOQUE LONGO", evitando o salvamento nativo das fotos em celulares */
-
-.foto-portfolio, .img-modal-destaque {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Safari */
-  user-select: none;           /* Padrão */
-  -webkit-user-drag: none;      /* Evita arrastar a imagem no Safari */
-}
-
 /* 6.1- seção "COMPORTAMENTO DAS PÁGINAS INTERNAS NO DESKTOP" --------------------------- */
 
 @media (min-width: 1024px) {
