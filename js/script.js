@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  
+
   // ==========================================================================
   // 5. ALEATORIZAÇÃO DE FOTOS COM PRIORIDADE DE CARREGAMENTO DINÂMICA
   // ==========================================================================
@@ -406,13 +406,18 @@ const modal = document.getElementById("modal-lightbox");
       atualizarConteudoModal();
     }
 
-    // Ação de clique/toque na foto para abrir o Lightbox
+// Ação de clique/toque na foto para abrir o Lightbox
     function tratarCliqueFoto(e) {
       const itemFoto = e.target.closest(".item-foto");
       const grade = document.getElementById("grade-galeria");
 
       // Só abre o modal se NÃO estiver no Modo Mosaico
       if (itemFoto && grade && !grade.classList.contains("modo-mosaico")) {
+        // Previne qualquer comportamento conflitante de toque no celular
+        if (e.type === "touchend") {
+          e.preventDefault();
+        }
+
         const fotoClicada = itemFoto.querySelector("img");
         
         fotosAtivas = Array.from(document.querySelectorAll(".item-foto"))
@@ -426,7 +431,13 @@ const modal = document.getElementById("modal-lightbox");
       }
     }
 
-    document.addEventListener("click", tratarCliqueFoto);
+    // Aplica os escutadores diretamente nos itens de foto (garante funcionamento no mobile)
+    const containerGaleria = document.getElementById("grade-galeria");
+    if (containerGaleria) {
+      containerGaleria.addEventListener("click", tratarCliqueFoto);
+    } else {
+      document.addEventListener("click", tratarCliqueFoto);
+    }
 
     if (btnFecharModal) btnFecharModal.addEventListener("click", fecharModal);
     if (btnAntModal) btnAntModal.addEventListener("click", fotoAnterior);

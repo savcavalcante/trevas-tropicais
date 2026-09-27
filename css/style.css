@@ -648,7 +648,8 @@ a {
   margin: 0px;
   padding: 0px;
   break-inside: avoid;
-  cursor:pointer; /* Adiciona um cursor de ponteiro para indicar que a foto é clicável */
+  cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que a foto é clicável */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .grade-galeria.modo-mosaico .foto-portfolio {
@@ -656,6 +657,7 @@ a {
   height: auto;
   display: block;
   object-fit: cover;
+  pointer-events: auto;
 }
 
 @media (min-width: 1024px) {
@@ -697,6 +699,7 @@ a {
   max-width: 100%;
   max-height: none; /* A foto ocupa no máximo 85% da altura do monitor, mantendo a proporção. */
   object-fit: cover;
+  pointer-events: auto;
 }
 
   /* subseção "BOTÃO DE GATILHO DO FILTRO" - Escondido por padrão no Desktop */
