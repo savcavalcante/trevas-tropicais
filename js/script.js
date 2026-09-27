@@ -154,27 +154,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 4.2. Lógica de clicar na foto no Mosaico para focar na Lista (com flag de bloqueio para o modal)
     const fotosGaleria = gradeGaleria.querySelectorAll(".item-foto");
-    
-    fotosGaleria.forEach(foto => {
-      function tratarCliqueMosaico(e) {
-        if (gradeGaleria.classList.contains("modo-mosaico")) {
-          e.stopPropagation();
-          e.preventDefault();
 
+    fotosGaleria.forEach(foto => {
+      foto.addEventListener("click", (e) => {
+        if (gradeGaleria.classList.contains("modo-mosaico")) {
+          // Alterna o modo sem bloquear a propagação de touch do celular
           gradeGaleria.classList.remove("modo-mosaico");
-          btnAlternar.textContent = "[ ⠿ Modo Mosaico ]";
+          if (btnAlternar) btnAlternar.textContent = "[ ⠿ Modo Mosaico ]";
           
           foto.scrollIntoView({
             behavior: "smooth",
             block: "center"
           });
         }
-      }
-
-      foto.addEventListener("click", tratarCliqueMosaico);
+      });
     });
   }
-
+  
   // ==========================================================================
   // 5. ALEATORIZAÇÃO DE FOTOS COM PRIORIDADE DE CARREGAMENTO DINÂMICA
   // ==========================================================================
