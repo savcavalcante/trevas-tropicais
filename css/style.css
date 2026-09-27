@@ -233,7 +233,7 @@ a {
   font-family: var(--font-titulo) !important;
   font-weight: 400 !important;
   font-style: normal !important;
-  font-size: 1.4rem; /* Tamanho maior e imponente */
+  font-size: 1.8rem; /* Tamanho maior e imponente */
   letter-spacing: 3px !important;
   color: #ffffff;
   transition: transform 0.4s ease, text-shadow 0.4s ease;
