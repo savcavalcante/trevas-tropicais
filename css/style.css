@@ -1249,9 +1249,9 @@ body.ocultar-aranhas .item-foto[data-tag="aranha"] {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95); /* Fundo quase 100% escuro para destaque */
+  background-color: rgba(0, 0, 0, 0.95);
   z-index: 2000;
-  display: flex;
+  display: none; /* Esconde totalmente quando inativo para liberar o toque no mobile */
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
