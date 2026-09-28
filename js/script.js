@@ -501,4 +501,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+  
+// ==========================================================================
+  // 9. EFEITO DE AUMENTO NO TÍTULO "TREVAS TROPICAIS" AO ROLAR A PÁGINA
+  // ==========================================================================
+  const destaqueCinzel = document.querySelector('.destaque-cinzel');
+
+  if (destaqueCinzel) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        destaqueCinzel.classList.add('expandido');
+      } else {
+        destaqueCinzel.classList.remove('expandido');
+      }
+    });
+  }  
 });
