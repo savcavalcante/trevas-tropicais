@@ -8,7 +8,7 @@
 </head>
 <body class="pagina-interna">
 
-  <!-- seção "MENU DE NAVEGAÇÃO E IDENTIDADE" -->
+<!-- seção "MENU DE NAVEGAÇÃO E IDENTIDADE" -->
 
   <header class="header-principal">
     
@@ -31,150 +31,156 @@
     </div>
   </header>
 
+<!-- seção "CONTEÚDO PRINCIPAL DA COLEÇÃO" -->
+
   <main class="wrapper-colecao">
     
-    <!-- seção "TÍTULO E DESCRIÇÃO DA COLEÇÃO" -->
+    <!-- subseção "TÍTULO E DESCRIÇÃO DA COLEÇÃO" -->
 
-    <aside class="painel-info">
-      <div class="conteudo-painel">
-        <h2 class="nome-colecao">NOME DA COLEÇÃO</h2>
-        <p class="descricao-colecao">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+      <aside class="painel-info">
+        <div class="conteudo-painel">
+          <h2 class="nome-colecao">NOME DA COLEÇÃO</h2>
+          <p class="descricao-colecao">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
 
-      <!-- Chamada de Vendas / Prints Fine Art -->
-      <div class="nota-acervo-colecao">
-        <p class="texto-nota-acervo">
-          * Todas as fotografias deste acervo estão disponíveis para aquisição em impressões Fine Art e quadros. Para encomendar uma obra ou tirar dúvidas, <a href="../sobre.html#secao-contato" class="link-sublinhado">entre em contato</a>.
-        </p>
-      </div>
+        <!-- Chamada de Vendas / Prints Fine Art -->
+        <div class="nota-acervo-colecao">
+          <p class="texto-nota-acervo">
+            * Todas as fotografias deste acervo estão disponíveis para aquisição em impressões Fine Art e quadros. Para encomendar uma obra ou tirar dúvidas, <a href="../sobre.html#secao-contato" class="link-sublinhado">entre em contato</a>.
+          </p>
+        </div>
 
-      </div>
-    </aside>
+        </div>
+      </aside>
 
-    <!-- seção "BOTÕES DE FILTROS DA GALERIA" -->
+    <!-- subseção "BOTÕES DE FILTROS DA GALERIA" -->
 
-    <aside class="painel-filtros" id="painel-filtros">
+      <aside class="painel-filtros" id="painel-filtros">
 
-    <!-- Controle de Visualização Global (Fora da gaveta) -->
+        <!-- Controle de Visualização Global (Fora da gaveta) -->
 
-      <div class="barra-acoes-rapidas">
-        <button class="btn-alternar-view" id="btn-alternar-view" aria-label="Alternar modo de visualização">
-          [ ☰ Modo Lista ]
+        <div class="barra-acoes-rapidas">
+          <button class="btn-alternar-view" id="btn-alternar-view" aria-label="Alternar modo de visualização">
+            [ ☰ Modo Lista ]
+          </button>
+        </div>
+
+        <!-- Gatilho da Gaveta de Subfiltros -->
+
+        <button class="btn-gatilho-filtros" id="btn-gatilho-filtros">
+          [Filtros <span class="seta-filtro">▼</span> ]
         </button>
-      </div>
 
-    <!-- Gatilho da Gaveta de Subfiltros -->
+        <!-- Gaveta Colapsável de Filtros de Conteúdo -->
 
-      <button class="btn-gatilho-filtros" id="btn-gatilho-filtros">
-        [Filtros <span class="seta-filtro">▼</span> ]
-      </button>
-
-    <!-- Gaveta Colapsável de Filtros de Conteúdo -->
-
-      <div class="conteudo-filtros" id="conteudo-filtros">
-        <span class="label-filtros">Filtrar por:</span>
-        <nav class="subfiltros-flex">
-          <button class="btn-filtro ativo" data-filter="todos">Ver todas</button>
-          <button class="btn-filtro" data-filter="subtema-1">Subtema 1</button>
-          <button class="btn-filtro" data-filter="subtema-2">Subtema 2</button>
-        </nav>
-      </div>
-    </aside>
-
-    <!-- seção "GALERIA DE FOTOS" -->
-
-    <section class="fluxo-conteudo">
-      <div class="grade-galeria modo-mosaico" id="grade-galeria" data-random="true">
-        
-        <div class="item-foto" data-category="subtema-1">
-          <img src="imagens/placeholder-vertical.webp" alt="Descrição da foto para SEO" class="foto-portfolio" loading="lazy">
-              data-loja=""
+        <div class="conteudo-filtros" id="conteudo-filtros">
+          <span class="label-filtros">Filtrar por:</span>
+          <nav class="subfiltros-flex">
+            <button class="btn-filtro ativo" data-filter="todos">Ver todas</button>
+            <button class="btn-filtro" data-filter="subtema-1">Subtema 1</button>
+            <button class="btn-filtro" data-filter="subtema-2">Subtema 2</button>
+          </nav>
         </div>
+      </aside>
 
-        <div class="item-foto" data-category="subtema-2">
-          <img src="imagens/placeholder-horizontal.webp" 
-              alt="Descrição da foto para SEO" 
-              data-loja=""
-              class="foto-portfolio" 
-              loading="lazy">
-              
+    <!-- subseção "GALERIA DE FOTOS" -->
+
+      <section class="fluxo-conteudo">
+        <div class="grade-galeria modo-mosaico" id="grade-galeria" data-random="true">
+          
+          <div class="item-foto" data-category="subtema-1">
+            <img src="imagens/placeholder-vertical.webp" 
+                alt="Descrição da foto para SEO" 
+                class="foto-portfolio" 
+                loading="lazy"  
+                data-loja=""> <!-- adicionar link de loja caso a foto já esteja disponivel. -->   
+          </div>
+
+          <div class="item-foto" data-category="subtema-2">
+            <img src="imagens/placeholder-horizontal.webp" 
+                alt="Descrição da foto para SEO" 
+                class="foto-portfolio" 
+                loading="lazy"  
+                data-loja=""> <!-- adicionar link de loja caso a foto já esteja disponivel. -->             
+          </div>          
         </div>
-        
-      </div>
-    </section>
+      </section>
   </main>
   
-<!-- Conceito narrativo e chamada do refresh da coleção -->  
-  <section class="bloco-refresh-pos-colecao">
-    <p class="frase-conceitual">
-      Como em uma verdadeira trilha na floresta, nada permanece no mesmo lugar a cada vez que você a visita.
-      <button class="btn-reorganizar-trilha" id="btn-reorganizar-trilha" aria-label="Reorganizar ordem da trilha" title="Reorganizar trilha">
-        [ ⟳ ]
-      </button>
-    </p>
-  </section>
+<!-- Seção "RODAPÉ/ PÓS COLEÇÃO" -->
 
-  <!-- seção "RODAPÉ/ PÓS COLEÇÃO" -->
+  <!-- Subseção "conceito narrativo/ chamada do refresh da coleção" -->  
+    
+    <section class="bloco-refresh-pos-colecao">
+      <p class="frase-conceitual">
+        Como em uma verdadeira trilha na floresta, nada permanece no mesmo lugar a cada vez que você a visita.
+        <button class="btn-reorganizar-trilha" id="btn-reorganizar-trilha" aria-label="Reorganizar ordem da trilha" title="Reorganizar trilha">
+          [ ⟳ ]
+        </button>
+      </p>
+    </section>
+
+  <!-- subseção "Continue navegando!" -->
 
       <footer class="navegacao-colecoes" id="rodape-navegacao">
         <h3 class="titulo-veja-tambem">escolha seu próximo caminho!</h3>
         
-        <!-- O JS vai injetar o mosaico de fotos (desktop) ou os botões (mobile) aqui -->
+        <!-- O JS vai injetar o mosaico (desktop) ou a lista (mobile) de coleções aqui -->
         <div class="container-links-dinamicos" id="links-dinamicos-rodape"></div>
       </footer>
 
   <!-- Rodapé Padrão com as informações de Copyright (Igual ao da Home) -->
 
-  <footer class="rodape-principal">
-    <div class="container-rodape">
-      
-      <nav class="links-rodape">
-        <a href="../sobre.html" class="link-fino">Sobre</a>
-        <a href="../sobre.html#secao-contato" class="link-fino">Contato</a>
-        <a href="https://instagram.com/savcavalcante" target="_blank" class="link-fino">Instagram</a>
-      </nav>
-      
-      <button class="btn-toggle-sensivel" id="btn-toggle-aranhas" aria-label="Ocultar fotos de aranhas">
-        <span class="icone-check">[ ]</span> ocultar aranhas
-      </button>
-      
-      <div class="assinatura-rodape">
-        <img src="../imagens/assets/assinatura.svg" alt="assinatura de Sávio Cavalcante" class="img-assinatura-rodape">
+    <footer class="rodape-principal">
+      <div class="container-rodape">
+        
+        <nav class="links-rodape">
+          <a href="../sobre.html" class="link-fino">Sobre</a>
+          <a href="../sobre.html#secao-contato" class="link-fino">Contato</a>
+          <a href="https://instagram.com/savcavalcante" target="_blank" class="link-fino">Instagram</a>
+        </nav>
+        
+        <button class="btn-toggle-sensivel" id="btn-toggle-aranhas" aria-label="Ocultar fotos de aranhas">
+          <span class="icone-check">[ ]</span> ocultar aranhas
+        </button>
+        
+        <div class="assinatura-rodape">
+          <img src="../imagens/assets/assinatura.svg" alt="assinatura de Sávio Cavalcante" class="img-assinatura-rodape">
+        </div>
+
+        <div class="info-copyright">
+          <p>&copy; 2026 Sávio Cavalcante. Todos os direitos reservados.</p>
+        </div>
+
       </div>
+    </footer>
 
-      <div class="info-copyright">
-        <p>&copy; 2026 Sávio Cavalcante. Todos os direitos reservados.</p>
+<!-- seção "Modal de Visualização" (Lightbox) -->
+
+  <div class="modal-lightbox" id="modal-lightbox">
+    <button class="btn-fechar-modal" id="btn-fechar-modal" aria-label="Fechar modal">&times;</button>
+    
+    <div class="container-midia-modal">
+      <button class="btn-nav-modal anterior" id="btn-modal-anterior" aria-label="Foto anterior">&#8249;</button>
+      <img src="" alt="Fotografia em destaque" id="img-modal-destaque" class="img-modal-destaque">
+      <button class="btn-nav-modal proxima" id="btn-modal-proxima" aria-label="Próxima foto">&#8250;</button>
+    </div>
+
+    <div class="rodape-modal" id="rodape-modal">
+      <p class="status-loja-modal" id="status-loja-modal"></p>
+      <p class="subtitulo-modal" id="subtitulo-modal"></p>
+
+      <div class="container-acoes-modal" id="container-acoes-modal">
+        <a href="#" target="_blank" class="btn-orcamento-modal" id="btn-wsp-modal">
+          [ 💬 WhatsApp ]
+        </a>
+        <a href="#" class="btn-orcamento-modal" id="btn-email-modal">
+          [ ✉️ E-mail ]
+        </a>
       </div>
-
-    </div>
-  </footer>
-
-<!-- Modal de Visualização (Lightbox) -->
-
-<div class="modal-lightbox" id="modal-lightbox">
-  <button class="btn-fechar-modal" id="btn-fechar-modal" aria-label="Fechar modal">&times;</button>
-  
-  <div class="container-midia-modal">
-    <button class="btn-nav-modal anterior" id="btn-modal-anterior" aria-label="Foto anterior">&#8249;</button>
-    <img src="" alt="Fotografia em destaque" id="img-modal-destaque" class="img-modal-destaque">
-    <button class="btn-nav-modal proxima" id="btn-modal-proxima" aria-label="Próxima foto">&#8250;</button>
-  </div>
-
-  <div class="rodape-modal" id="rodape-modal">
-    <p class="status-loja-modal" id="status-loja-modal"></p>
-    <p class="subtitulo-modal" id="subtitulo-modal"></p>
-
-    <div class="container-acoes-modal" id="container-acoes-modal">
-      <a href="#" target="_blank" class="btn-orcamento-modal" id="btn-wsp-modal">
-        [ 💬 WhatsApp ]
-      </a>
-      <a href="#" class="btn-orcamento-modal" id="btn-email-modal">
-        [ ✉️ E-mail ]
-      </a>
     </div>
   </div>
-</div>
 
   <script src="../js/script.js"></script>
 
