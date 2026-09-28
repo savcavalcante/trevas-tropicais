@@ -64,6 +64,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (min-width: 768px) {
+  body {
+    padding-top: 160px; /* No desktop o cabeçalho fica um pouco mais compacto */
+  }
+}
+
 /* Aplicação da fonte de título nos elementos de destaque */
 h1, h2, h3, .logo-nome, .titulo-colecao, .nome-colecao, .titulo-institucional {
   font-family: var(--font-titulo);
@@ -838,7 +844,7 @@ width: 100%;
     text-align: left;
     height: fit-content;
     position: sticky;
-    top: max(140px, 50vh - 200px);
+    top: 160px;
     transform: none; /* Centraliza verticalmente o painel de informações */
     padding: 0;
   }
@@ -846,6 +852,13 @@ width: 100%;
   .descricao-colecao {
     margin: 0;
   }
+
+  .painel-info .nota-acervo-colecao {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
 
   .frase-conceitual {
     margin-top: 30px;
@@ -873,7 +886,7 @@ width: 100%;
     width: 20%; /* Mesmo tamanho da coluna da esquerda para simetria visual */
     height: fit-content;
     position: sticky;
-    top: max(140px, 50vh - 200px);
+    top: 160px;
     transform: none;
     display: flex;
     flex-direction:column;
@@ -911,11 +924,14 @@ width: 100%;
 }
 
 .titulo-veja-tambem {
+  display:block;
+  width: 100%;
+  text-align: center;
   font-size: var(--font-size-sm);
   font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #888;
+  color: #fff;
   margin-bottom: 30px;
 }
 
@@ -1194,6 +1210,23 @@ width: 100%;
 
 .sub-grade-redes {
   margin-top: 12px;
+}
+
+.btn-link-institucional {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: var(--font-size-sm);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #444;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-link-institucional:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
   /* Seção "CONTATO" com âncora de navegação */
