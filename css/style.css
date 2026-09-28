@@ -827,6 +827,19 @@ a {
   color: #aaa;
 }
 
+/* subseção "Bloqueio de seleção, toque longo no mobile e arrasto no desktop" */
+.foto-portfolio,
+.foto-capa,
+.img-modal-destaque {
+  -webkit-touch-callout: none !important; /* Desativa menu ao segurar o dedo (iOS/Android) */
+  -webkit-user-select: none !important;   /* Safari */
+  -moz-user-select: none !important;      /* Firefox */
+  -ms-user-select: none !important;       /* IE/Edge */
+  user-select: none !important;           /* Padrão CSS */
+  -webkit-user-drag: none !important;     /* Desativa arrasto de imagens no Chrome/Edge/Safari */
+  pointer-events: auto;                   /* Mantém a imagem clicável para abrir o modal */
+}
+
 /* 6.1- seção "COMPORTAMENTO DAS PÁGINAS INTERNAS NO DESKTOP" --------------------------- */
 
 @media (min-width: 1024px) {

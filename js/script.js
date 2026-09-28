@@ -228,29 +228,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   // 6. PROTEÇÃO DO ACERVO (BLOQUEIO DE BOTÃO DIREITO NAS IMAGENS)
   // ==========================================================================
- /* document.addEventListener("contextmenu", (e) => {
-    // Se o clique com botão direito for em cima de uma foto do portfólio ou do modal lightbox, bloqueia
-    if (
-      e.target.classList.contains("foto-portfolio") || 
-      e.target.classList.contains("foto-capa") ||
-      e.target.classList.contains("img-modal-destaque") ||
-      e.target.id === "img-modal-destaque"
-    ) {
+  document.addEventListener("contextmenu", (e) => {
+    // Bloqueia o clique com o botão direito apenas se for em uma foto do acervo ou modal
+    if (e.target.matches(".foto-portfolio, .foto-capa, .img-modal-destaque, #img-modal-destaque")) {
       e.preventDefault();
     }
   });
 
-   // Previne também o evento de arrastar a imagem com o mouse/dedo
   document.addEventListener("dragstart", (e) => {
-    if (
-      e.target.classList.contains("foto-portfolio") || 
-      e.target.classList.contains("foto-capa") ||
-      e.target.classList.contains("img-modal-destaque") ||
-      e.target.id === "img-modal-destaque"
-    ) {
+    // Impede o usuário de arrastar a foto para a área de trabalho
+    if (e.target.matches(".foto-portfolio, .foto-capa, .img-modal-destaque, #img-modal-destaque")) {
       e.preventDefault();
     }
-  }); */
+  });
 
   // ==========================================================================
   // 7. LÓGICA DO TOGGLE DE SENSIBILIDADE (OCULTAR ARACNÍDEOS)
