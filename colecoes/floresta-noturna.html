@@ -8,7 +8,7 @@
 </head>
 <body class="pagina-interna">
 
-  <!-- seção "MENU DE NAVEGAÇÃO E IDENTIDADE" -->
+<!-- seção "MENU DE NAVEGAÇÃO E IDENTIDADE" -->
 
   <header class="header-principal">
     
@@ -31,335 +31,338 @@
     </div>
   </header>
 
+<!-- seção "CONTEÚDO PRINCIPAL DA COLEÇÃO" -->
+
   <main class="wrapper-colecao">
     
-    <!-- seção "TÍTULO E DESCRIÇÃO DA COLEÇÃO" -->
+    <!-- subseção "TÍTULO E DESCRIÇÃO DA COLEÇÃO" -->
 
-    <aside class="painel-info">
-      <div class="conteudo-painel">
-        <h2 class="nome-colecao">floresta noturna</h2>
-        <p class="descricao-colecao">
-          Insetos, anfíbios, fungos, plantas e tantos outros. Um pouco de tudo que tive o privilégio de encontrar à noite nas florestas.
-        </p>
-
-<!-- Chamada de Vendas / Prints Fine Art -->
-        <div class="nota-acervo-colecao">
-          <p class="texto-nota-acervo">
-             * Todas as fotografias deste acervo estão disponíveis para aquisição na forma de impressões e quadros prontos. Para encomendar uma obra basta clicar na fotografia escolhida. Em caso de dúvidas, <a href="../sobre.html#secao-contato" class="link-sublinhado">entre em contato</a>.
+      <aside class="painel-info">
+        <div class="conteudo-painel">
+          <h2 class="nome-colecao">floresta noturna</h2>
+          <p class="descricao-colecao">
+            Insetos, anfíbios, fungos, plantas e tantos outros. Um pouco de tudo que tive o privilégio de encontrar à noite nas florestas.
           </p>
+
+        <!-- Chamada de Vendas / Prints Fine Art -->
+          <div class="nota-acervo-colecao">
+            <p class="texto-nota-acervo">
+              * Todas as fotografias deste acervo estão disponíveis para aquisição na forma de impressões e quadros prontos. Para encomendar uma obra basta clicar na fotografia escolhida. Em caso de dúvidas, <a href="../sobre.html#secao-contato" class="link-sublinhado">entre em contato</a>.
+            </p>
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
 
-    <!-- seção "BOTÕES DE FILTROS DA GALERIA" -->
+    <!-- subseção "BOTÕES DE FILTROS DA GALERIA" -->
 
-    <aside class="painel-filtros" id="painel-filtros">
+      <aside class="painel-filtros" id="painel-filtros">
 
-    <!-- Controle de Visualização Global (Fora da gaveta) -->
+        <!-- Controle de Visualização Global (Fora da gaveta) -->
 
-      <div class="barra-acoes-rapidas">
-        <button class="btn-alternar-view" id="btn-alternar-view" aria-label="Alternar modo de visualização">
-          [ ☰ Modo Lista ]
-        </button>
-      </div>
+          <div class="barra-acoes-rapidas">
+            <button class="btn-alternar-view" id="btn-alternar-view" aria-label="Alternar modo de visualização">
+              [ ☰ Modo Lista ]
+            </button>
+          </div>
 
-    <!-- Gatilho da Gaveta de Subfiltros -->
+        <!-- Gatilho da Gaveta de Subfiltros -->
 
-      <button class="btn-gatilho-filtros" id="btn-gatilho-filtros">
-        [Filtros <span class="seta-filtro">▼</span> ]
-      </button>
+          <button class="btn-gatilho-filtros" id="btn-gatilho-filtros">
+            [Filtros <span class="seta-filtro">▼</span> ]
+          </button>
 
-    <!-- Gaveta Colapsável de Filtros de Conteúdo -->
+        <!-- Gaveta Colapsável de Filtros de Conteúdo -->
 
-      <div class="conteudo-filtros" id="conteudo-filtros">
-        <span class="label-filtros">Filtrar por:</span>
-        <nav class="subfiltros-flex">
-          <button class="btn-filtro ativo" data-filter="todos">Ver todas</button>
-          <button class="btn-filtro" data-filter="inseto">insetos</button>
-          <button class="btn-filtro" data-filter="aranha">aranhas</button>
-          <button class="btn-filtro" data-filter="gastropode">gastropodes</button>
-          <button class="btn-filtro" data-filter="reptil">répteis</button>
-          <button class="btn-filtro" data-filter="anfibio">anfíbios</button>
-          <button class="btn-filtro" data-filter="planta">plantas</button>
-          <button class="btn-filtro" data-filter="fungo">fungos</button>
-        </nav>
-      </div>
-    </aside>
+          <div class="conteudo-filtros" id="conteudo-filtros">
+            <span class="label-filtros">Filtrar por:</span>
+            <nav class="subfiltros-flex">
+              <button class="btn-filtro ativo" data-filter="todos">Ver todas</button>
+              <button class="btn-filtro" data-filter="inseto">insetos</button>
+              <button class="btn-filtro" data-filter="aranha">aranhas</button>
+              <button class="btn-filtro" data-filter="gastropode">gastropodes</button>
+              <button class="btn-filtro" data-filter="reptil">répteis</button>
+              <button class="btn-filtro" data-filter="anfibio">anfíbios</button>
+              <button class="btn-filtro" data-filter="planta">plantas</button>
+              <button class="btn-filtro" data-filter="fungo">fungos</button>
+            </nav>
+          </div>
+      </aside>
 
-<!-- seção "GALERIA DE FOTOS" -->
+    <!-- subseção "GALERIA DE FOTOS" -->
 
-  <section class="fluxo-conteudo">
-    <div class="grade-galeria modo-mosaico" id="grade-galeria" data-random="true">
-      
-<!-- subseção "PRINCIPAL" -->      
+      <section class="fluxo-conteudo">
+        <div class="grade-galeria modo-mosaico" id="grade-galeria" data-random="true">
 
-    <div class="item-foto" data-category="anfibio">
-      <img src="../imagens/galeria/floresta-noturna/anfibio-1.webp" 
-          data-loja="https://loja.trevastropicais.art.br/produtos/quadro-decorativo-perereca-i/"
-          alt="Fotografia da coleção floresta-noturna - Categoria anfibio" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="anfibio">
+            <img src="../imagens/galeria/floresta-noturna/anfibio-1.webp" 
+                data-loja="https://loja.trevastropicais.art.br/produtos/quadro-decorativo-perereca-i/"
+                alt="Fotografia da coleção floresta-noturna - Categoria anfibio" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="anfibio">
-      <img src="../imagens/galeria/floresta-noturna/anfibio-2.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria anfibio" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="anfibio">
+            <img src="../imagens/galeria/floresta-noturna/anfibio-2.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria anfibio" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="anfibio">
-      <img src="../imagens/galeria/floresta-noturna/anfibio-3.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria anfibio" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="anfibio">
+            <img src="../imagens/galeria/floresta-noturna/anfibio-3.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria anfibio" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="aranha">
-      <img src="../imagens/galeria/floresta-noturna/aranha-1.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria aranha" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="aranha">
+            <img src="../imagens/galeria/floresta-noturna/aranha-1.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria aranha" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="gastropode">
-      <img src="../imagens/galeria/floresta-noturna/gastropode-1.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria gastropode" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="gastropode">
+            <img src="../imagens/galeria/floresta-noturna/gastropode-1.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria gastropode" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-1.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-1.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-10.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-10.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-11.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-11.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-12.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-12.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-13.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-13.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-14.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-14.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-2.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-2.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-3.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-3.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-4.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-4.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-5.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-5.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-6.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-6.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-7.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-7.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-8.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-8.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/floresta-noturna/inseto-9.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/floresta-noturna/inseto-9.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="reptil">
-      <img src="../imagens/galeria/floresta-noturna/reptil-1.webp" 
-          alt="Fotografia da coleção floresta-noturna - Categoria reptil" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="reptil">
+            <img src="../imagens/galeria/floresta-noturna/reptil-1.webp" 
+                alt="Fotografia da coleção floresta-noturna - Categoria reptil" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-<!-- subseção "ARACHNIDA" -->
+      <!-- subcoleção "ARACHNIDA" -->
 
-    <div class="item-foto" data-category="aranha">
-      <img src="../imagens/galeria/arachnida/aranha-2.webp" 
-          alt="Fotografia da coleção arachnida - Categoria aranha" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="aranha">
+            <img src="../imagens/galeria/arachnida/aranha-2.webp" 
+                alt="Fotografia da coleção arachnida - Categoria aranha" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="aranha">
-      <img src="../imagens/galeria/arachnida/aranha-6.webp" 
-          alt="Fotografia da coleção arachnida - Categoria aranha" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="aranha">
+            <img src="../imagens/galeria/arachnida/aranha-6.webp" 
+                alt="Fotografia da coleção arachnida - Categoria aranha" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="aranha">
-      <img src="../imagens/galeria/arachnida/aranha-12.webp" 
-          alt="Fotografia da coleção arachnida - Categoria aranha" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="aranha">
+            <img src="../imagens/galeria/arachnida/aranha-12.webp" 
+                alt="Fotografia da coleção arachnida - Categoria aranha" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-<!-- subseção "DRAMAS-DA-NATUREZA" -->
+      <!-- subcoleção "DRAMAS-DA-NATUREZA" -->
 
-    <div class="item-foto" data-category="inseto">
-      <img src="../imagens/galeria/dramas-da-natureza/inseto-3.webp" 
-          alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="inseto">
+            <img src="../imagens/galeria/dramas-da-natureza/inseto-3.webp" 
+                alt="Fotografia da coleção dramas-da-natureza - Categoria inseto" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-<!-- subseção "MYCELIA" -->
+      <!-- subcoleção "MYCELIA" -->
 
-    <div class="item-foto" data-category="fungo">
-      <img src="../imagens/galeria/mycelia/cogumelo-12.webp" 
-          alt="Fotografia da coleção mycelia - Categoria cogumelo" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="fungo">
+            <img src="../imagens/galeria/mycelia/cogumelo-12.webp" 
+                alt="Fotografia da coleção mycelia - Categoria cogumelo" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="fungo">
-      <img src="../imagens/galeria/mycelia/cogumelo-6.webp" 
-          alt="Fotografia da coleção mycelia - Categoria cogumelo" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="fungo">
+            <img src="../imagens/galeria/mycelia/cogumelo-6.webp" 
+                alt="Fotografia da coleção mycelia - Categoria cogumelo" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="fungo">
-      <img src="../imagens/galeria/mycelia/cordyceps-8.webp" 
-          alt="Fotografia da coleção mycelia - Categoria cordyceps" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="fungo">
+            <img src="../imagens/galeria/mycelia/cordyceps-8.webp" 
+                alt="Fotografia da coleção mycelia - Categoria cordyceps" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-<!-- subseção "REINO-PLANTAE" -->
+      <!-- subcoleção "REINO-PLANTAE" -->
 
-    <div class="item-foto" data-category="planta">
-      <img src="../imagens/galeria/reino-plantae/flor-5.webp" 
-          alt="Fotografia da coleção reino-plantae - Categoria planta" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="planta">
+            <img src="../imagens/galeria/reino-plantae/flor-5.webp" 
+                alt="Fotografia da coleção reino-plantae - Categoria planta" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="planta">
-      <img src="../imagens/galeria/reino-plantae/musgo-samambaia-2.webp" 
-          alt="Fotografia da coleção reino-plantae - Categoria planta" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="planta">
+            <img src="../imagens/galeria/reino-plantae/musgo-samambaia-2.webp" 
+                alt="Fotografia da coleção reino-plantae - Categoria planta" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
-    <div class="item-foto" data-category="planta">
-      <img src="../imagens/galeria/reino-plantae/folha-3.webp" 
-          alt="Fotografia da coleção reino-plantae - Categoria planta" 
-          class="foto-portfolio" 
-          loading="lazy">
-    </div>
+          <div class="item-foto" data-category="planta">
+            <img src="../imagens/galeria/reino-plantae/folha-3.webp" 
+                alt="Fotografia da coleção reino-plantae - Categoria planta" 
+                class="foto-portfolio" 
+                loading="lazy">
+          </div>
 
       </div>
-    </section>
+     </section>
   </main>
  
-<!-- Conceito narrativo e chamada do refresh da coleção -->  
-  <section class="bloco-refresh-pos-colecao">
-    <p class="frase-conceitual">
-      Como em uma verdadeira trilha na floresta, nada permanece no mesmo lugar a cada vez que você a visita.
-      <button class="btn-reorganizar-trilha" id="btn-reorganizar-trilha" aria-label="Reorganizar ordem da trilha" title="Reorganizar trilha">
-        [ ⟳ ]
-      </button>
-    </p>
-  </section>
+<!-- Seção "RODAPÉ/ PÓS COLEÇÃO" -->
 
-  <!-- seção "RODAPÉ/ PÓS COLEÇÃO" -->
+  <!-- Subseção "conceito narrativo/ chamada do refresh da coleção" -->  
+    
+    <section class="bloco-refresh-pos-colecao">
+      <p class="frase-conceitual">
+        Como em uma verdadeira trilha na floresta, nada permanece no mesmo lugar a cada vez que você a visita.
+        <button class="btn-reorganizar-trilha" id="btn-reorganizar-trilha" aria-label="Reorganizar ordem da trilha" title="Reorganizar trilha">
+          [ ⟳ ]
+        </button>
+      </p>
+    </section>
+
+  <!-- subseção "Continue navegando!" -->
 
       <footer class="navegacao-colecoes" id="rodape-navegacao">
         <h3 class="titulo-veja-tambem">escolha seu próximo caminho!</h3>
         
-        <!-- O JS vai injetar o mosaico de fotos (desktop) ou os botões (mobile) aqui -->
+        <!-- O JS vai injetar o mosaico (desktop) ou a lista (mobile) de coleções aqui -->
         <div class="container-links-dinamicos" id="links-dinamicos-rodape"></div>
       </footer>
 
   <!-- Rodapé Padrão com as informações de Copyright (Igual ao da Home) -->
 
-  <footer class="rodape-principal">
-    <div class="container-rodape">
-      
-      <nav class="links-rodape">
-        <a href="../sobre.html" class="link-fino">Sobre</a>
-        <a href="../sobre.html#secao-contato" class="link-fino">Contato</a>
-        <a href="https://instagram.com/savcavalcante" target="_blank" class="link-fino">Instagram</a>
-      </nav>
-      
-      <button class="btn-toggle-sensivel" id="btn-toggle-aranhas" aria-label="Ocultar fotos de aranhas">
-        <span class="icone-check">[ ]</span> ocultar aranhas
-      </button>
-      
-      <div class="assinatura-rodape">
-        <img src="../imagens/assets/assinatura.svg" alt="assinatura de Sávio Cavalcante" class="img-assinatura-rodape">
-      </div>
+    <footer class="rodape-principal">
+      <div class="container-rodape">
+        
+        <nav class="links-rodape">
+          <a href="../sobre.html" class="link-fino">Sobre</a>
+          <a href="../sobre.html#secao-contato" class="link-fino">Contato</a>
+          <a href="https://instagram.com/savcavalcante" target="_blank" class="link-fino">Instagram</a>
+        </nav>
+        
+        <button class="btn-toggle-sensivel" id="btn-toggle-aranhas" aria-label="Ocultar fotos de aranhas">
+          <span class="icone-check">[ ]</span> ocultar aranhas
+        </button>
+        
+        <div class="assinatura-rodape">
+          <img src="../imagens/assets/assinatura.svg" alt="assinatura de Sávio Cavalcante" class="img-assinatura-rodape">
+        </div>
 
-      <div class="info-copyright">
-        <p>&copy; 2026 Sávio Cavalcante. Todos os direitos reservados.</p>
-      </div>
+        <div class="info-copyright">
+          <p>&copy; 2026 Sávio Cavalcante. Todos os direitos reservados.</p>
+        </div>
 
-    </div>
-  </footer>
+      </div>
+    </footer>
        
 <!-- Modal de Visualização (Lightbox) -->
 

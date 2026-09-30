@@ -1,1460 +1,1466 @@
-/* 1- seção "CONFIGURAÇÕES GERAIS" ------------------------------------------------
+/* 1- seção "CONFIGURAÇÕES GERAIS" ------------------------------------------------*/
 
-- Design mobile-first, galeria de molduras grandes em mosaico/masonry que levam às páginas das coleções.
-- ========= Fontes e cores gerais ainda não determinadas.*/
+  /* subseção "DECLARAÇÃO DE FONTES LOCAIS" */
 
-/* Declaração das fontes locais baixadas */
+    @font-face {
+      font-family: 'Cinzel Decorative';
+      src: url('/css/fontes/CinzelDecorative-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-  font-family: 'Cinzel Decorative';
-  src: url('/css/fontes/CinzelDecorative-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+    @font-face {
+      font-family: 'Josefin Sans';
+      src: url('/css/fontes/JosefinSans-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-  font-family: 'Josefin Sans';
-  src: url('/css/fontes/JosefinSans-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+    :root {
+      --font-principal: 'Josefin Sans', 'Century Gothic', sans-serif;
+      --font-titulo: 'Cinzel Decorative', 'Georgia', serif;
 
-:root {
-  --font-principal: 'Josefin Sans', 'Century Gothic', sans-serif;
-  --font-titulo: 'Cinzel Decorative', 'Georgia', serif;
+    /* Tamanho global de fontes, mobile-first. */
 
-  /* TAMANHOS DE FONTE BASE (MOBILE) */
+      --font-size-sm: 0.75rem;   /* ~12px: Legendas, links finos, avisos */
+      --font-size-base: 0.9rem;   /* ~14.4px: Textos descritivos e parágrafos */
+      --font-size-lg: 1.1rem;    /* ~17.6px: Subtítulos e títulos médios */
+      --font-size-xl: 1.4rem;    /* ~22.4px: Títulos de destaque */
+    }
 
-  --font-size-sm: 0.75rem;   /* ~12px: Legendas, links finos, avisos */
-  --font-size-base: 0.9rem;   /* ~14.4px: Textos descritivos e parágrafos */
-  --font-size-lg: 1.1rem;    /* ~17.6px: Subtítulos e títulos médios */
-  --font-size-xl: 1.4rem;    /* ~22.4px: Títulos de destaque */
-}
+    /* Aplicação da fonte de título nos elementos de destaque */
+    
+    h1, h2, h3, .logo-nome, .titulo-colecao, .nome-colecao, .titulo-institucional {
+      font-family: var(--font-titulo);
+      font-weight: 400;
+      letter-spacing: 8px !important;
+      text-transform: lowercase !important;
+    }
 
-/* ESCALA AUTOMÁTICA PARA DESKTOP */
+    /* Escala de fontes para desktop. */
 
-@media (min-width: 1024px) {
-  :root {
-    --font-size-sm: 0.85rem;   /* ~13.6px */
-    --font-size-base: 1.05rem;  /* ~16.8px */
-    --font-size-lg: 1.25rem;   /* ~20px */
-    --font-size-xl: 1.6rem;    /* ~25.6px */
+    @media (min-width: 1024px) {
+      :root {
+        --font-size-sm: 0.85rem;
+        --font-size-base: 1.05rem;
+        --font-size-lg: 1.25rem;
+        --font-size-xl: 1.6rem;
+      }
+    }
+
+  /* subseção "CORES E MARGENS" */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #f5f5f5;
+      font-family: var(--font-principal);
+      font-weight: 300;
+      padding-top: 120px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-top: 160px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+/* 2- seção "CABEÇALHO" ------------------------------------------------------------*/
+
+  .header-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.85); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 15px 0 20px 0;
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #0a0a0a;
-  color: #f5f5f5;
-  font-family: var(--font-principal);
-  font-weight: 300; /* Força o uso do peso Light da Josefin Sans */
-  padding-top: 120px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@media (min-width: 768px) {
-  body {
-    padding-top: 160px; /* No desktop o cabeçalho fica um pouco mais compacto */
-  }
-}
-
-/* Aplicação da fonte de título nos elementos de destaque */
-h1, h2, h3, .logo-nome, .titulo-colecao, .nome-colecao, .titulo-institucional {
-  font-family: var(--font-titulo);
-  font-weight: 400;
-  letter-spacing: 8px !important;
-  text-transform: lowercase !important;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* 2- seção "CABEÇALHO" ------------------------------------------------------------
-
-- Design alto com links lado a lado no desktop.
-- No mobile, o menu colapsa em lista vertical acionado por um gatilho. */
-
-.header-principal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(10, 10, 10, 0.85); 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1000;
-  border-bottom: 1px solid #1a1a1a;
-  padding: 15px 0 20px 0;
-}
 
   /* GATILHO DO MENU MOBILE */
 
-.btn-gatilho-menu {
-  display: flex; 
-  background: none;
-  border: none;
-  color: #f5f5f5;
-  font-family: inherit;
-  font-size: 0.75rem;
-  letter-spacing: 1.5px; 
-  text-transform: uppercase;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-  
-  /* CHAVE DO ALINHAMENTO ÓPTICO PERFEITO: */
-  position: relative;
-  padding-right: 14px;
-  margin-left: 14px; 
-}
+  .btn-gatilho-menu {
+    display: flex; 
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-family: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px; 
+    text-transform: uppercase;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    position: relative;
+    padding-right: 14px;
+    margin-left: 14px; 
+  }
 
-.seta-menu {
-  font-size: 0.55rem;
-  transition: transform 0.3s ease;
-  position: absolute;
-  right: 0;
-}
+  .seta-menu {
+    font-size: 0.55rem;
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 0;
+  }
 
-/* CONTAINER DOS LINKS: No mobile, começa em coluna única e colapsado */
-.menu-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  width: 100%;
-  max-height: 0; /* Começa colapsado */
-  overflow: hidden;
-  transition: max-height 0.35s ease-out, padding 0.3s ease;
-  padding: 0;
-}
+  /* CONTAINER DOS LINKS: No mobile, começa em coluna única e colapsado */
 
-/* CLASSE INJETADA PELO JS NO MOBILE */
-.menu-links.aberto {
-  max-height: 200px;
-  padding-bottom: 15px;
-}
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out, padding 0.3s ease;
+    padding: 0;
+  }
 
-.nav-link {
-  font-size: 0.75rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  opacity: 0.5;
-  transition: opacity 0.3s;
-}
+  /* CLASSE INJETADA PELO JS NO MOBILE PARA ABRIR A BANDEJA */
 
-.nav-link:hover, .nav-link.ativo {
-  opacity: 1;
-}
+  .menu-links.aberto {
+    max-height: 200px;
+    padding-bottom: 15px;
+  }
 
-/* CONTAINER DO NOME/TITULO/LOGO */
-.identidade-marca {
-  width: 100%;
-  text-align: center;
-}
+  .nav-link {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
 
-.logo-nome {
-  font-size: var(--font-size-lg);
-  font-weight: 300;
-  letter-spacing: 5px;
-}
+  .nav-link:hover, .nav-link.ativo {
+    opacity: 1;
+  }
 
-/* 3- seção "VITRINE DAS COLEÇÕES DA PÁGINA INICIAL" ----------------------------------------------
+  /* CONTAINER DO NOME/TITULO/LOGOMARCA */
 
-- Aqui fica a organização das capas na entrada do site.
-- Design em rolagem vertical no mobile, mosaico/masonry com título em hover no desktop.*/
+  .identidade-marca {
+    width: 100%;
+    text-align: center;
+  }
 
- /* subseção "TEXTO DE APRESENTAÇÃO" */
+  .logo-nome {
+    font-size: var(--font-size-lg);
+    font-weight: 300;
+    letter-spacing: 5px;
+  }
 
-.apresentacao-home {
-  max-width: 680px;
-  margin: 0 auto 40px auto;
-  padding: 0 20px;
-  text-align: center;
-}
+/* 3- seção "VITRINE DAS COLEÇÕES DA PÁGINA INICIAL" ---------------------------------------*/
 
-.apresentacao-home p {
-  font-size: var(--font-size-base);
-  line-height: 1.8;
-  color: #b0b0b0;
-  letter-spacing: 0.3px;
-}
+  /* subseção "TEXTO DE APRESENTAÇÃO" */
 
-/* Bloco discreto para o aviso sobre aranhas */
-.apresentacao-home .bloco-aracnideos {
-  display: inline;
-  color: #888;
-  font-style: italic;
-}
+    .apresentacao-home {
+      max-width: 680px;
+      margin: 0 auto 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
 
-/* Botão minimalista 'é só clicar aqui' */
-.btn-filtro-inline {
-  background: none;
-  border: none;
-  color: #d0d0d0;
-  font-family: inherit;
-  font-size: inherit;
-  font-style: normal;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.3s ease;
-}
+    .apresentacao-home p {
+      font-size: var(--font-size-base);
+      line-height: 1.8;
+      color: #b0b0b0;
+      letter-spacing: 0.3px;
+    }
 
-.btn-filtro-inline:hover {
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-}
+    /* Bloco discreto para o aviso sobre aranhas */
 
-/* --- CHAMADA DRAMÁTICA FINAL --- */
-.chamada-dramatica {
-  margin-top: 30px !important;
-  font-size: var(--font-size-base) !important;
-  color: #c0c0c0 !important;
-  letter-spacing: 1px;
-}
+    .apresentacao-home .bloco-aracnideos {
+      display: inline;
+      color: #888;
+      font-style: italic;
+    }
 
-.destaque-cinzel {
-  display: block; /* Força a quebra para a linha de baixo */
-  margin-top: 8px;
-  font-family: var(--font-titulo) !important;
-  font-weight: 400 !important;
-  font-style: normal !important;
-  font-size: 1.8rem; /* Tamanho maior e imponente */
-  letter-spacing: 3px !important;
-  color: #ffffff;
-  transition: transform 0.4s ease, text-shadow 0.4s ease;
-}
+    /* Botão minimalista 'é só clicar aqui' */
 
-/* Efeito sutil de brilho ao scrollar a tela */
-.destaque-cinzel.expandido {
-  transform: scale(1.06);
-  text-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
-}
+    .btn-filtro-inline {
+      background: none;
+      border: none;
+      color: #d0d0d0;
+      font-family: inherit;
+      font-size: inherit;
+      font-style: normal;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
 
-/* Linha divisória sutil */
-.divisoria-home {
-  width: 50px;
-  height: 1px;
-  background-color: #262626;
-  margin: 35px auto 0 auto;
-}
+    .btn-filtro-inline:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
 
- /* subseção "GRID DE COLEÇÕES" */
+    /* Bloco de convite dramático final, antes da grade de fotos */
 
-.container-portfolio {
-  padding: 0;
-  width: 100%;
-}
+    .chamada-dramatica {
+      margin-top: 30px !important;
+      font-size: var(--font-size-base) !important;
+      color: #c0c0c0 !important;
+      letter-spacing: 1px;
+    }
 
-.flex-colecoes {
-  display: flex;
-  flex-direction: column; 
-  gap: 0;
-  width: 100%;
-}
+    /* Título da galeria fotográfica: Trevas Tropicais, bem grande e com efeito*/
 
-.card-colecao {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
+    .destaque-cinzel {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--font-titulo) !important;
+      font-weight: 400 !important;
+      font-style: normal !important;
+      font-size: 1.8rem;
+      letter-spacing: 3px !important;
+      color: #ffffff;
+      transition: transform 0.4s ease, text-shadow 0.4s ease;
+    }
 
-.moldura-foto {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  background-color: #111;
-}
+    /* Efeito sutil de aumento ao scrollar a tela */
 
-.foto-capa {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  image-rendering: -webkit-optimize-contrast;
-}
+    .destaque-cinzel.expandido {
+      transform: scale(1.06);
+      text-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Linha divisória sutil */
+
+    .divisoria-home {
+      width: 50px;
+      height: 1px;
+      background-color: #262626;
+      margin: 35px auto 0 auto;
+    }
+
+  /* subseção "GRADE DE COLEÇÕES" */
+
+    .container-portfolio {
+      padding: 0;
+      width: 100%;
+    }
+
+    .flex-colecoes {
+      display: flex;
+      flex-direction: column; 
+      gap: 0;
+      width: 100%;
+    }
+
+    .card-colecao {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .moldura-foto {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background-color: #111;
+    }
+
+    .foto-capa {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+    }
 
   /* subseção "CONFIGURAÇÃO DOS TÍTULOS DAS COLEÇÕES" */
 
-.info-colecao {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Faixa escura com transparência do mobile */
-  padding: 15px 20px;
-  text-align: center;
+    .info-colecao {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6); /* Faixa escura com transparência do mobile */
+      padding: 15px 20px;
+      text-align: center;
+      opacity: 1; /* Sempre visível no mobile, efeito hover no desktop (ativado na query da seção 5) */
+      transition: opacity 0.3s ease;
+    }
 
-      /* subseção "Configuração para o Hover no Desktop", ativada abaixo na seção 4 */
-
-  opacity: 1; /* Sempre visível no mobile */
-  transition: opacity 0.3s ease;
-}
-
-.titulo-colecao {
-  font-size: var(--font-size-base);
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: #fff;
-}
+    .titulo-colecao {
+      font-size: var(--font-size-base);
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #fff;
+    }
 
 /* 4- seção "RODAPÉS" ----------------------------------------------------------- */
 
-.rodape-principal {
-  width: 100%;
-  border-top: 1px solid #1a1a1a;
-  background-color: #0a0a0a;
-  padding: 40px 20px;
-  margin-top: 60px; /* Dá um recuo após o término das capas da vitrine */
-}
+  /* subseção "RODAPÉ PRINCIPAL" */
 
-.container-rodape {
-  display: flex;
-  flex-direction: column; /* Mobile: empilhado */
-  align-items: center;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .rodape-principal {
+      width: 100%;
+      border-top: 1px solid #1a1a1a;
+      background-color: #0a0a0a;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
 
-.info-copyright p {
-  font-size: var(--font-size-sm);
-  letter-spacing: 1px;
-  color: #666;
-}
+    .container-rodape {
+      display: flex;
+      flex-direction: column; /* Mobile: empilhado */
+      align-items: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.links-rodape {
-  display: flex;
-  gap: 20px;
-}
+    .info-copyright p {
+      font-size: var(--font-size-sm);
+      letter-spacing: 1px;
+      color: #666;
+    }
 
-.link-fino {
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #fff;
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
-}
+    .links-rodape {
+      display: flex;
+      gap: 20px;
+    }
 
-.link-fino:hover {
-  opacity: 1;
-}
+    .link-fino {
+      font-size: var(--font-size-sm);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #fff;
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+    }
+
+    .link-fino:hover {
+      opacity: 1;
+    }
 
   /* subseção "ASSINATURA DO RODAPÉ" */
 
-.assinatura-rodape {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0 5px 0;
-}
+    .assinatura-rodape {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 5px 0;
+    }
 
-.img-assinatura-rodape {
-  width: 110px; /* Um pouco menor que a do manifesto para manter a hierarquia do rodapé */
-  height: auto;
-  opacity: 0.4;  /* Bem discreta, integrada à paleta dos textos secundários */
-  transition: opacity 0.3s ease;
-}
+    .img-assinatura-rodape {
+      width: 110px;
+      height: auto;
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+    }
 
-.img-assinatura-rodape:hover {
-  opacity: 0.8;
-}
+    .img-assinatura-rodape:hover {
+      opacity: 0.8;
+    }
 
   /* subseção "AJUSTE PARA DESKTOP" */
 
-@media (min-width: 768px) {
-  .container-rodape {
-    flex-direction: column; 
-    gap: 20px;
-  }
-}
+    @media (min-width: 768px) {
+      .container-rodape {
+        flex-direction: column; 
+        gap: 20px;
+      }
+    }
 
 
-/* 5- seção "MEDIA QUERIES DA PÁGINA INICIAL" ------------------------------------------------------
-
-- Configurações de portabilidade das telas menores/mobile para as maiores/desktop. */
+/* 5- seção "MEDIA QUERIES DA PÁGINA INICIAL" ---------------------------------------------*/
 
 @media (min-width: 768px) {
   
   /* subseção "AJUSTES DO CABEÇALHO PARA DESKTOP" */
 
-  .logo-nome {
-    font-size: var(--font-size-xl);
-  }
+    .logo-nome {
+      font-size: var(--font-size-xl);
+    }
 
-  .titulo-colecao {
-    font-size: var(--font-size-lg);
-  }
-  
-    /* ESCONDE O BOTÃO DE GATILHO NO DESKTOP */
+    .titulo-colecao {
+      font-size: var(--font-size-lg);
+    }
 
-  .btn-gatilho-menu {
-    display: none;
-  }
+    .btn-gatilho-menu {
+      display: none;
+    }
 
-    /* RESTAURA OS LINKS LADO A LADO NO DESKTOP */
+    .menu-links {
+      order: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      max-height: none; 
+      overflow: visible;
+      padding-bottom: 15px;
+      padding-top: 0;
+    }
 
-  .menu-links {
-    order: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    max-height: none; 
-    overflow: visible;
-    padding-bottom: 15px;
-    padding-top: 0;
-  }
+    .menu-links.aberto {
+      padding-bottom: 15px; 
+    }
 
-  .menu-links.aberto {
-    padding-bottom: 15px; 
-  }
-
-  .identidade-marca {
-    order: 2;
-    padding: 10px 0;
-  }
-  
-  .header-principal {
-    padding: 20px 0 15px 0;
-  }
+    .identidade-marca {
+      order: 2;
+      padding: 10px 0;
+    }
     
-    /* subseção "MUDANÇA DE FLUXO (FLEX>MASONRY)" */
+    .header-principal {
+      padding: 20px 0 15px 0;
+    }
+    
+  /* subseção "MUDANÇA DE FLUXO (FLEX>MASONRY)" */
 
-  .flex-colecoes {
-    display: block;
-    column-count: 2;
-    width: 100%;
-  }
+    .flex-colecoes {
+      display: block;
+      column-count: 2;
+      width: 100%;
+    }
 
-  .card-colecao {
-    width: 100%; 
-    display: block;
-  }
+    .card-colecao {
+      width: 100%; 
+      display: block;
+    }
   
-    /* subseção "EFEITO ESCONDER LEGENDA NO DESKTOP" */
+  /* subseção "EFEITO ESCONDER LEGENDA NO DESKTOP" */
 
-  .info-colecao {
-    opacity: 0;
-    height:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    pointer-events: none; /* Evita que a legenda interfira na interação com o card */
-    transition: opacity 0.3s ease;
-  }
+    .info-colecao {
+      opacity: 0;
+      height:100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
 
-    /* subseção "EFEITO DE REVELAR LEGENDA NO HOVER" */
+  /* subseção "EFEITO DE REVELAR LEGENDA NO HOVER" */
 
-  .card-colecao:hover .info-colecao {
-    opacity: 1;
-    pointer-events: auto; /* Permite interação com a legenda quando visível */
-  }
+    .card-colecao:hover .info-colecao {
+      opacity: 1;
+      pointer-events: auto;
+    }
 }
 
-    /* seção "AJUSTE PARA TELAS AINDA MAIORES", colocando 3 colunas. */
+  /* subseção "AJUSTE PARA TELAS AINDA MAIORES", colocando 3 colunas. */
 
-@media (min-width: 1200px) {
-  .flex-colecoes {
-    column-count: 3;
+  @media (min-width: 1200px) {
+    .flex-colecoes {
+      column-count: 3;
+    }
   }
-}
 
-/* 6- seção "PÁGINA INTERNA DE COLEÇÃO". ----------------------------------------------------------- 
-
-- A ideia a princípio é que seja uma rolagem vertical tanto no mobile quanto desktop,
-- Full screen no mobile, adaptativa a depender da largura da foto no desktop, mas sem tocar os cantos. 
-- ============ Muito provavelmente vou querer fazer algo diferente dependendo da coleção, no desktop */
+/* 6- seção "PÁGINA INTERNA DE COLEÇÃO". -------------------------------------------------------*/
 
   /* subseção "CONTAINER ADAPTATIVO QUE ABRAÇA AS DUAS COLUNAS" */
 
-.wrapper-colecao {
-  display: flex;
-  flex-direction: column; /* Mobile: empilhado verticalmente */
-  width: 100%;
-  padding: 0 20px;
-}
+    .wrapper-colecao {
+      display: flex;
+      flex-direction: column; /* Mobile: empilhado verticalmente */
+      width: 100%;
+      padding: 0 20px;
+    }
 
   /* subseção "PAINEL DE TEXTO (TÍTULO, DESCRIÇÃO E FILTROS)" */
 
-.painel-info {
-  width: 100%;
-  padding: 20px 0 15px 0;
-  text-align: center;
-}
+    .painel-info {
+      width: 100%;
+      padding: 20px 0 15px 0;
+      text-align: center;
+    }
 
-.nome-colecao {
-  font-size: var(--font-size-lg);
-  font-weight: 300;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
+    .nome-colecao {
+      font-size: var(--font-size-lg);
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
 
-.descricao-colecao {
-  font-size: var(--font-size-base);
-  line-height: 1.6;
-  opacity: 0.7;
-  max-width: 600px;
-  margin: 0 auto 15px auto;
-}
+    .descricao-colecao {
+      font-size: var(--font-size-base);
+      line-height: 1.6;
+      opacity: 0.7;
+      max-width: 600px;
+      margin: 0 auto 15px auto;
+    }
 
-  /* subseção "FRASE DO CONCEITO NARRATIVO", que induz o visitante a atualizar a página */
-.bloco-refresh-pos-colecao {
-  width: 100%;
-  max-width: 1000px;
-  margin: 50px auto 30px auto;
-  padding-top: 25px;
-  border-top: 1px dashed #222;
-  text-align: center;
-}
+  /* subseção "FRASE DO CONCEITO NARRATIVO", que induz o visitante a atualizar a página ao final da rolagem */
 
-  .frase-conceitual {
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
-  color: #666666;
-  font-style: italic;
-  margin-top: 20px;
-  letter-spacing: 0.5px;
-  display: block;
-}
+    .bloco-refresh-pos-colecao {
+      width: 100%;
+      max-width: 1000px;
+      margin: 50px auto 30px auto;
+      padding-top: 25px;
+      border-top: 1px dashed #222;
+      text-align: center;
+    }
 
-.btn-reorganizar-trilha {
-  background: transparent;
-  border: none;
-  color: #888888;
-  font-family: inherit;
-  font-size: var(--font-size-sm);
-  font-weight: normal;
-  cursor: pointer;
-  padding: 4px 6px;
-  margin-left: 4px;
-  display: inline-block;
-  vertical-align: middle;
-  transition: color 0.3s ease, transform 0.4s ease;
-  -webkit-tap-highlight-color: transparent;
-}
+    .frase-conceitual {
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+      color: #666666;
+      font-style: italic;
+      margin-top: 20px;
+      letter-spacing: 0.5px;
+      display: block;
+    }
 
-.btn-reorganizar-trilha:hover,
-.btn-reorganizar-trilha:focus {
-  color: #f5f5f5;
-  transform: rotate(180deg);
-  outline: none;
-}
+    .btn-reorganizar-trilha {
+      background: transparent;
+      border: none;
+      color: #888888;
+      font-family: inherit;
+      font-size: var(--font-size-sm);
+      font-weight: normal;
+      cursor: pointer;
+      padding: 4px 6px;
+      margin-left: 4px;
+      display: inline-block;
+      vertical-align: middle;
+      transition: color 0.3s ease, transform 0.4s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-reorganizar-trilha:hover,
+    .btn-reorganizar-trilha:focus {
+      color: #f5f5f5;
+      transform: rotate(180deg);
+      outline: none;
+    }
 
   /* subseção "CONTAINER PARA OS BOTÕES DE FILTRO" */
 
-.subfiltros-flex {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .subfiltros-flex {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.btn-filtro {
-  background: none;
-  border: 1px solid #333;
-  color: #f5f5f5;
-  padding: 6px 14px;
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+    .btn-filtro {
+      background: none;
+      border: 1px solid #333;
+      color: #f5f5f5;
+      padding: 6px 14px;
+      font-size: var(--font-size-sm);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-.btn-filtro.ativo, .btn-filtro:hover {
-  background-color: #f5f5f5;
-  color: #0a0a0a;
-  border-color: #f5f5f5;
-}
+    .btn-filtro.ativo, .btn-filtro:hover {
+      background-color: #f5f5f5;
+      color: #0a0a0a;
+      border-color: #f5f5f5;
+    }
 
-/* subseção "ALTERNADOR DE VISUALIZAÇÃO" */
+  /* subseção "ALTERNADOR DE VISUALIZAÇÃO" */
 
-.barra-acoes-rapidas {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  margin-bottom: 10px;
-}
+    .barra-acoes-rapidas {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
 
-.btn-alternar-view {
-  background: none;
-  border: 1px dashed #444;
-  color: #ccc;
-  padding: 8px 16px;
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: auto;
-}
+    .btn-alternar-view {
+      background: none;
+      border: 1px dashed #444;
+      color: #ccc;
+      padding: 8px 16px;
+      font-size: var(--font-size-sm);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: auto;
+    }
 
-.btn-alternar-view:hover, 
-.btn-alternar-view:active {
-  border-color: #f5f5f5;
-  color: #f5f5f5;
-  background-color: rgba(255, 255, 255, 0.05);
-}
+    .btn-alternar-view:hover, 
+    .btn-alternar-view:active {
+      border-color: #f5f5f5;
+      color: #f5f5f5;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
 
-/* Rótulo descritivo dentro da gaveta de subfiltros */
-.label-filtros {
-  display: block;
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #666;
-  margin-bottom: 10px;
-  text-align: center;
-}
+  /* subseção "Rótulo descritivo dentro da gaveta de subfiltros" */
 
-@media (min-width: 1024px) {
-  .label-filtros {
-    text-align: right;
-  }
-}
+    .label-filtros {
+      display: block;
+      font-size: var(--font-size-sm);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #666;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .label-filtros {
+        text-align: right;
+      }
+    }
+
   /* subseção "COMPORTAMENTO DINÂMICO PARA MODO MOSAICO" */
 
-/* Força a galeria a se comportar como colunas (masonry) sem espaços vazios */
-.grade-galeria.modo-mosaico {
-  display: block; 
-  column-count: 2; /* 2 colunas de fotos no mobile */
-  column-gap: 0px;
-}
+    .grade-galeria.modo-mosaico {
+      display: block; 
+      column-count: 2; /* 2 colunas de fotos no mobile */
+      column-gap: 0px;
+    }
 
-/* Garante que os cards não quebrem ao meio entre colunas */
-.grade-galeria.modo-mosaico .item-foto {
-  display: block;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  break-inside: avoid;
-  cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que a foto é clicável */
-  -webkit-tap-highlight-color: transparent;
-}
+    .grade-galeria.modo-mosaico .item-foto {
+      display: block;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      break-inside: avoid;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-.grade-galeria.modo-mosaico .foto-portfolio {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  pointer-events: auto;
-}
+    .grade-galeria.modo-mosaico .foto-portfolio {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      pointer-events: auto;
+    }
 
-@media (min-width: 1024px) {
-  .grade-galeria.modo-mosaico {
-    column-count: 3; /* 3 colunas de fotos no desktop */
-  }
-}
+    @media (min-width: 1024px) {
+      .grade-galeria.modo-mosaico {
+        column-count: 3; /* 3 colunas de fotos no desktop */
+      }
+    }
 
   /* subseção "FLUXO DE CONTEÚDO DA COLEÇÃO" */
 
-.fluxo-conteudo {
-  width: 100%;
-}
+    .fluxo-conteudo {
+      width: 100%;
+    }
 
   /* subseção "ALINHAMENTO DAS FOTOS". Coluna única e centralizada */
 
-.grade-galeria {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px; 
-  width: 100%;
-  padding-bottom: 0px;
-}
+    .grade-galeria {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px; 
+      width: 100%;
+      padding-bottom: 0px;
+    }
 
-.item-foto {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
+    .item-foto {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
 
-  /* subseção "CONTROLE DE TAMANHO MÁXIMO VERTICAL". Alterado para imagens verticais ocuparem toda a largura, talvez reverta isso depois. */
+  /* subseção "CONTROLE DE TAMANHO MÁXIMO VERTICAL". Alterado para imagens verticais ocuparem toda a largura. */
 
-.foto-portfolio {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: none;
-  object-fit: cover;
-  pointer-events: auto;
-  -webkit-touch-callout: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
+    .foto-portfolio {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: none;
+      object-fit: cover;
+      pointer-events: auto;
+      -webkit-touch-callout: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
 
   /* subseção "BOTÃO DE GATILHO DO FILTRO" - Escondido por padrão no Desktop */
 
-.btn-gatilho-filtros {
-  display: none;
-  width: 100%;
-  padding: 12px 15px;
-  background-color: #111;
-  color: #fff;
-  border: 1px solid #333;
-  font-family: var(--font-principal);
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  justify-content: center; 
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
+    .btn-gatilho-filtros {
+      display: none;
+      width: 100%;
+      padding: 12px 15px;
+      background-color: #111;
+      color: #fff;
+      border: 1px solid #333;
+      font-family: var(--font-principal);
+      font-size: var(--font-size-sm);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      justify-content: center; 
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
 
   /* subseção "MEDIA QUERY DO BOTÃO DE GATILHO DO FILTRO", utilizado no mobile */
 
-@media (max-width: 768px) {
-  
-    /* Garante que o painel de filtros fique no topo antes das fotos */
+    @media (max-width: 768px) {
+      
+      .wrapper-colecao {
+        display: flex;
+        flex-direction: column;
+      }
 
-  .wrapper-colecao {
-    display: flex;
-    flex-direction: column;
-  }
+      .painel-filtros {
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+        background-color: #0a0a0a;
+        border-top: 1px solid #222;
+        padding-top: 25px;
+        margin-top: 25px;
+      }
 
-  .painel-filtros {
-    width: 100%;
-    position: relative;
-    margin-bottom: 20px;
-    background-color: #0a0a0a;
-    border-top: 1px solid #222;
-    padding-top: 25px;
-    margin-top: 25px;
-  }
+      .btn-gatilho-filtros {
+        display: flex;
+      }
 
-    /* Mostra o botão gatilho no mobile */
+      /* subseção "CONTAINER DA GAVETA", que desdobra */
 
-  .btn-gatilho-filtros {
-    display: flex;
-  }
+      .conteudo-filtros {
+        display: none !important;
+        width: 100%;
+        background-color: #0a0a0a;
+        border-left: 1px solid #1a1a1a;
+        border-right: 1px solid #1a1a1a;
+        border-bottom: 1px solid #1a1a1a;
+        padding: 15px 0;
+      }
 
-    /* subseção "CONTAINER DA GAVETA", que desdobra */
+      /* subseção "CLASSE INJETADA PELO JS", que faz o menu aparecer" */
 
-  .conteudo-filtros {
-    display: none !important;
-    width: 100%;
-    background-color: #0a0a0a;
-    border-left: 1px solid #1a1a1a;
-    border-right: 1px solid #1a1a1a;
-    border-bottom: 1px solid #1a1a1a;
-    padding: 15px 0;
-  }
+      .painel-filtros .conteudo-filtros.aberto {
+        display: block !important;
+        visibility: visible !important;
+        height: auto !important;
+        opacity: 1 !important;
+      }
 
-    /* subseção "CLASSE INJETADA PELO JS", que faz o menu aparecer" */
+      /* subseção "CONTAINER DOS FILTROS ABERTOS", distribuidos lado a lado. */
 
-  .painel-filtros .conteudo-filtros.aberto {
-    display: block !important;
-    visibility: visible !important;
-    height: auto !important;
-    opacity: 1 !important;
-  }
+      .conteudo-filtros.aberto .subfiltros-flex {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;     /* Quebra linha se faltar espaço (mosaico) */
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px;
+        width: 100%;
+      }
 
-    /* subseção "CONTAINER DOS FILTROS ABERTOS", distribuidos lado a lado. */
+      /* subseção "MOLDE DOS BOTÕES", ajustando-se ao tamanho do texto */
 
-  .conteudo-filtros.aberto .subfiltros-flex {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;     /* Quebra linha se faltar espaço (mosaico) */
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px;
-    width: 100%;
-  }
+      .btn-filtro {
+        width: auto;
+        text-align: center;
+        padding: 8px 16px;
+        font-size: var(--font-size-sm);
+        border-radius: 3px;
+      }
+    }
 
-    /* subseção "MOLDE DOS BOTÕES", ajustando-se ao tamanho do texto */
+  /* subseção "NOTA SUTIL DE ACERVO AO FIM DA COLEÇÃO" */
 
-  .btn-filtro {
-    width: auto;
-    text-align: center;
-    padding: 8px 16px;
-    font-size: var(--font-size-sm);
-    border-radius: 3px;
-  }
-}
+    .nota-acervo-colecao {
+      width: 100%;
+      max-width: 550px;
+      margin: 20px auto 15px auto;
+      padding-top: 15px;
+      border-top: 1px dashed #222;
+      text-align: center;
+    }
 
-/* subseção "NOTA SUTIL DE ACERVO AO FIM DA COLEÇÃO" */
+    .texto-nota-acervo {
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+      color: #777;
+      font-style: italic;
+    }
 
-.nota-acervo-colecao {
-  width: 100%;
-  max-width: 550px;
-  margin: 20px auto 15px auto;
-  padding-top: 15px;
-  border-top: 1px dashed #222;
-  text-align: center;
-}
+    .texto-nota-acervo .link-sublinhado {
+      color: #aaa;
+    }
 
-.texto-nota-acervo {
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
-  color: #777;
-  font-style: italic;
-}
+  /* subseção "Bloqueio de seleção, toque longo no mobile e arrasto no desktop" */
 
-.texto-nota-acervo .link-sublinhado {
-  color: #aaa;
-}
+    .foto-portfolio,
+    .foto-capa,
+    .img-modal-destaque {
+      -webkit-touch-callout: none !important; 
+      -webkit-user-select: none !important; 
+      -moz-user-select: none !important;     
+      -ms-user-select: none !important;    
+      user-select: none !important;       
+      -webkit-user-drag: none !important;     
+      pointer-events: auto;                   
+    }
 
 /* 6.1- seção "COMPORTAMENTO DAS PÁGINAS INTERNAS NO DESKTOP" --------------------------- */
 
-@media (min-width: 1024px) {
-  .wrapper-colecao {
-    flex-direction: row;
-    gap: 40px;
-    align-items: flex-start; /* Alinha o conteúdo no topo da tela */
+  @media (min-width: 1024px) {
+    .wrapper-colecao {
+      flex-direction: row;
+      gap: 40px;
+      align-items: flex-start; 
+    }
+
+    /* subseção "COLUNA DA ESQUERDA". Fixa o painel esquerdo na tela durante o scroll */
+
+      .painel-info {
+        order: 1;
+        width: 20%; 
+        text-align: left;
+        height: fit-content;
+        position: sticky;
+        top: 160px;
+        transform: none;
+        padding: 0;
+      }
+
+      .descricao-colecao {
+        margin: 0;
+      }
+
+      .painel-info .nota-acervo-colecao {
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .frase-conceitual {
+        margin-top: 30px;
+        max-width: 90%;
+      }
+
+    /* subseção "COLUNA CENTRAL", com scroll vertical das fotos */
+
+      .fluxo-conteudo {
+        order: 2;
+        width: 60%;
+        min-height: 60vh;
+      }
+
+      .grade-galeria {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 0 80px 0;
+      }
+
+    /* subseção "COLUNA DA DIREITA". Fixa o painel de filtros na tela durante o scroll */
+
+      .painel-filtros {
+        order: 3;
+        width: 20%; 
+        height: fit-content;
+        position: sticky;
+        top: 160px;
+        transform: none;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+      }
+
+      .conteudo-filtros {
+        width: 100%;
+      }
+
+      .subfiltros-flex {
+        flex-direction: column; 
+        align-items: flex-end;
+        gap: 15px;
+      }
+
+      .barra-acoes-rapidas {
+        padding: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-end; 
+      }
   }
 
-  /* subseção "COLUNA DA ESQUERDA". Fixa o painel esquerdo na tela durante o scroll */
+/* 6.2- seção "RODAPÉ DE NAVEGAÇÃO AUTOMATIZADO", "continue navegando!" ----------------------------- */
 
-  .painel-info {
-    order: 1;
-    width: 20%; /* Ocupa pouco menos de 1/3 da tela */
-    text-align: left;
-    height: fit-content;
-    position: sticky;
-    top: 160px;
-    transform: none; /* Centraliza verticalmente o painel de informações */
-    padding: 0;
-  }
+ /* subseção "CONFIGURAÇOES GERAIS", mobile-first */
 
-  .descricao-colecao {
-    margin: 0;
-  }
-
-  .painel-info .nota-acervo-colecao {
-    text-align: left;
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  .frase-conceitual {
-    margin-top: 30px;
-    max-width: 90%;
-  }
-
-  /* subseção "COLUNA CENTRAL", com scroll vertical das fotos */
-
-  .fluxo-conteudo {
-    order: 2;
-    width: 60%;
-    min-height: 60vh;
-  }
-
-  .grade-galeria {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 0 80px 0;
-  }
-
-  /* subseção "COLUNA DA DIREITA". Fixa o painel de filtros na tela durante o scroll */
-
-  .painel-filtros {
-    order: 3;
-    width: 20%; /* Mesmo tamanho da coluna da esquerda para simetria visual */
-    height: fit-content;
-    position: sticky;
-    top: 160px;
-    transform: none;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-  }
-
-  .conteudo-filtros {
+  .navegacao-colecoes {
     width: 100%;
+    max-width: 100%;
+    margin: 80px auto 0 auto;
+    padding: 40px 0 0px 0;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
   }
 
-  .subfiltros-flex {
-    flex-direction: column; /* No desktop, os botões ficam em lista vertical */
-    align-items: flex-end; /* Alinha os botões à direita */
-    gap: 15px;
-  }
-
-  .barra-acoes-rapidas {
-    padding: 0;
+  .titulo-veja-tambem {
+    display:block;
     width: 100%;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-end; /* Alinha o botão de alternar visualização à direita */
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 30px;
   }
-}
 
-/* 6.2- seção "RODAPÉ DE NAVEGAÇÃO AUTOMATIZADO" ----------------------------- */
-
-.navegacao-colecoes {
-  width: 100%;
-  max-width: 100%;
-  margin: 80px auto 0 auto;
-  padding: 40px 0 0px 0;
-  border-top: 1px solid #1a1a1a;
-  text-align: center;
-}
-
-.titulo-veja-tambem {
-  display:block;
-  width: 100%;
-  text-align: center;
-  font-size: var(--font-size-sm);
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 30px;
-}
-
-/* CONTAINER DOS LINKS DINÂMICOS (MOBILE FIRST: 2 COLUNAS) */
-.container-links-dinamicos {
-  display: block;
-  column-count: 2; /* Exibe em 2 colunas no mobile */
-  column-gap: 0;
-  width: 100%;
-  padding: 0;
-}
-
-.container-links-dinamicos .card-sugestao-rodape {
-  display: block;
-  width: 100%;
-  break-inside: avoid; /* Evita que um card se divida entre duas colunas */
-  position: relative;
-  overflow: hidden;
-}
-
-.img-sugestao-rodape {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-/* Legenda visível por padrão no mobile, idêntica à página inicial */
-.container-links-dinamicos .overlay-sugestao {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 12px 10px;
-  text-align: center;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.txt-sugestao-desktop {
-  font-size: var(--font-size-sm);
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-/* ------ COMPORTAMENTO ADAPTATIVO: DESKTOP (Telas maiores) ------ */
-
-@media (min-width: 1024px) {
-  
-  /* Expande o container para 3 colunas no desktop */
   .container-links-dinamicos {
-    column-count: 3;
+    display: block;
+    column-count: 2;
+    column-gap: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .container-links-dinamicos .card-sugestao-rodape {
+    display: block;
+    width: 100%;
+    break-inside: avoid; 
+    position: relative;
+    overflow: hidden;
   }
 
   .img-sugestao-rodape {
-    opacity: 0.85;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
   }
 
-  /* Aplica o efeito hover de revelar legenda no desktop */
   .container-links-dinamicos .overlay-sugestao {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    top: 0;
+    display: block;
+    position: absolute;
     bottom: 0;
-    opacity: 0; /* Continua invisível até o hover */
-    pointer-events: none;
-    padding: 20px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 12px 10px;
+    text-align: center;
+    opacity: 1;
     transition: opacity 0.3s ease;
   }
 
   .txt-sugestao-desktop {
-    font-size: var(--font-size-base);
-    letter-spacing: 2px;
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fff;
   }
 
-  .container-links-dinamicos .card-sugestao-rodape:hover .overlay-sugestao {
-    opacity: 1;
-    pointer-events: auto;
-  }
+/* subseção "ADAPTAÇÕES DO RODAPÉ DINÂMICO PARA DESKTOP" */
 
-  .container-links-dinamicos .card-sugestao-rodape:hover .img-sugestao-rodape {
-    opacity: 1;
-    transform: scale(1.03);
+  @media (min-width: 1024px) {
+    
+    .container-links-dinamicos {
+      column-count: 3;
+    }
+
+    .img-sugestao-rodape {
+      opacity: 0.85;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .container-links-dinamicos .overlay-sugestao {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      opacity: 0; 
+      pointer-events: none;
+      padding: 20px;
+      transition: opacity 0.3s ease;
+    }
+
+    .txt-sugestao-desktop {
+      font-size: var(--font-size-base);
+      letter-spacing: 2px;
+    }
+
+    .container-links-dinamicos .card-sugestao-rodape:hover .overlay-sugestao {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .container-links-dinamicos .card-sugestao-rodape:hover .img-sugestao-rodape {
+      opacity: 1;
+      transform: scale(1.03);
+    }
   }
-}
 
 /* 7- seção "PÁGINA INSTITUCIONAL/SOBRE/CONTATO" ------------------------------------------ */
 
   /* subseção "WRAPPER INSTITUCIONAL", que centraliza o conteúdo*/
 
-.wrapper-institucional {
-  max-width: 600px;
-  margin: 60px auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+    .wrapper-institucional {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-.wrapper-institucional h2 {
-  font-size: var(--font-size-xl);
-  margin-bottom: 25px;
-  color: #fff;
-}
+    .wrapper-institucional h2 {
+      font-size: var(--font-size-xl);
+      margin-bottom: 25px;
+      color: #fff;
+    }
 
-.wrapper-institucional h3 {
-  font-size: var(--font-size-lg);
-  margin-bottom: 15px;
-  color: #aaa;
-}
+    .wrapper-institucional h3 {
+      font-size: var(--font-size-lg);
+      margin-bottom: 15px;
+      color: #aaa;
+    }
 
   /* subseção "ESPAÇAMENTO DOS GRANDES BLOCOS", que define o espaçamento dos blocos da página */
 
-.wrapper-institucional section {
-  width: 100%;
-  margin-bottom: 50px;
-}
+    .wrapper-institucional section {
+      width: 100%;
+      margin-bottom: 50px;
+    }
 
   /* subseção "CONTAINER DA FOTO DE PERFIL" */
 
-.container-foto-perfil {
-  width: 180px;
-  height: 180px;
-  margin: 0 auto;
-  border-radius: 50%; /* Deixa a foto redonda */
-  overflow: hidden;
-  background-color: #222; /* Fundo placeholder caso a imagem suma */
-  border: 1px solid #333;
-}
+    .container-foto-perfil {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto;
+      border-radius: 50%; /* Deixa a foto redonda */
+      overflow: hidden;
+      background-color: #222; 
+      border: 1px solid #333;
+    }
 
-.foto-perfil {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .foto-perfil {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  /* subseção "BLOCO DE TEXTO" */
+  /* subseção "BLOCO DE TEXTO/MANIFESTO" */
 
-.texto-placeholder p {
-  font-size: var(--font-size-base);
-  line-height: 1.8;
-  color: #ccc;
-  margin-bottom: 20px;
-}
+    .texto-placeholder p {
+      font-size: var(--font-size-base);
+      line-height: 1.8;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
 
   /* subseção "ASSINATURA PÓS MANIFESTO" */
 
-.container-assinatura-manifesto {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 35px; /* Recuo confortável após o término do texto */
-}
+    .container-assinatura-manifesto {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 35px; 
+    }
 
-.img-assinatura {
-  width: 160px; /* Largura elegante para visualização em desktop e mobile */
-  height: auto;
-  opacity: 0.85; /* Dá um tom sutil e elegante */
-  transition: opacity 0.3s ease;
-}
+    .img-assinatura {
+      width: 160px;
+      height: auto;
+      opacity: 0.85; 
+      transition: opacity 0.3s ease;
+    }
 
-.img-assinatura:hover {
-  opacity: 1;
-}
+    .img-assinatura:hover {
+      opacity: 1;
+    }
 
   /* subseção "LINKS DE CONTATO" */
 
-.lista-links-sutil {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 15px;
-}
+    .lista-links-sutil {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 15px;
+    }
 
-.link-texto-sutil {
-  font-size: var(--font-size-base);
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    .link-texto-sutil {
+      font-size: var(--font-size-base);
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-.link-texto-sutil:hover {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
+    .link-texto-sutil:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
-.divisor-link {
-  font-size: 0.75rem;
-  color: #444;
-  user-select: none;
-}
+    .divisor-link {
+      font-size: 0.75rem;
+      color: #444;
+      user-select: none;
+    }
 
-/* subseção "BLOCOS COMERCIAIS E INSTITUCIONAIS" */
+  /* subseção "BLOCOS COMERCIAIS E INSTITUCIONAIS" */
 
-.cabecalho-secao-servicos {
-  width: 100%;
-  max-width: 600px;
-  margin: 60px auto 30px auto;
-  padding-top: 40px;
-  border-top: 1px solid #1a1a1a;
-  text-align: center;
-}
+    .cabecalho-secao-servicos {
+      width: 100%;
+      max-width: 600px;
+      margin: 60px auto 30px auto;
+      padding-top: 40px;
+      border-top: 1px solid #1a1a1a;
+      text-align: center;
+    }
 
-.bloco-comercial-institucional {
-  width: 100%;
-  padding-top: 30px;
-  border-top: 1px solid #1a1a1a;
-  text-align: center;
-}
+    .bloco-comercial-institucional {
+      width: 100%;
+      padding-top: 30px;
+      border-top: 1px solid #1a1a1a;
+      text-align: center;
+    }
 
-.cabecalho-bloco-comercial {
-  margin-bottom: 15px;
-}
+    .cabecalho-bloco-comercial {
+      margin-bottom: 15px;
+    }
 
-.tag-categoria-comercial {
-  font-size: var(--font-size-base);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #666;
-  display: block;
-  margin-bottom: 5px;
-}
+    .tag-categoria-comercial {
+      font-size: var(--font-size-base);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #666;
+      display: block;
+      margin-bottom: 5px;
+    }
 
-.texto-descricao-comercial p {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #ccc;
-  max-width: 500px;
-  margin: 0 auto 15px auto;
-}
+    .texto-descricao-comercial p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #ccc;
+      max-width: 500px;
+      margin: 0 auto 15px auto;
+    }
 
-.texto-instrucao-prints {
-  font-size: var(--font-size-sm) !important;
-  color: #888 !important;
-  font-style: italic;
-}
+    .texto-instrucao-prints {
+      font-size: var(--font-size-sm) !important;
+      color: #888 !important;
+      font-style: italic;
+    }
 
-.link-prova-social {
-  font-size: var(--font-size-sm);
-  color: #888;
-  margin-bottom: 20px;
-}
+    .link-prova-social {
+      font-size: var(--font-size-sm);
+      color: #888;
+      margin-bottom: 20px;
+    }
 
-.link-sublinhado {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: opacity 0.3s ease;
-}
+    .link-sublinhado {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: opacity 0.3s ease;
+    }
 
-.link-sublinhado:hover {
-  opacity: 0.7;
-}
+    .link-sublinhado:hover {
+      opacity: 0.7;
+    }
 
-.container-cta-comercial {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-}
+    .container-cta-comercial {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
 
-.btn-destaque-comercial {
-  border-color: #555;
-  background-color: rgba(255, 255, 255, 0.04);
-}
+    .btn-destaque-comercial {
+      border-color: #555;
+      background-color: rgba(255, 255, 255, 0.04);
+    }
 
-.sub-grade-redes {
-  margin-top: 12px;
-}
+    .sub-grade-redes {
+      margin-top: 12px;
+    }
 
-.btn-link-institucional {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: var(--font-size-sm);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #fff;
-  border: 1px solid #444;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+    .btn-link-institucional {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: var(--font-size-sm);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fff;
+      border: 1px solid #444;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-.btn-link-institucional:hover {
-  border-color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-}
+    .btn-link-institucional:hover {
+      border-color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-  /* Seção "CONTATO" com âncora de navegação */
+  /* subseção "CONTATO" com âncora de navegação */
 
-#secao-contato {
-  scroll-margin-top: 140px; /* Compensação da altura do cabeçalho fixo durante a rolagem */
-}
+    #secao-contato {
+      scroll-margin-top: 140px; 
+    }
 
 /* 8- seção "BOTÃO DA ARACNOFOBIA", regra para ocultar aranhas em qualquer link ou foto ------------- */
 
-.btn-toggle-sensivel {
-  background: none;
-  border: none;
-  color: #fff;
-  font-family: var(--font-principal);
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  opacity: 0.4;
-  cursor: pointer;
-  transition: opacity 0.3s ease, color 0.3s ease;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
+  .btn-toggle-sensivel {
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: var(--font-principal);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
 
-.btn-toggle-sensivel:hover {
-  opacity: 1;
-}
+  .btn-toggle-sensivel:hover {
+    opacity: 1;
+  }
 
-.btn-toggle-sensivel.ativo {
-  opacity: 0.9;
-  color: #ffb74d;
-}
+  .btn-toggle-sensivel.ativo {
+    opacity: 0.9;
+    color: #ffb74d;
+  }
 
-body.ocultar-aranhas [href*="arachnida"],
-body.ocultar-aranhas .item-foto[data-category="aranha"],
-body.ocultar-aranhas .item-foto[data-category="opiliao"],
-body.ocultar-aranhas .item-foto[data-category="arachnida"],
-body.ocultar-aranhas .item-foto[data-tag="aranha"] {
-  display: none !important;
-}
+  body.ocultar-aranhas [href*="arachnida"],
+  body.ocultar-aranhas .item-foto[data-category="aranha"],
+  body.ocultar-aranhas .item-foto[data-category="opiliao"],
+  body.ocultar-aranhas .item-foto[data-category="arachnida"],
+  body.ocultar-aranhas .item-foto[data-tag="aranha"] {
+    display: none !important;
+  }
 
 /* 9- seção "MODAL DE VISUALIZAÇÃO (LIGHTBOX)" ------------------------------------ */
 
-.modal-lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.96);
-  z-index: 2000;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-}
+  /* subseção "CONFIGURAÇÕES GERAIS", mobile-first */
 
-.modal-lightbox.ativo {
-  display: flex !important;
-  opacity: 1;
-  pointer-events: auto;
-}
+    .modal-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.96);
+      z-index: 2000;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
 
-/* Botão Fechar (Topo Direita) */
-.btn-fechar-modal {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.8rem;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  z-index: 2010;
-}
+    .modal-lightbox.ativo {
+      display: flex !important;
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-.btn-fechar-modal:hover {
-  opacity: 1;
-}
+  /* subseção "Botão de Fechar" (Topo Direita) */
 
-/* Área Central com Imagem e Navegação */
-.container-midia-modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 70vh !important; /* Aumentado de 45vh para 58vh: baixa a foto e dá destaque */
-  max-height: 70vh !important;
-  position: relative;
-  margin-top: 20px; /* Leve recuo do topo para descer o bloco da imagem */
-  flex: none;
-}
+    .btn-fechar-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+      z-index: 2010;
+    }
 
-.img-modal-destaque {
-  max-height: 58vh; /* Acompanha o container no mobile */
-  max-width: 92vw;
-  object-fit: contain;
-  user-select: none;
-}
+    .btn-fechar-modal:hover {
+      opacity: 1;
+    }
 
-/* Botões de Navegação (Esquerda / Direita) */
-.btn-nav-modal {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  border: none;
-  color: #fff;
-  font-size: 2.5rem;
-  padding: 10px 15px;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-  z-index: 2005;
-}
+  /* subseção "Área Central com Imagem e Navegação" */
 
-.btn-nav-modal:hover {
-  opacity: 1;
-}
+    .container-midia-modal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 70vh !important;
+      max-height: 70vh !important;
+      position: relative;
+      margin-top: 20px; 
+      flex: none;
+    }
 
-.btn-nav-modal.anterior { left: 10px; }
-.btn-nav-modal.proxima { right: 10px; }
+    .img-modal-destaque {
+      max-height: 58vh; 
+      max-width: 92vw;
+      object-fit: contain;
+      user-select: none;
+    }
 
-/* Rodapé do Modal (Status de Venda / CTA WhatsApp ou Nuvemshop) */
-.rodape-modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 0 10px;
-  text-align: center;
-  z-index: 2010;
-  width: 100%;
-  margin-top: -10px; /* Valor negativo força o rodapé a SUBIR em direção à foto */
-  margin-bottom: 25px; /* Dá um recuo confortável do rodapé para o fim da tela */
-  position: relative;
-}
+  /* subseção "Botões de Navegação (Esquerda / Direita)" */
 
-.status-loja-modal {
-  font-size: var(--font-size-sm);
-  letter-spacing: 1px;
-  color: #fff;
-  font-weight: 500;
-  line-height: 1.3;
-}
+    .btn-nav-modal {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      border: none;
+      color: #fff;
+      font-size: 2.5rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+      z-index: 2005;
+    }
 
-.subtitulo-modal {
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  color: #888;
-  font-style: italic;
-  margin-bottom: 4px;
-}
+    .btn-nav-modal:hover {
+      opacity: 1;
+    }
 
-/* Container para alinhar botões de contato lado a lado */
-.container-acoes-modal {
-  display: flex;
-  flex-direction: row; /* Força ficar lado a lado ou responsivo sem quebrar layout */
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
+    .btn-nav-modal.anterior { left: 10px; }
+    .btn-nav-modal.proxima { right: 10px; }
 
-@media (min-width: 500px) {
-  .container-acoes-modal {
-    flex-direction: row;
-    gap: 12px;
+  /* subseção "Rodapé do Modal" (Status de Venda / CTA WhatsApp ou Nuvemshop) */
+
+    .rodape-modal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 0 10px;
+      text-align: center;
+      z-index: 2010;
+      width: 100%;
+      margin-top: -10px; 
+      margin-bottom: 25px; 
+      position: relative;
+    }
+
+    .status-loja-modal {
+      font-size: var(--font-size-sm);
+      letter-spacing: 1px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .subtitulo-modal {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+
+    .container-acoes-modal {
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @media (min-width: 500px) {
+      .container-acoes-modal {
+        flex-direction: row;
+        gap: 12px;
+      }
+    }
+
+    .btn-orcamento-modal {
+      font-size: var(--font-size-sm);
+      letter-spacing: 1.5px;
+      color: #ccc;
+      text-transform: uppercase;
+      border: 1px dashed #444;
+      padding: 6px 12px;
+      background-color: rgba(255, 255, 255, 0.03);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-orcamento-modal:hover {
+      border-color: #fff;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+/* subseão "ADAPTAÇÃO DO LIGHTBOX PARA TELAS MAIORES" */
+
+  @media (min-width: 768px) {
+    .modal-lightbox {
+      padding: 20px;
+    }
+
+    .container-midia-modal {
+      height: auto !important;
+      max-height: 70vh !important;
+      margin-top: 0;
+      flex: 1; 
+    }
+
+    .img-modal-destaque {
+      max-height: 70vh; 
+      max-width: 85vw;
+    }
+
+    .rodape-modal {
+      margin-top: auto; 
+      gap: 8px;
+      padding-bottom: 25px;
+    }
+
+    .status-loja-modal {
+      font-size: var(--font-size-sm);
+    }
+
+    .btn-orcamento-modal {
+      font-size: var(--font-size-sm);
+      padding: 8px 16px;
+    }
   }
-}
-
-.btn-orcamento-modal {
-  font-size: var(--font-size-sm);
-  letter-spacing: 1.5px;
-  color: #ccc;
-  text-transform: uppercase;
-  border: 1px dashed #444;
-  padding: 6px 12px;
-  background-color: rgba(255, 255, 255, 0.03);
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.btn-orcamento-modal:hover {
-  border-color: #fff;
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Media Query para restaurar visualização ampla em telas maiores (Desktop/Tablet) */
-@media (min-width: 768px) {
-  .modal-lightbox {
-    padding: 20px;
-  }
-
-  .container-midia-modal {
-    height: auto !important;
-    max-height: 70vh !important;
-    margin-top: 0;
-    flex: 1; /* Volta a se expandir suavemente no centro */
-  }
-
-  .img-modal-destaque {
-    max-height: 70vh; /* Foto bem centralizada e imponente no desktop */
-    max-width: 85vw;
-  }
-
-  .rodape-modal {
-    margin-top: auto; /* Desfaz o puxão negativo no desktop */
-    gap: 8px;
-    padding-bottom: 25px;
-  }
-
-  .status-loja-modal {
-    font-size: var(--font-size-sm);
-  }
-
-  .btn-orcamento-modal {
-    font-size: var(--font-size-sm);
-    padding: 8px 16px;
-  }
-}
