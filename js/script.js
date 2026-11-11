@@ -107,7 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
       { nome: "Dramas da Natureza", arquivo: "colecoes/dramas-da-natureza.html", capa: "imagens/galeria/dramas-da-natureza/inseto-10.webp" },
       { nome: "Cyberchoque", arquivo: "colecoes/cyberchoque.html", capa: "imagens/galeria/cyberchoque/cyber-horror-4.webp" },
       { nome: "Arachnida", arquivo: "colecoes/arachnida.html", capa: "imagens/galeria/arachnida/aranha-13.webp" },
-      { nome: "Floresta Noturna", arquivo: "colecoes/floresta-noturna.html", capa: "imagens/galeria/floresta-noturna/anfibio-1.webp" }
+      { nome: "Floresta Noturna", arquivo: "colecoes/floresta-noturna.html", capa: "imagens/galeria/floresta-noturna/anfibio-1.webp" },
+      { nome: "Morro Dois Irmãos", arquivo: "colecoes/morro-dois-irmaos.html", capa: "imagens/galeria/morro-dois-irmaos/paisagem-urbanizada-11.webp" }
     ];
 
     const paginaAtual = window.location.pathname.split("/").pop();

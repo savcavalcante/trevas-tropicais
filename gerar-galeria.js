@@ -4,7 +4,7 @@ const path = require('path');
 // ==========================================================================
 // CONFIGURAÇÃO DA COLEÇÃO ATUAL // rodar "node gerar-galeria.js" para gerar o HTML da galeria
 // ==========================================================================
-const nomeColecao = 'cyberchoque'; // mudar de acordo com o nome da nova coleção, etc.
+const nomeColecao = 'morro-dois-irmaos'; // mudar de acordo com o nome da nova coleção, etc.
 
 // ==========================================================================
 // CONFIGURAÇÕES DO SCRIPT (automático pelo nome do arquivo)
@@ -49,7 +49,8 @@ fs.readdir(pastaImagens, (err, arquivos) => {
   <img src="../imagens/galeria/${nomeColecao}/${imagem}" 
        alt="Fotografia da coleção ${nomeColecao} - Categoria ${categoria}" 
        class="foto-portfolio" 
-       loading="lazy">
+       loading="lazy"
+       data-loja=""> <!-- adicionar link de loja caso a foto já esteja disponivel. -->
 </div>\n`;
   });
 
